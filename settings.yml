@@ -1,0 +1,18 @@
+ttl_tags_age:
+  type: list
+  default: "大众向|少年|成年|成年↑"
+  description: 
+    zh_CN: "预设置标签:分级"
+    en: "A list of tags"
+ttl_tags_state:
+  type: list
+  default: "连载中|短篇完结|长篇完结"
+  description: 
+    zh_CN: "预设置标签：篇幅/状态"
+    en: "A list of tags"
+ttl_tags_free:
+  type: list
+  default: "ABO|哨向"
+  description: 
+    zh_CN: "预设置标签:类型"
+    en: "A list of tags"

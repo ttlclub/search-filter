@@ -1,0 +1,27 @@
+{{#if siteSettings.tagging_enabled}}       
+    {{ttl-tag-chooser
+    id="search-with-tags"
+    tags=searchedTerms.tags
+    everyTag=true
+    unlimitedTagCount=true
+    onChange=(action "onChangeSearchTermForTags")
+    options=(hash
+        allowAny=false
+        headerAriaLabel=(i18n "search.advanced.with_tags.aria_label")
+    )
+    }}
+    <!-- 包含所有标签 -->
+    {{#if showAllTagsCheckbox}}
+    <section class="field">
+        <label>
+        {{input
+            type="checkbox"
+            class="all-tags"
+            checked=searchedTerms.special.all_tags
+            click=(action "onChangeSearchTermForAllTags" value="target.checked")
+        }}
+        {{i18n "search.advanced.filters.all_tags"}}
+        </label>
+    </section>
+    {{/if}}
+{{/if}}

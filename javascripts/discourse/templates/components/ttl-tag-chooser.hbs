@@ -1,0 +1,79 @@
+{{#unless selectKit.isHidden}}
+  {{component selectKit.options.headerComponent
+    tabindex=tabindex
+    value=value
+    selectedContent=selectedContent
+    selectKit=selectKit
+    id=(concat selectKit.uniqueID "-header")
+  }}
+
+  {{#select-kit/select-kit-body selectKit=selectKit id=(concat selectKit.uniqueID "-body")}}
+    {{component selectKit.options.filterComponent
+      selectKit=selectKit
+      id=(concat selectKit.uniqueID "-filter")
+    }}
+
+    {{#if selectedContent.length}}
+      <div class="selected-content">
+        {{#each selectedContent as |item|}}
+          {{component selectKit.options.selectedChoiceComponent
+            item=item
+            selectKit=selectKit
+          }}
+        {{/each}}
+      </div>
+    {{/if}}
+
+
+    {{#if selectKit.filter}}
+        {{#if selectKit.isLoading}}
+            <span class="is-loading">
+                {{#if site}}
+                {{loading-spinner size="small"}}
+                {{/if}}
+            </span>
+        {{else}}
+
+            {{#each collections as |collection|}}
+                {{component (component-for-collection collection.identifier selectKit)
+                collection=collection
+                selectKit=selectKit
+                value=value
+                }}
+            {{/each}}
+        
+            {{#if selectKit.filter}}
+                {{#if selectKit.hasNoContent}}
+                <span class="no-content" role="alert">
+                    {{i18n "select_kit.no_content"}}
+                </span>
+                {{else}}
+                <span class="results-count" role="alert">
+                    {{i18n "select_kit.results_count" count=mainCollection.length}}
+                </span>
+                {{/if}}
+            {{/if}}
+        {{/if}}
+    {{else}}
+        <!-- 预置的tag组 --> 
+        <div class="ttl-tag-panel">
+            {{#each ttlTags as |ttlTags|}}
+                <div class="ttl-filter-item">
+                    <div class="ttl-filter-item-header">{{concat ttlTags.header "："}}</div>
+                    {{#each ttlTags.body as |tag|}}
+                        <span class={{if (ttl-is-active tag content) "btn btn-default active" "btn btn-default"}} {{on "click" (fn this.setTagActive tag ttlTags)}}>{{tag}}</span>
+                    {{/each}}
+                </div>
+            {{/each}}
+        </div>
+              
+    <!-- reset 确认 按钮组 -->  
+    {{/if}}
+    <div class="ttl-btn-panel">
+        {{d-button icon="undo" label=(theme-prefix "ttl-tag-chooser.reset") class="ttl-reset-btn btn-flat" click=(action this.selectKit.onClearSelection)}}
+        {{d-button label=(theme-prefix "ttl-tag-chooser.ok") class="ttl-ok-btn btn-primary" click=(action this.selectKit.toggle)}}
+    </div>  
+    
+
+  {{/select-kit/select-kit-body}}
+{{/unless}}
