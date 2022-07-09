@@ -16,6 +16,7 @@
     <!-- 搜索框-->
     <div class="search-bar">
       {{search-text-field
+        id="search-term"
         value=searchTerm
         class="full-page-search search no-blur search-query"
         aria-label=(i18n "search.search_term_label")
@@ -65,6 +66,8 @@
       </div>
       -->
     {{/if}}
+    
+    
     <!-- 提示警告-->
     <div class="search-notice">
       {{#if invalidSearch}}
@@ -135,6 +138,11 @@
           </div>
         </div>
       {{/if}}
+    {{else}}
+    <div class="ttl-recent-searches">
+      {{mount-widget widget="search-menu-recent-searches"}}
+    </div>
+    
     {{/if}}
 
     {{plugin-outlet name="full-page-search-below-search-info" tagName="span" connectorTagName="div" args=(hash search=searchTerm)}}
@@ -168,25 +176,26 @@
                       {{model.grouped_search_result.error}}
                     </div>
                   {{/if}}
-                   
+                  <!-- 没有结果-创建新主题/在谷歌中搜索-->
+                  <!--
                   {{#if showSuggestion}}
                     <div class="no-results-suggestion">
                       {{i18n "search.cant_find"}}
-                      {{#if canCreateTopic}}
-                        <!-- 没有结果-创建新主题-->
+                      {{#if canCreateTopic}}                        
                         <a href {{action "createTopic" searchTerm}}>{{i18n "search.start_new_topic"}}</a>
                         {{#unless siteSettings.login_required}}
-                          <!-- 在谷歌中搜索-->
                           {{i18n "search.or_search_google"}}
                         {{/unless}}
                       {{else}}
                         {{i18n "search.search_google"}}
                       {{/if}}
                     </div>
-
                     {{google-search searchTerm=searchTerm}}
                   {{/if}}
+                  -->
+
                 {{/if}}
+
               {{/unless}}
               <!-- 有结果-->
               {{#if hasResults}}

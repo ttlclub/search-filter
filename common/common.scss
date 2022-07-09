@@ -196,6 +196,7 @@
 // main-outlet-wrapper，改成full width结果其他页面崩了，暂时先这样
 #main-outlet-wrapper {
   padding: unset;
+  background:var(--primary-50) !important;
   // background: var(--primary-50);
 }
 
@@ -232,9 +233,60 @@
     button {
       border-radius:1.2em;
     }
+
+  }
+}
+// 提示警告
+.search-notice {
+  .fps-invalid {
+    border-radius:1.2em;
+    border: unset !important;
   }
 }
 
+
+// 最近搜索
+.ttl-recent-searches {
+  .search-menu-recent {
+    // @include separator;
+
+    .heading {
+      display: flex;
+      justify-content: space-between;
+      margin:1em;
+      h4 {
+        color: var(--primary-medium);
+        font-weight: normal;
+        margin-bottom: 0;
+      }
+      .clear-recent-searches {
+        cursor: pointer;
+        color: var(--primary-low-mid);
+      }
+    }
+    .search-menu-assistant-item {
+      margin: 0.8em 1em 0.8em 1em;
+      list-style: none;
+      a {
+        color: var(--primary);
+        .d-icon {
+          width: 1.2em;
+          height:1.2em;
+          color: var(--primary-medium);
+          vertical-align: middle;
+          margin-right: 5px;
+        }
+        .search-item-slug {
+          margin-left:0.5em;
+          margin-right:0.5em;
+          font-size: var(--font-0);
+
+        }
+      }
+      
+    }
+  }
+}
 // 排序 筛选 搜索结果
 .search-advanced {
   .search-info {
