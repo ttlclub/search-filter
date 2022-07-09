@@ -227,13 +227,13 @@
     #search-type {
       display: none;
     } 
-    .search-context {
-      display: none;
-    }
     button {
       border-radius:1.2em;
     }
-
+  }
+  // 搜索上下文
+  .search-context {
+    display: none !important;
   }
 }
 // 提示警告
@@ -291,6 +291,7 @@
 .search-advanced {
   .search-info {
     margin-bottom: unset !important;
+    flex-wrap: nowrap;
     .select-kit {
       .select-kit-header {
         background: var(--primary-100) !important;
@@ -337,7 +338,8 @@
     .search-filters {
       margin-right:0.5em !important;
       margin-left:0.2em !important;
-      flex-grow:1;
+      flex-grow:1;     
+      max-width: calc(70% - 1.4em);
       .select-kit-header {
         padding-left: 1.2em;
       }
