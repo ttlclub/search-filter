@@ -170,6 +170,9 @@
       display: flex;
       justify-content: center;
       border-top: 1px solid var(--primary-100);
+      button {
+        margin: unset !important;
+      }
 
       .ttl-reset-btn {
         position: absolute;
@@ -198,6 +201,13 @@
   padding: unset;
   background:var(--primary-50) !important;
   // background: var(--primary-50);
+  #main-outlet {
+    padding-top: unset;
+  }
+}
+.search-container {
+  padding-top: 1.25em;
+  background:white;
 }
 
 // 搜索栏
@@ -291,7 +301,7 @@
 .search-advanced {
   .search-info {
     margin-bottom: unset !important;
-    flex-wrap: nowrap;
+    flex-wrap: nowrap !important;
     .select-kit {
       .select-kit-header {
         background: var(--primary-100) !important;
@@ -317,6 +327,10 @@
         .selected-name {
           justify-content: center;
           flex-grow: 1;
+          .name {
+            white-space: nowrap;
+            overflow: hidden;
+          }         
         }    
         .select-kit-body {
           border:unset;
@@ -340,6 +354,7 @@
       margin-left:0.2em !important;
       flex-grow:1;     
       max-width: calc(70% - 1.4em);
+      background: white;
       .select-kit-header {
         padding-left: 1.2em;
       }
