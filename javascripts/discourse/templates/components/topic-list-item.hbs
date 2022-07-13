@@ -1,0 +1,52 @@
+<td>
+  <div class="ttl-topic-list-item">
+    <div class="topic-header-grid">
+      <div class="topic-title">
+        <span class='link-top-line'>
+          {{~topic-link topic class="raw-link raw-topic-link"}}
+        </span>
+      </div>
+      {{!--
+      <div class="topic-category">
+        {{category-link topic.category}}
+      </div> --}}
+    </div>
+
+
+    <div class="topic-author">
+      {{topic.posters.0.user.username}}
+    </div>
+    <div class='topic-details'>
+      {{raw "list/topic-excerpt" topic=topic}}
+    </div>
+
+    <div class="topic-tags">
+      {{discourse-tags topic mode="list"}}
+    </div>
+
+    <div class="ttl-topic-meta">
+
+      <div class="topic-views {{topic.viewsHeat}} inline sub">
+        {{d-icon "far-eye"}}
+        {{number topic.views numberKey="views_long"}}
+      </div>
+      <span class="middot inline sub"></span>
+      <div class='topic-replies posts-map {{likesHeat}} inline sub' title='{{title}}'>
+        <a href class='posts-map badge-posts {{likesHeat}}'>{{d-icon "far-comment"}}{{number topic.replyCount}}</a>
+      </div>
+
+      <span class="middot inline sub"></span>
+      <div class='topic-replies posts-map {{likesHeat}} inline sub' title='{{title}}'>
+        <a href class='posts-map badge-posts {{likesHeat}}'>{{d-icon "far-heart"}}{{number topic.like_count}}</a>
+      </div>
+
+      <span class="middot inline sub"></span>
+      <div class="{{class}} {{cold-age-class topic.createdAt startDate=topic.bumpedAt class=""}} activity inline sub"
+        title="{{{topic.bumpedAtTitle}}}">
+        <a href="{{topic.lastPostUrl}}">{{format-date topic.bumpedAt format="medium-with-ago" noTitle="true"}}</a>
+      </div>
+
+    </div>
+
+  </div>
+</td>

@@ -12,6 +12,7 @@
   "color_schemes": {
   },
   "modifiers": {
+      "serialize_topic_excerpts": true
   },
   "learn_more": "https://meta.discourse.org/t/beginners-guide-to-using-discourse-themes/91966"
 }
