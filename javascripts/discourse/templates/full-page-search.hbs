@@ -1,4 +1,4 @@
-
+{{ttl-navigation-bar}}
 
 {{#d-section pageClass="search" class="search-container"}}
   {{scroll-tracker name="full-page-search" tag=searchTerm class="hidden"}}
@@ -142,7 +142,6 @@
     <div class="ttl-recent-searches">
       {{mount-widget widget="search-menu-recent-searches"}}
     </div>
-    
     {{/if}}
 
     {{plugin-outlet name="full-page-search-below-search-info" tagName="span" connectorTagName="div" args=(hash search=searchTerm)}}

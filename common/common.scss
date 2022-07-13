@@ -391,3 +391,43 @@
   }
 }
 
+
+// nav bar
+.ttl-nav-bar {
+  .nav-pills::-webkit-scrollbar {
+    display: none;
+  }
+  .nav-pills {
+    position: relative;
+    white-space: nowrap;
+    overflow-x: auto;
+    overflow-y: hidden;
+
+    li {
+      border:unset;
+    }
+
+    
+    li a.active {
+      font-weight: bold;
+      color: var(--tertiary);
+      background-color: unset;
+    }
+    li a:hover {
+      color: var(--tertiary);
+      background-color: unset;
+    }
+
+    .ttl-nav-line {
+      position: absolute; 
+      bottom: 0;
+      left:0.5em;
+  
+      height: 0.2em;
+      width: 2em;
+      border-radius:0.2em;
+      background-color: var(--tertiary);
+      transition: all .3s;
+    }
+  } 
+}
