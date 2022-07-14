@@ -31,7 +31,7 @@ export default Component.extend({
     const fontSize = document.defaultView.getComputedStyle(document.body, '').fontSize;
     const halfRectWidth = selectedItem.getBoundingClientRect().width / 2;
     const leftPosition =
-      selectedItem.getBoundingClientRect().left + document.querySelector('.nav-pills').scrollLeft;
+       selectedItem.getBoundingClientRect().left - selectedItem.parentNode.getBoundingClientRect().left + document.querySelector('.nav-pills').scrollLeft;
     const marker = document.querySelector('.ttl-nav-line');
 
     marker.style.left = "".concat("calc(", leftPosition + halfRectWidth , "px", " - ", fontSize, ")");
