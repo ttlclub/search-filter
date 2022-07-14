@@ -431,3 +431,30 @@
     }
   } 
 }
+
+
+// 创建topic按钮
+.list-controls {
+  .container {
+    #create-topic {
+      opacity: 0.7;
+      position: fixed;
+      bottom: 5em;
+      right: 1.5em;
+      width: 3em;
+      height: 3em;
+      border-radius:50%;
+
+      &.btn {
+        background: var(--primary-medium);
+        .d-icon {
+          color: white;
+        }
+        .svg-icon {
+          width: 1.5em;
+          height: 1.5em;
+        }
+      }
+    }
+  }
+}
