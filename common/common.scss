@@ -513,7 +513,7 @@
 }
 
 .ttl-topic-list-item:hover {
-  border: solid 1px gray;
+  border: solid 1px var(--primary-low);;
   background-color: darken($secondary, 3%);
   lighten: ($primary, 70%);
 }
