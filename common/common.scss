@@ -605,10 +605,6 @@ $z-layers: (
   margin-bottom: 0;
 }
 
-.ttl-topic-list-item:hover {
-  background-color: darken($secondary, 3%);
-  lighten: ($primary, 70%);
-}
 
 .ttl-topic-list-item:active {
   -webkit-transform: translateY(+2px);
