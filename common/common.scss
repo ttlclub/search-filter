@@ -434,6 +434,11 @@
 
 
 // 创建topic按钮
+
+$z-layers: (
+  "create-topic-button": 1000,
+);
+
 .list-controls {
   .container {
     #create-topic {
@@ -444,6 +449,7 @@
       width: 3em;
       height: 3em;
       border-radius:50%;
+      z-index: z("create-topic-button");
 
       &.btn {
         background: var(--primary-medium);
