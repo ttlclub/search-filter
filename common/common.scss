@@ -437,6 +437,8 @@
 
 $z-layers: (
   "create-topic-button": 1000,
+  "topic-footer-panel": 350,
+  "topic-progress": 351,
 );
 
 .list-controls {
@@ -463,4 +465,71 @@ $z-layers: (
       }
     }
   }
+}
+
+
+// 帖子详情
+
+//// 底部panel
+#topic-footer-buttons{
+  z-index: z("topic-footer-panel");
+  background: white;
+  position:fixed;
+  bottom: 0;
+  margin-bottom: unset;
+  padding-top:0.5em;
+  padding-bottom: 1em;
+  width: -webkit-fill-available;
+
+  .topic-footer-main-buttons {
+    flex-wrap: nowrap;
+    .reply {
+      margin-left: 0.5em;
+      width: 60%;
+      height: 2em;
+      border-radius:1.5em;
+      color:var(--primary-medium);
+      &.btn {
+        background: var(--primary-low);
+        justify-content:flex-start;
+      }
+    }
+    .btn {
+      background: transparent;
+      justify-items: unset;
+    }
+    .topic-notifications-button {
+      margin:unset;
+      align-items:flex-start;
+      .select-kit.is-expanded {
+        // 没法高于父级，还没找到解决方法
+        z-index: 352 !important;
+      }
+    }
+    .has-like{
+      .d-icon {
+        color: var(--love);
+      }
+    }
+  }
+}
+//// 帖子进度条
+.container.posts .topic-navigation {
+  z-index:z("topic-progress");
+  &.topic-progress-expanded {
+    .timeline-container {
+      border-radius: 20px 20px 0 0;
+      .widget-component-connector {
+        display: none !important;
+      }
+    }
+
+  }
+}
+#topic-progress {
+  position: fixed;
+  bottom: 20%;
+  right:2em;
+  border-radius:2em;
+  overflow: hidden;
 }
