@@ -741,3 +741,123 @@ tr {
   border-radius: 2em;
   overflow: hidden;
 }
+
+
+
+// 头像框选择面板
+$flair-size: 5.5rem;
+
+.select-kit.avatar-frame-chooser {
+  .select-kit-header {
+    .select-kit-header-wrapper {
+      flex-direction:column;
+    }
+  }
+  .select-kit-header,
+  .flair-row {
+    .avatar-flair {
+      align-items: center;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: $flair-size $flair-size;
+      display: flex;
+      justify-content: center;
+      height: $flair-size;
+      width: $flair-size;
+
+      &.rounded {
+        background-size: ($flair-size / 1.4) ($flair-size / 1.4);
+        border-radius: 50%;
+      }
+
+      .d-icon {
+        display: block;
+        height: ($flair-size / 1.8);
+        width: ($flair-size / 1.8);
+      }
+    }
+
+    span {
+      white-space: nowrap;
+    }
+  }
+  &.is-expanded .select-kit-body {
+    border-radius: 20px 20px 0 0;
+    position: fixed;
+    height: 500px;
+    bottom:0;
+    right: 0;
+    left: 0;
+    box-shadow: shadow("composer");
+
+    .select-kit-collection {
+      flex-wrap: wrap;
+      flex-direction:row;
+      align-content:flex-start;
+      overflow-y:scroll;
+      max-height: unset;
+      height:100%;
+
+
+      .select-kit-row {
+        width:7.5rem;
+        height: 8.5rem;
+        margin: 0.5rem;
+        display: unset;
+        list-style-type: none;
+        flex:0 1 auto;
+        border-radius:1.5rem;
+        display:flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        justify-content: center;
+        //要加组件的classname，不想改了，就用div
+        >div {
+          display: flex;
+          justify-content:center;
+        }
+        &.is-selected.is-highlighted {
+          background: var(--primary-low);
+
+        }
+      }
+    }
+    .ttl-btn-panel {
+      padding: 1em;
+      width: -webkit-fill-available;
+      position: fixed;
+      bottom: 0;
+      display: flex;
+      justify-content: center;
+      background: white;
+      border-top: 1px solid var(--primary-100);
+
+      button {
+        margin: unset !important;
+      }
+
+      .ttl-reset-btn {
+        position: absolute;
+        left: 2em;
+        color: var(--primary-low-mid);
+
+        &:focus {
+          background: unset;
+
+          .d-icon {
+            color: unset;
+          }
+        }
+      }
+
+      .ttl-ok-btn {
+        width: 10em;
+        border-radius: 1.2em;
+        color: var(--secondary);
+        background: var(--tertiary);
+      }
+    }
+  }
+}
+
+
