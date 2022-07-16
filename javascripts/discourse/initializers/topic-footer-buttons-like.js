@@ -1,5 +1,6 @@
 import { registerTopicFooterButton, getTopicFooterButtons } from "discourse/lib/register-topic-footer-button";
 import { later } from "@ember/runloop";
+import { replaceIcon } from "discourse-common/lib/icon-library";
 
 
 export function footertTggleLike(post,likeAction) {
@@ -20,12 +21,8 @@ export default {
         registerTopicFooterButton({
             id: "like",
             icon() {
-                const post = this.topic.postStream.posts[0]; 
-                let postLiked;
-                if(post.likeAction) {
-                    postLiked = post.likeAction.acted;
-                    console.log(postLiked);
-                    return postLiked
+                if(this.topic.postStream.posts[0].likeAction) {
+                    return this.topic.postStream.posts[0].likeAction.acted
                         ? "d-liked" 
                         : "d-unliked";
                 } else {
@@ -34,12 +31,12 @@ export default {
                 
 
             },
+
             classNames() {
                 const post = this.topic.postStream.posts[0]; 
                 let postLiked;
                 if(post.likeAction) {
                     postLiked = post.likeAction.acted;
-                    console.log(postLiked);
                     return postLiked
                         ? ["toggle-like", "has-like", "fade-out"]
                         : ["toggle-like", "like"];
@@ -47,8 +44,15 @@ export default {
                     return;
                 }               
             },
+
+            displayed() {
+                return this.topic.postStream.posts[0].likeAction.acted || this.topic.postStream.posts[0].likeAction.get("canToggle") 
+                    ? true 
+                    : false;
+            },
+
             action() {
-                // debugger
+                debugger
                 const currentUser = this.currentUser;
                 const topic = this.topic;
                 const post = this.topic.postStream.posts[0];
@@ -69,18 +73,22 @@ export default {
                 
                 if (postLiked) {
                     heart.closest(".toggle-like").classList.remove("has-like");
+                    // 调理不好了先这样
+                    heart.firstChild.href.baseVal = "#far-heart";
                     return footertTggleLike(post,likeAction);
                 } 
 
                 heart.closest(".toggle-like").classList.add("has-like");
                 heart.classList.add("heart-animation");
+                // 调理不好了先这样
+                heart.firstChild.href.baseVal = "#heart";
+
             
                 return new Promise((resolve) => {
                     later(() => {
                         footertTggleLike(post,likeAction).then(() => resolve());
                     }, 400);
                 });
-    
             },
         });
 
