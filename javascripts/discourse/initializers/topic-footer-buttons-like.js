@@ -27,16 +27,11 @@ export default {
                 } else {
                     return;
                 }
-                
-
             },
 
             classNames() {
-                const post = this.topic.postStream.posts[0]; 
-                let postLiked;
-                if(post.likeAction) {
-                    postLiked = post.likeAction.acted;
-                    return postLiked
+                if(this.topic.postStream.posts[0].likeAction) {
+                    return this.topic.postStream.posts[0].likeAction.acted
                         ? ["toggle-like", "has-like", "fade-out"]
                         : ["toggle-like", "like"];
                 } else {
@@ -45,13 +40,17 @@ export default {
             },
             // 是否显示按钮
             displayed() {
-                return this.topic.postStream.posts[0].likeAction.acted || this.topic.postStream.posts[0].likeAction.get("canToggle") 
-                    ? true 
-                    : false;
+                if(this.topic.postStream.posts[0].likeAction) {
+                    return this.topic.postStream.posts[0].likeAction.acted || this.topic.postStream.posts[0].likeAction.get("canToggle") 
+                        ? true 
+                        : false;
+                } else {
+                    return false;
+                }   
             },
 
             action() {
-                debugger
+                // debugger
                 const currentUser = this.currentUser;
                 const topic = this.topic;
                 const post = this.topic.postStream.posts[0];
