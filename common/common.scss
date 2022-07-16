@@ -642,62 +642,90 @@ tr {
 
 
 // globle css
-// .btn{
-//   border-radius: 2em;
-// }
+
+.btn {
+  border-radius: 8px;
+}
+
+.alert.alert-info {
+  border-radius: 8px;
+}
+
+#reply-control {
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+}
+
+.topic-body {
+  padding: 1em;
+}
+
+.fixed-modal .modal-inner-container {
+  border-radius: 8px;
+}
+
 // wj change end
 
 // 帖子详情
 
 //// 底部panel
-#topic-footer-buttons{
+#topic-footer-buttons {
   z-index: z("topic-footer-panel");
   background: white;
-  position:fixed;
+  position: fixed;
   bottom: 0;
   margin-bottom: unset;
-  padding-top:0.5em;
+  padding-top: 0.5em;
   padding-bottom: 1em;
   width: -webkit-fill-available;
 
   .topic-footer-main-buttons {
     flex-wrap: nowrap;
+
     .reply {
       margin-left: 0.5em;
       width: 60%;
       height: 2em;
-      border-radius:1.5em;
-      color:var(--primary-medium);
+      border-radius: 1.5em;
+      color: var(--primary-medium);
+
       &.btn {
         background: var(--primary-low);
-        justify-content:flex-start;
+        justify-content: flex-start;
       }
     }
+
     .btn {
       background: transparent;
       justify-items: unset;
     }
+
     .topic-notifications-button {
-      margin:unset;
-      align-items:flex-start;
+      margin: unset;
+      align-items: flex-start;
+
       .select-kit.is-expanded {
         // 没法高于父级，还没找到解决方法
         z-index: 352 !important;
       }
     }
-    .has-like{
+
+    .has-like {
       .d-icon {
         color: var(--love);
       }
     }
   }
 }
+
 //// 帖子进度条
 .container.posts .topic-navigation {
-  z-index:z("topic-progress");
+  z-index: z("topic-progress");
+
   &.topic-progress-expanded {
     .timeline-container {
       border-radius: 20px 20px 0 0;
+
       .widget-component-connector {
         display: none !important;
       }
@@ -705,10 +733,11 @@ tr {
 
   }
 }
+
 #topic-progress {
   position: fixed;
   bottom: 20%;
-  right:2em;
-  border-radius:2em;
+  right: 2em;
+  border-radius: 2em;
   overflow: hidden;
 }
