@@ -2,6 +2,7 @@
 %nav {
   margin-left: 0;
   list-style: none;
+
   li a {
     display: block;
     text-decoration: none;
@@ -18,11 +19,11 @@
   flex-direction: row;
   align-items: stretch;
 
-  > li {
+  >li {
     display: flex;
     margin-right: 0.5em;
 
-    > a {
+    >a {
       border: none;
       padding: 6px 12px;
       color: var(--primary);
@@ -61,25 +62,28 @@
 // 用select kit重写的tag选择器
 .tag-chooser {
   &.is-expanded {
+
     // 重写select kit的自动hidden样式
     .select-kit-body[data-popper-reference-hidden] {
       visibility: unset !important;
       pointer-events: unset !important;
     }
+
     .select-kit-body {
       display: flex;
       justify-content: flex-start;
       position: fixed !important;
       width: 100%;
-      height:500px;
+      height: 500px;
       bottom: 0 !important;
       left: 0 !important;
       right: 0 !important;
       border-radius: 20px 20px 0 0;
       transform: unset !important;
       box-shadow: shadow("composer");
-      
+
     }
+
     // 搜索框
     .select-kit-filter {
       width: -webkit-fill-available;
@@ -89,22 +93,26 @@
       padding: 0.25em 1em !important;
       display: flex;
       flex-direction: row-reverse;
+
       .d-icon {
         margin-right: 1em;
       }
     }
+
     // 被选中的tag
     .selected-content {
       border-bottom: unset;
-      border-top:unset !important;
+      border-top: unset !important;
       padding: 1em;
       overflow-y: scroll;
       max-height: 25%;
+
       .selected-choice {
-        border-radius:1.2em;
-        margin:0.2em;
+        border-radius: 1.2em;
+        margin: 0.2em;
       }
     }
+
     // 搜索tag结果
     .select-kit-collection {
       display: flex;
@@ -112,10 +120,10 @@
       flex-wrap: wrap;
       align-items: stretch;
       padding: 1em;
-      border-top:unset !important;
+      border-top: unset !important;
 
       .select-kit-row {
-        border-radius:1.2em;
+        border-radius: 1.2em;
         font-size: var(--font-0);
         background: white;
         border: 1px solid rgba(215, 215, 215, 1);
@@ -125,35 +133,43 @@
       }
 
     }
+
     // 无结果
     .no-content {
       padding: 1em 1.6em;
 
     }
+
     // 指定tag选择面板
-    .ttl-tag-panel{
+    .ttl-tag-panel {
       padding: 1em;
       width: -webkit-fill-available;
       position: fixed;
       bottom: 4em;
+
       .ttl-filter-item-header {
         margin-bottom: 0.5em;
       }
+
       .ttl-filter-item {
-        margin-bottom:0.8em;
+        margin-bottom: 0.8em;
+
         .btn {
-          border-radius:1.2em;
+          border-radius: 1.2em;
           font-size: var(--font-0);
           background: white;
           border: 1px solid rgba(215, 215, 215, 1);
+
           // z-index: 1;
           @include hover {
             background: unset;
-            color:unset;
+            color: unset;
           }
-          > font {
+
+          >font {
             pointer-events: none;
           }
+
           &.active {
             border: 1px solid var(--tertiary);
             color: var(--tertiary);
@@ -161,6 +177,7 @@
         }
       }
     }
+
     // tag chooser 按钮
     .ttl-btn-panel {
       padding: 1em;
@@ -170,6 +187,7 @@
       display: flex;
       justify-content: center;
       border-top: 1px solid var(--primary-100);
+
       button {
         margin: unset !important;
       }
@@ -177,18 +195,20 @@
       .ttl-reset-btn {
         position: absolute;
         left: 2em;
-        color:var(--primary-low-mid);
+        color: var(--primary-low-mid);
 
         &:focus {
           background: unset;
+
           .d-icon {
             color: unset;
           }
         }
       }
+
       .ttl-ok-btn {
-        width:10em;
-        border-radius:1.2em;
+        width: 10em;
+        border-radius: 1.2em;
         color: var(--secondary);
         background: var(--tertiary);
       }
@@ -199,15 +219,17 @@
 // main-outlet-wrapper，改成full width结果其他页面崩了，暂时先这样
 #main-outlet-wrapper {
   padding: unset;
-  background:var(--primary-50) !important;
+  background: var(--primary-50) !important;
+
   // background: var(--primary-50);
   #main-outlet {
     padding-top: unset;
   }
 }
+
 .search-container {
   padding-top: 1.25em;
-  background:white;
+  background: white;
 }
 
 // 搜索栏
@@ -215,41 +237,50 @@
   background: white !important;
   // 这个padding感觉会崩
   padding: 0.5em !important;
+
   .search-page-heading {
     display: none;
   }
+
   .search-filters {
-    background:unset;
+    background: unset;
     // display: none;
   }
+
   .search-bar {
     background: unset;
     flex-direction: row;
+
     input.search-query {
       margin: 0 0.5em 0 0;
-      border-radius:1.2em;
-      border:1px solid var(--primary-low-mid);
+      border-radius: 1.2em;
+      border: 1px solid var(--primary-low-mid);
     }
+
     input[type="text"]:focus {
       border: 1px solid var(--tertiary);
-      outline:unset;
+      outline: unset;
     }
+
     #search-type {
       display: none;
-    } 
+    }
+
     button {
-      border-radius:1.2em;
+      border-radius: 1.2em;
     }
   }
+
   // 搜索上下文
   .search-context {
     display: none !important;
   }
 }
+
 // 提示警告
 .search-notice {
   .fps-invalid {
-    border-radius:1.2em;
+    border-radius: 1.2em;
     border: unset !important;
   }
 }
@@ -263,45 +294,53 @@
     .heading {
       display: flex;
       justify-content: space-between;
-      margin:1em;
+      margin: 1em;
+
       h4 {
         color: var(--primary-medium);
         font-weight: normal;
         margin-bottom: 0;
       }
+
       .clear-recent-searches {
         cursor: pointer;
         color: var(--primary-low-mid);
       }
     }
+
     .search-menu-assistant-item {
       margin: 0.8em 1em 0.8em 1em;
       list-style: none;
+
       a {
         color: var(--primary);
+
         .d-icon {
           width: 1.2em;
-          height:1.2em;
+          height: 1.2em;
           color: var(--primary-medium);
           vertical-align: middle;
           margin-right: 5px;
         }
+
         .search-item-slug {
-          margin-left:0.5em;
-          margin-right:0.5em;
+          margin-left: 0.5em;
+          margin-right: 0.5em;
           font-size: var(--font-0);
 
         }
       }
-      
+
     }
   }
 }
+
 // 排序 筛选 搜索结果
 .search-advanced {
   .search-info {
     margin-bottom: unset !important;
     flex-wrap: nowrap !important;
+
     .select-kit {
       .select-kit-header {
         background: var(--primary-100) !important;
@@ -312,52 +351,64 @@
         border-radius: 1.2em;
       }
     }
+
     // 排序
     .sort-by {
-      margin-left:0.5em !important;
-      margin-right:0.2em !important;
+      margin-left: 0.5em !important;
+      margin-right: 0.2em !important;
       min-width: 30%;
+
       details {
         width: 100%;
       }
+
       label {
         display: none;
       }
+
       .select-kit {
         .selected-name {
           justify-content: center;
           flex-grow: 1;
+
           .name {
             white-space: nowrap;
             overflow: hidden;
-          }         
-        }    
+          }
+        }
+
         .select-kit-body {
-          border:unset;
-          box-shadow:unset;
+          border: unset;
+          box-shadow: unset;
           // width:calc(100%);
-          
+
           .select-kit-collection {
             max-height: unset;
-            .select-kit-row{
-              &.is-selected, .is-highlighted {
-                background:var(--tertiary-very-low) !important;
+
+            .select-kit-row {
+
+              &.is-selected,
+              .is-highlighted {
+                background: var(--tertiary-very-low) !important;
               }
             }
-          }       
+          }
         }
       }
     }
+
     // 筛选
     .search-filters {
-      margin-right:0.5em !important;
-      margin-left:0.2em !important;
-      flex-grow:1;     
+      margin-right: 0.5em !important;
+      margin-left: 0.2em !important;
+      flex-grow: 1;
       max-width: calc(70% - 1.4em);
       background: white;
+
       .select-kit-header {
         padding-left: 1.2em;
       }
+
       section {
         label {
           display: none;
@@ -365,25 +416,30 @@
       }
     }
   }
+
   // 搜索结果
   .search-results {
-    background:var(--primary-50) !important;
+    background: var(--primary-50) !important;
+
     //padding-top: unset !important;
     .loading-container {
       padding: 1em;
     }
+
     .fps-result {
       background: white;
-      border-radius:1em;
-      margin:0em 0.5em 1em 0.5em;
+      border-radius: 1em;
+      margin: 0em 0.5em 1em 0.5em;
       padding: 0.8em 1em 0.8em 1em;
 
       .author {
         display: none;
       }
+
       .badge-category-bg {
-        border-radius:50%;
+        border-radius: 50%;
       }
+
       .blurb {
         font-size: var(--font-down-1);
       }
@@ -397,6 +453,7 @@
   .nav-pills::-webkit-scrollbar {
     display: none;
   }
+
   .nav-pills {
     position: relative;
     white-space: nowrap;
@@ -404,32 +461,33 @@
     overflow-y: hidden;
 
     li {
-      border:unset;
+      border: unset;
     }
 
-    
+
     li a.active {
       font-weight: bold;
       color: var(--tertiary);
       background-color: unset;
     }
+
     li a:hover {
       color: var(--tertiary);
       background-color: unset;
     }
 
     .ttl-nav-line {
-      position: absolute; 
+      position: absolute;
       bottom: 0;
-      left:0.5em;
-  
+      left: 0.5em;
+
       height: 0.2em;
       width: 2em;
-      border-radius:0.2em;
+      border-radius: 0.2em;
       background-color: var(--tertiary);
       transition: all .3s;
     }
-  } 
+  }
 }
 
 
@@ -450,14 +508,16 @@ $z-layers: (
       right: 1.5em;
       width: 3em;
       height: 3em;
-      border-radius:50%;
+      border-radius: 50%;
       z-index: z("create-topic-button");
 
       &.btn {
         background: var(--primary-medium);
+
         .d-icon {
           color: white;
         }
+
         .svg-icon {
           width: 1.5em;
           height: 1.5em;
@@ -467,6 +527,125 @@ $z-layers: (
   }
 }
 
+// wjchange 
+
+.topic-list {
+
+  .topic-author {
+    color: black;
+    padding: 0;
+  }
+
+  .topic-details {
+    max-height: initial;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .topic-excerpt {
+    color: var(--primary-medium);
+    margin-top: 0;
+    max-height: initial;
+    width: 100%;
+  }
+
+  .topic-actions {
+    margin-top: 5px;
+    float: none;
+  }
+
+  .list-button {
+    font-size: 1em;
+    padding: 0 10px 0 0px;
+  }
+
+  .like-count {
+    font-size: 1em;
+    line-height: 1em;
+    float: left;
+    margin-right: 8px;
+  }
+
+  .list-button i {
+    vertical-align: top;
+  }
+
+  .num.activity {
+    float: right;
+  }
+
+  img.thumbnail:not(.tiles-thumbnail) {
+    max-width: 80px;
+    max-height: 80px;
+  }
+
+  .discourse-tags {
+    color: black;
+    float: initial;
+    clear: initial;
+    margin-right: 30px;
+    flex-wrap: wrap;
+  }
+}
+
+.topic-header-grid {
+  grid-area: theader;
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-template-rows: auto auto;
+  grid-template-areas:
+    "title posters"
+    "category posters"
+}
+
+.ttl-topic-list-item {
+  border-radius: 15px;
+  background-color: white;
+  padding: 15px;
+  margin: 5px;
+  margin-top: 10px;
+  margin-bottom: 0;
+}
+
+
+
+.middot:after {
+  content: '\00B7';
+}
+
+.topic-list-item,
+tr {
+  border-bottom: none;
+}
+
+.ttl-topic-meta {
+  margin-top: 0.5em;
+}
+
+// del unused component
+.topic-list .topic-list-data.posters {
+  display: none;
+}
+
+.topic-list .posts.topic-list-data {
+  display: none;
+}
+
+.topic-list .views.topic-list-data {
+  display: none;
+}
+
+.topic-list .activity.topic-list-data {
+  display: none;
+}
+
+
+
+// globle css
+// .btn{
+//   border-radius: 2em;
+// }
+// wj change end
 
 // 帖子详情
 
