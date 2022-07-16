@@ -669,24 +669,26 @@ body .admin-customize .admin-container {
   border-radius: 8px;
 }
 
-#reply-control #reply-title{
+#reply-control #reply-title {
   border-radius: 8px;
 }
 
-.d-editor-textarea-wrapper textarea{
+.d-editor-textarea-wrapper textarea {
   border-radius: 8px;
 }
 
-.select-kit  .select-kit-header{
+.select-kit .select-kit-header {
   border-radius: 8px;
 }
 
-.select-kit.is-expanded .select-kit-body{
+.select-kit.is-expanded .select-kit-body {
   border-radius: 8px;
 
 }
 
-.tag-row.select-kit-row{
+.select-kit.tag-chooser .select-kit-row,
+.select-kit.mini-tag-chooser .select-kit-row,
+.select-kit.tag-drop .select-kit-row {
   display: inline-box;
   height: 2em;
   line-height: 2em;
