@@ -660,7 +660,41 @@ tr {
   padding: 1em;
 }
 
+body .admin-customize .admin-container {
+  padding: 1em;
+
+}
+
 .fixed-modal .modal-inner-container {
+  border-radius: 8px;
+}
+
+#reply-control #reply-title {
+  border-radius: 8px;
+}
+
+.d-editor-textarea-wrapper textarea {
+  border-radius: 8px;
+}
+
+.select-kit .select-kit-header {
+  border-radius: 8px;
+}
+
+.select-kit.is-expanded .select-kit-body {
+  border-radius: 8px;
+
+}
+
+.select-kit.tag-chooser .select-kit-row,
+.select-kit.mini-tag-chooser .select-kit-row,
+.select-kit.tag-drop .select-kit-row {
+  display: inline-box;
+  height: 2em;
+  line-height: 2em;
+  border: 1px solid;
+  padding: 0 0.5em 0 0.5em;
+  margin: 3px;
   border-radius: 8px;
 }
 
