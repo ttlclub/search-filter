@@ -44,7 +44,7 @@ export default {
                     return;
                 }               
             },
-
+            // 是否显示按钮
             displayed() {
                 return this.topic.postStream.posts[0].likeAction.acted || this.topic.postStream.posts[0].likeAction.get("canToggle") 
                     ? true 
