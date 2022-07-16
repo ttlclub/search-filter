@@ -1,6 +1,5 @@
 import { registerTopicFooterButton, getTopicFooterButtons } from "discourse/lib/register-topic-footer-button";
 import { later } from "@ember/runloop";
-import { replaceIcon } from "discourse-common/lib/icon-library";
 
 
 export function footertTggleLike(post,likeAction) {

@@ -32,7 +32,7 @@
                label=(theme-prefix "topic.reply.title")
                title="topic.reply.help"}}
   {{/if}}
-
+  <!-- 强行把下拉按钮变成inline -->
   {{#each dropdownButtons as |actionable|}}
     {{#if (eq actionable.type "inline-button")}}
       {{d-button
@@ -60,7 +60,7 @@
       }}
     {{/if}}
   {{/each}}
-
+  <!-- inline按钮 -->
   {{#each inlineActionables as |actionable|}}
     {{#if (eq actionable.type "inline-button")}}
       {{d-button
@@ -68,7 +68,7 @@
         class=(concat "btn-default topic-footer-button " actionable.classNames)
         action=actionable.action
         icon=actionable.icon
-        translatedLabel=actionable.label
+        translatedLabel=""
         translatedTitle=actionable.title
         translatedAriaLabel=actionable.ariaLabel
         disabled=actionable.disabled
