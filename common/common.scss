@@ -685,10 +685,11 @@ body .admin-customize .admin-container {
 }
 
 .select-kit .select-kit-header {
-  border: none;
-  background: var(--primary-100);
+  border: none !important;
+  background: var(--primary-100) !important;
   @include ttl-rounded-corners;
 }
+
 
 .select-kit.is-expanded .select-kit-body {
   @include ttl-rounded-corners;
@@ -700,8 +701,8 @@ body .admin-customize .admin-container {
 }
 
 li.navigation-toggle {
-  background: var(--primary-100);
-  border: none;
+  border: none !important;
+  background: var(--primary-100) !important;
   @include ttl-rounded-corners;
 }
 
