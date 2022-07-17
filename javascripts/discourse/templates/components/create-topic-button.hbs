@@ -1,4 +1,6 @@
 {{#if canCreateTopic}}
+{{#if disabled}}
+{{else}}
   {{d-button
     class=btnClass
     id="create-topic"
@@ -6,4 +8,5 @@
     icon="plus"
     disabled=disabled
     label=""}}
+{{/if}}
 {{/if}}

@@ -342,6 +342,7 @@
   .search-info {
     margin-bottom: unset !important;
     flex-wrap: nowrap !important;
+    align-items: center;
 
     .select-kit {
       .select-kit-header {
@@ -675,6 +676,7 @@ body .admin-customize .admin-container {
 }
 
 #reply-control #reply-title {
+  border: none;
   @include ttl-rounded-corners;
 }
 
@@ -683,6 +685,8 @@ body .admin-customize .admin-container {
 }
 
 .select-kit .select-kit-header {
+  border: none;
+  background: var(--primary-100);
   @include ttl-rounded-corners;
 }
 
@@ -696,14 +700,20 @@ body .admin-customize .admin-container {
 }
 
 li.navigation-toggle {
+  background: var(--primary-100);
+  border: none;
   @include ttl-rounded-corners;
 }
-ul.drop{
+
+ul.drop {
   @include ttl-rounded-corners;
 }
-input.input-xxlarge{
+
+input.input-xxlarge {
+  border: none;
   @include ttl-rounded-corners;
 }
+
 // wj change end
 
 // 帖子详情
@@ -724,9 +734,10 @@ input.input-xxlarge{
     align-items: center;
     justify-content: space-evenly;
 
-    button{
+    button {
       margin: 0;
     }
+
     .reply {
       margin-left: 0.5em;
       width: 50%;
@@ -795,9 +806,10 @@ $flair-size: 5.5rem;
 .select-kit.avatar-frame-chooser {
   .select-kit-header {
     .select-kit-header-wrapper {
-      flex-direction:column;
+      flex-direction: column;
     }
   }
+
   .select-kit-header,
   .flair-row {
     .avatar-flair {
@@ -826,47 +838,52 @@ $flair-size: 5.5rem;
       white-space: nowrap;
     }
   }
+
   &.is-expanded .select-kit-body {
     border-radius: 20px 20px 0 0;
     position: fixed;
     height: 500px;
-    bottom:0;
+    bottom: 0;
     right: 0;
     left: 0;
     box-shadow: shadow("composer");
 
     .select-kit-collection {
-      flex-wrap: wrap;
-      flex-direction:row;
-      align-content:flex-start;
-      overflow-y:scroll;
+      display: grid;
+      grid-template-columns: min-content;
+      grid-template-rows: min-content;
+      grid-auto-flow: row;
+      justify-items: center;
       max-height: unset;
-      height:100%;
+      height: 100%;
 
 
       .select-kit-row {
-        width:7.5rem;
+        width: 7.5rem;
         height: 8.5rem;
         margin: 0.5rem;
         display: unset;
         list-style-type: none;
-        flex:0 1 auto;
-        border-radius:1.5rem;
-        display:flex;
+        flex: 0 1 auto;
+        border-radius: 1.5rem;
+        display: flex;
         flex-direction: column;
         flex-wrap: nowrap;
         justify-content: center;
+
         //要加组件的classname，不想改了，就用div
         >div {
           display: flex;
-          justify-content:center;
+          justify-content: center;
         }
+
         &.is-selected.is-highlighted {
           background: var(--primary-low);
 
         }
       }
     }
+
     .ttl-btn-panel {
       padding: 1em;
       width: -webkit-fill-available;
@@ -904,5 +921,3 @@ $flair-size: 5.5rem;
     }
   }
 }
-
-
