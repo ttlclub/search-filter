@@ -699,7 +699,9 @@ body .admin-customize .admin-container {
 li.navigation-toggle {
   @include ttl-rounded-corners;
 }
-
+ul.drop{
+  @include ttl-rounded-corners;
+}
 // wj change end
 
 // 帖子详情
@@ -717,7 +719,12 @@ li.navigation-toggle {
 
   .topic-footer-main-buttons {
     flex-wrap: nowrap;
+    align-items: center;
+    justify-content: space-evenly;
 
+    button{
+      margin: 0;
+    }
     .reply {
       margin-left: 0.5em;
       width: 60%;
