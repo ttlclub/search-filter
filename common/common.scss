@@ -534,7 +534,7 @@ $z-layers: (
 .topic-list {
 
   .topic-author {
-    color: black;
+    color: var(--primary);
     padding: 0;
   }
 
@@ -602,7 +602,7 @@ $z-layers: (
 
 .ttl-topic-list-item {
   border-radius: 15px;
-  background-color: white;
+  background-color: var(--header_background);
   padding: 15px;
   margin: 5px;
   margin-top: 10px;
@@ -727,7 +727,7 @@ ul.drop{
     }
     .reply {
       margin-left: 0.5em;
-      width: 60%;
+      width: 50%;
       height: 2em;
       border-radius: 1.5em;
       color: var(--primary-medium);
