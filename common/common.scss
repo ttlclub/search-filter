@@ -1,3 +1,5 @@
+@import 'variables';
+
 // nav bar
 %nav {
   margin-left: 0;
@@ -103,7 +105,7 @@
     .selected-content {
       border-bottom: unset;
       border-top: unset !important;
-      padding: 1em;
+      @include ttl-paddings;
       overflow-y: scroll;
       max-height: 25%;
 
@@ -119,7 +121,7 @@
       flex-direction: row;
       flex-wrap: wrap;
       align-items: stretch;
-      padding: 1em;
+      @include ttl-paddings;
       border-top: unset !important;
 
       .select-kit-row {
@@ -142,7 +144,7 @@
 
     // 指定tag选择面板
     .ttl-tag-panel {
-      padding: 1em;
+      @include ttl-paddings;
       width: -webkit-fill-available;
       position: fixed;
       bottom: 4em;
@@ -180,7 +182,7 @@
 
     // tag chooser 按钮
     .ttl-btn-panel {
-      padding: 1em;
+      @include ttl-paddings;
       width: -webkit-fill-available;
       position: fixed;
       bottom: 0;
@@ -423,7 +425,7 @@
 
     //padding-top: unset !important;
     .loading-container {
-      padding: 1em;
+      @include ttl-paddings;
     }
 
     .fps-result {
@@ -642,13 +644,17 @@ tr {
 
 
 // globle css
+* {
+  outline: none;
+}
 
 .btn {
-  border-radius: 8px;
+  white-space: nowrap;
+  @include ttl-rounded-corners;
 }
 
 .alert.alert-info {
-  border-radius: 8px;
+  @include ttl-rounded-corners;
 }
 
 #reply-control {
@@ -657,45 +663,45 @@ tr {
 }
 
 .topic-body {
-  padding: 1em;
+  @include ttl-paddings;
 }
 
 body .admin-customize .admin-container {
-  padding: 1em;
+  @include ttl-paddings;
 
 }
 
 .fixed-modal .modal-inner-container {
-  border-radius: 8px;
+  @include ttl-rounded-corners;
+}
+
+.ember-text-field.ember-view {
+  @include ttl-rounded-corners;
 }
 
 #reply-control #reply-title {
-  border-radius: 8px;
+  @include ttl-rounded-corners;
 }
 
 .d-editor-textarea-wrapper textarea {
-  border-radius: 8px;
+  @include ttl-rounded-corners;
 }
 
 .select-kit .select-kit-header {
-  border-radius: 8px;
+  @include ttl-rounded-corners;
 }
 
 .select-kit.is-expanded .select-kit-body {
-  border-radius: 8px;
+  @include ttl-rounded-corners;
 
 }
 
-.select-kit.tag-chooser .select-kit-row,
-.select-kit.mini-tag-chooser .select-kit-row,
-.select-kit.tag-drop .select-kit-row {
-  display: inline-box;
-  height: 2em;
-  line-height: 2em;
-  border: 1px solid;
-  padding: 0 0.5em 0 0.5em;
-  margin: 3px;
-  border-radius: 8px;
+.d-editor-textarea-wrapper {
+  @include ttl-rounded-corners;
+}
+
+li.navigation-toggle {
+  @include ttl-rounded-corners;
 }
 
 // wj change end

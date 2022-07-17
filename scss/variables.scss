@@ -1,0 +1,9 @@
+@mixin ttl-rounded-corners {
+    -moz-border-radius: 8px;
+    -webkit-border-radius: 8px;
+    border-radius: 8px;
+}
+
+@mixin ttl-paddings {
+    padding: 1em;
+}
