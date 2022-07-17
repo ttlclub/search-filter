@@ -925,16 +925,16 @@ $flair-size: 5.5rem;
 
 // daidai change
 .category-img {
-  height: 6rem;
-  width: 6rem;
-  border-radius: 8px;
-  margin: 10px;
+  // height: 6rem;
+  // width: 6rem;
+  // border-radius: 8px;
+  margin: 1rem;
 
 }
 
 .category-title-link {
-  width: 7.5rem;
-  height: 9rem;
+  width: 7rem;
+  height: 8.5rem;
   background: var(--header_background);
   box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.0600);
   border-radius: 16px;
@@ -945,11 +945,12 @@ $flair-size: 5.5rem;
 }
 
 
-// .img-logo {
-//   height: 150px;
-//   width: 150;
-//   background: blue;
-// }
+.img-logo {
+  height: 6rem;
+  width: 6rem;
+  border-radius: 8px;
+  margin: 10px;
+}
 
 // .categories-list navigation-categories docked {
 //   background-color: #F6FCFF;
@@ -991,11 +992,7 @@ $flair-size: 5.5rem;
   display: grid;
   grid-template-columns: auto auto auto;
   grid-template-rows: min-content;
-  grid-column-gap: 15px;
-  grid-row-gap: 10px;
   grid-auto-flow: row;
-  justify-items: center;
-  width: 100%;
+  justify-items: space-evenly;
   align-items: center;
-  justify-content: center;
 }
