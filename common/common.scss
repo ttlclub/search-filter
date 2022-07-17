@@ -949,12 +949,15 @@ $flair-size: 5.5rem;
   margin: auto;
 }
 
-
+.category-logo.aspect-image {
+  height: 6rem;
+  width: 6rem;
+  border-radius: 8px;
+}
 .category-logo.aspect-image img {
   height: 6rem;
   width: 6rem;
   border-radius: 8px;
-  margin: 10px;
 }
 
 // .categories-list navigation-categories docked {
@@ -963,22 +966,22 @@ $flair-size: 5.5rem;
 
 
 
-.topic-list .main-link a.title {
-  color: var(--primary);
-  padding: 0;
-}
+// .topic-list .main-link a.title {
+//   color: var(--primary);
+//   padding: 0;
+// }
 
-.topic-list-main-link a.title,
-.topic-list .main-link a.title {
-  padding: 15px 0;
-  word-break: break-word;
-  color: var(--primary);
-}
+// .topic-list-main-link a.title,
+// .topic-list .main-link a.title {
+//   padding: 15px 0;
+//   word-break: break-word;
+//   color: var(--primary);
+// }
 
-td .main-link a.title {
-  padding: 5px 10px 5px 0;
-  word-wrap: break-word;
-}
+// td .main-link a.title {
+//   padding: 5px 10px 5px 0;
+//   word-wrap: break-word;
+// }
 
 // a {
 //   color: var(--tertiary);
