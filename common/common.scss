@@ -1,3 +1,5 @@
+@import 'variables';
+
 // nav bar
 %nav {
   margin-left: 0;
@@ -80,7 +82,7 @@
       right: 0 !important;
       border-radius: 20px 20px 0 0;
       transform: unset !important;
-      box-shadow: shadow("composer");
+      box-shadow: 0px -10px 20px 3px rgba(0,0,0,0.2);
 
     }
 
@@ -103,7 +105,7 @@
     .selected-content {
       border-bottom: unset;
       border-top: unset !important;
-      padding: 1em;
+      @include ttl-paddings;
       overflow-y: scroll;
       max-height: 25%;
 
@@ -119,7 +121,7 @@
       flex-direction: row;
       flex-wrap: wrap;
       align-items: stretch;
-      padding: 1em;
+      @include ttl-paddings;
       border-top: unset !important;
 
       .select-kit-row {
@@ -142,7 +144,7 @@
 
     // 指定tag选择面板
     .ttl-tag-panel {
-      padding: 1em;
+      @include ttl-paddings;
       width: -webkit-fill-available;
       position: fixed;
       bottom: 4em;
@@ -180,7 +182,7 @@
 
     // tag chooser 按钮
     .ttl-btn-panel {
-      padding: 1em;
+      @include ttl-paddings;
       width: -webkit-fill-available;
       position: fixed;
       bottom: 0;
@@ -340,6 +342,7 @@
   .search-info {
     margin-bottom: unset !important;
     flex-wrap: nowrap !important;
+    align-items: center;
 
     .select-kit {
       .select-kit-header {
@@ -423,7 +426,7 @@
 
     //padding-top: unset !important;
     .loading-container {
-      padding: 1em;
+      @include ttl-paddings;
     }
 
     .fps-result {
@@ -532,7 +535,7 @@ $z-layers: (
 .topic-list {
 
   .topic-author {
-    color: black;
+    color: var(--primary);
     padding: 0;
   }
 
@@ -580,7 +583,6 @@ $z-layers: (
   }
 
   .discourse-tags {
-    color: black;
     float: initial;
     clear: initial;
     margin-right: 30px;
@@ -600,7 +602,7 @@ $z-layers: (
 
 .ttl-topic-list-item {
   border-radius: 15px;
-  background-color: white;
+  background-color: var(--header_background);
   padding: 15px;
   margin: 5px;
   margin-top: 10px;
@@ -643,12 +645,17 @@ tr {
 
 // globle css
 
+* {
+  outline: none;
+}
+
 .btn {
-  border-radius: 8px;
+  white-space: nowrap;
+  @include ttl-rounded-corners;
 }
 
 .alert.alert-info {
-  border-radius: 8px;
+  @include ttl-rounded-corners;
 }
 
 #reply-control {
@@ -657,45 +664,64 @@ tr {
 }
 
 .topic-body {
-  padding: 1em;
+  @include ttl-paddings;
 }
 
 body .admin-customize .admin-container {
-  padding: 1em;
+  @include ttl-paddings;
 
 }
 
 .fixed-modal .modal-inner-container {
-  border-radius: 8px;
+  @include ttl-rounded-corners;
 }
 
 #reply-control #reply-title {
-  border-radius: 8px;
+  border: none;
+  @include ttl-rounded-corners;
 }
 
 .d-editor-textarea-wrapper textarea {
-  border-radius: 8px;
+  @include ttl-rounded-corners;
 }
 
 .select-kit .select-kit-header {
-  border-radius: 8px;
+  border: none !important;
+  background: var(--primary-100) !important;
+  @include ttl-rounded-corners;
 }
+
 
 .select-kit.is-expanded .select-kit-body {
-  border-radius: 8px;
+  @include ttl-rounded-corners;
 
 }
 
-.select-kit.tag-chooser .select-kit-row,
-.select-kit.mini-tag-chooser .select-kit-row,
-.select-kit.tag-drop .select-kit-row {
-  display: inline-box;
-  height: 2em;
-  line-height: 2em;
-  border: 1px solid;
-  padding: 0 0.5em 0 0.5em;
-  margin: 3px;
-  border-radius: 8px;
+.d-editor-textarea-wrapper {
+  @include ttl-rounded-corners;
+}
+
+li.navigation-toggle {
+  border: none !important;
+  background: var(--primary-100) !important;
+  @include ttl-rounded-corners;
+}
+
+ul.drop {
+  @include ttl-rounded-corners;
+}
+
+input.input-xxlarge {
+  border: none;
+  @include ttl-rounded-corners;
+}
+
+.list-controls .container{
+  padding: 0 5px;
+}
+
+#toggle-hamburger-menu{
+  display: none;
 }
 
 // wj change end
@@ -717,6 +743,12 @@ body .admin-customize .admin-container {
 
   .topic-footer-main-buttons {
     flex-wrap: nowrap;
+    align-items: center;
+    justify-content: space-evenly;
+
+    button {
+      margin: 0;
+    }
 
     button {
       margin-right: unset;
@@ -792,9 +824,10 @@ $flair-size: 5.5rem;
 .select-kit.avatar-frame-chooser {
   .select-kit-header {
     .select-kit-header-wrapper {
-      flex-direction:column;
+      flex-direction: column;
     }
   }
+
   .select-kit-header,
   .flair-row {
     .avatar-flair {
@@ -823,18 +856,17 @@ $flair-size: 5.5rem;
       white-space: nowrap;
     }
   }
-
+  // selct kit 自动隐藏要强制display
   &.is-expanded .select-kit-body[data-popper-reference-hidden] {
     visibility: unset !important;
     pointer-events: unset !important;
   }
 
-
   &.is-expanded .select-kit-body {
     border-radius: 20px 20px 0 0;
     position: fixed;
     height: 500px;
-    bottom:0;
+    bottom: 0;
     right: 0;
     left: 0;
     box-shadow: shadow("composer");
@@ -842,43 +874,41 @@ $flair-size: 5.5rem;
 
 
     .select-kit-collection {
-      flex-wrap: wrap;
-      flex-direction:row;
-      align-content:flex-start;
-      // 调理不好了
-      // justify-content:center;
-      // 负的是滚动条宽度
-      margin-right: -1rem;
-      overflow-y:scroll;
+      display: grid;
+      grid-template-columns: auto auto auto;
+      grid-template-rows: min-content;
+      grid-auto-flow: row;
+      justify-items: center;
       max-height: unset;
-      height:100%;
-      padding:1.2em 0 0 0;
+      height: 100%;
 
 
       .select-kit-row {
-        width:7rem;
-        max-width: 28%;
+        width: 7.5rem;
         height: 8.5rem;
         margin: 0.5rem;
         display: unset;
         list-style-type: none;
-        flex:0 1 auto;
-        border-radius:1.5rem;
-        display:flex;
+        flex: 0 1 auto;
+        border-radius: 1.5rem;
+        display: flex;
         flex-direction: column;
         flex-wrap: nowrap;
         justify-content: center;
+
         //要加组件的classname，不想改了，就用div
         >div {
           display: flex;
-          justify-content:center;
+          justify-content: center;
         }
+
         &.is-selected.is-highlighted {
           background: var(--primary-low);
 
         }
       }
     }
+
     .ttl-btn-panel {
       padding: 1em;
       width: -webkit-fill-available;
@@ -917,9 +947,29 @@ $flair-size: 5.5rem;
   }
 }
 
+// daidai change
+// .category-img {
+//   // height: 6rem;
+//   // width: 6rem;
+//   // border-radius: 8px;
+//   margin: 1rem;
 
-// topic 发帖人 header
+// }
 
+.category-title-link {
+  width: 7rem;
+  height: 9rem;
+  background: var(--header_background);
+  box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.0600);
+  border-radius: 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex-wrap: nowrap;
+  align-items: center;
+}
+
+// 帖子创建者标题栏
 .topic-owner-header-wrapper {
   display: flex;
   flex-wrap: nowrap;
@@ -1126,7 +1176,7 @@ $flair-size: 5.5rem;
   }
 }
 
-// 帖子中包含的链接 不显示
+// 帖子中包含的链接 不显示（待定）
 .post-links-container {
   display: none;
 }
@@ -1134,11 +1184,81 @@ $flair-size: 5.5rem;
 nav.post-controls .actions button.share, button.share-and-invite {
   display: none;
 }
-// 谁赞了，谁读过不显示 
+// 谁赞了，谁读过不显示 （待定）
 .who-liked, .who-read {
   display: none;
 }
 // onebox 圆角
 aside.onebox{
   border-radius: 1em;
+}
+
+
+
+.category-list .category-name {
+  font-size: 15px;
+}
+.category-list .category-text-title{
+  margin-top: 10px;
+}
+.category-logo.aspect-image {
+  height: 6rem;
+  width: 6rem;
+  border-radius: 8px;
+  margin: 0;
+}
+
+.category-logo.aspect-image img {
+  height: 6rem;
+  width: 6rem;
+  border-radius: 8px;
+}
+
+// .categories-list navigation-categories docked {
+//   background-color: #F6FCFF;
+// }
+
+
+
+// .topic-list .main-link a.title {
+//   color: var(--primary);
+//   padding: 0;
+// }
+
+// .topic-list-main-link a.title,
+// .topic-list .main-link a.title {
+//   padding: 15px 0;
+//   word-break: break-word;
+//   color: var(--primary);
+// }
+
+// td .main-link a.title {
+//   padding: 5px 10px 5px 0;
+//   word-wrap: break-word;
+// }
+
+// a {
+//   color: var(--tertiary);
+//   text-decoration: none;
+//   cursor: pointer;
+// }
+// a {
+//   background-color: transparent;
+// }
+// a:-webkit-any-link {
+//   color: -webkit-link;
+//   cursor: pointer;
+//   text-decoration: underline;
+// }
+// daidai change end
+
+// wj change 2
+
+.category-list {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  grid-template-rows: min-content;
+  grid-auto-flow: row;
+  justify-items: center;
+  align-items: center;
 }

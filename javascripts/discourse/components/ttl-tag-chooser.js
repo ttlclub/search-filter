@@ -9,30 +9,30 @@ export default MultiSelectComponent.extend(TagsMixin, {
   //tagName: "",
   pluginApiIdentifiers: ["tag-chooser"],
   classNames: ["tag-chooser"],
-  ttlTags:  [
-      {
-        header:"分级",
-        body: settings.ttl_tags_age.split("|"),
-        active: false,
-        isSingleSelect: true,
-      },
-      {
-        header:"篇幅/状态",
-        body: settings.ttl_tags_state.split("|"),
-        active: false,
-        isSingleSelect: true,
-      },
-      {
-        header:"标签",
-        body: settings.ttl_tags_free.split("|"),
-        active: false,
-        isSingleSelect: false,
-      }
-    ],
+  ttlTags: [
+    {
+      header: "分级",
+      body: settings.ttl_tags_age.split("|"),
+      active: false,
+      isSingleSelect: true,
+    },
+    {
+      header: "篇幅/状态",
+      body: settings.ttl_tags_state.split("|"),
+      active: false,
+      isSingleSelect: true,
+    },
+    {
+      header: "标签",
+      body: settings.ttl_tags_free.split("|"),
+      active: false,
+      isSingleSelect: false,
+    },
+  ],
 
   selectKitOptions: {
     filterable: true,
-    filterIcon:"search",
+    filterIcon: "search",
     filterPlaceholder: "tagging.choose_for_topic",
     limit: null,
     allowAny: "canCreateTag",
@@ -78,11 +78,27 @@ export default MultiSelectComponent.extend(TagsMixin, {
     });
   },
 
-  didInsertElement(){
-      // 页面渲染完成后create popper
-      this.createPopper();
+  didInsertElement() {
+    // 页面渲染完成后create popper
 
+    this.createPopper();
   },
+  // // wj:rewrite toggle fun open card-cloak (fun fromdiscourse/app/assets/javascripts/select-kit/addon/components/select-kit.js 891)
+  // _toggle(event) {
+  //   if (this.selectKit.isExpanded) {
+
+  //     const cardCloak = document.querySelector(".card-cloak");
+  //     cardCloak.classList.add("hidden");
+  //     cardCloak.style.setProperties("z-index","100")
+
+  //     this._close(event);
+  //   } else {
+  //     const cardCloak = document.querySelector(".card-cloak");
+  //     cardCloak.classList.remove("hidden");
+
+  //     this._open(event);
+  //   }
+  // },
 
   value: computed("tags.[]", function () {
     return makeArray(this.tags).uniq();
@@ -93,7 +109,6 @@ export default MultiSelectComponent.extend(TagsMixin, {
       .uniq()
       .map((t) => this.defaultItem(t, t));
   }),
-  
 
   actions: {
     // 原来的tag chooser component里原封不动复制过来的
@@ -106,78 +121,81 @@ export default MultiSelectComponent.extend(TagsMixin, {
     },
   },
 
-
   @action
-  setTagActive(tag,collection,event) {
-      // setTagActive: 设置标签为选中状态
+  setTagActive(tag, collection, event) {
+    // setTagActive: 设置标签为选中状态
 
-      if(this.isActive(tag,this.content)) {
-          // 已选中
+    if (this.isActive(tag, this.content)) {
+      // 已选中
+      event.target.classList.toggle("active");
+      this.selectKit.deselect({ id: tag, name: tag });
+    } else {
+      // 未选中
+      if (collection.isSingleSelect) {
+        // 单选
+        if (
+          collection.body.some((element) =>
+            this.isActive(element, this.content)
+          )
+        ) {
+          // 该组已有其他tag被选中
+          const selected_tag = collection.body.find((element) =>
+            this.isActive(element, this.content)
+          );
+
+          this.selectKit.deselect({ id: selected_tag, name: selected_tag });
+          event.target.parentNode.classList.remove("active");
+
+          this.selectKit.select(tag, { id: tag, name: tag });
+          event.target.classList.add("active");
+        } else {
+          // 该组未有其他tag被选中
           event.target.classList.toggle("active");
-          this.selectKit.deselect({id:tag,name:tag});
+          this.selectKit.select(tag, { id: tag, name: tag });
+        }
       } else {
-          // 未选中
-          if(collection.isSingleSelect) {
-              // 单选
-              if(collection.body.some(element => this.isActive(element,this.content))) {
-                  // 该组已有其他tag被选中
-                  const selected_tag = collection.body.find(element => this.isActive(element,this.content));
-
-                  this.selectKit.deselect({id:selected_tag,name:selected_tag});
-                  event.target.parentNode.classList.remove("active");
-
-                  this.selectKit.select(tag,{id:tag,name:tag});
-                  event.target.classList.add("active");
-
-              } else {
-                  // 该组未有其他tag被选中
-                  event.target.classList.toggle("active");
-                  this.selectKit.select(tag,{id:tag,name:tag});
-              }
-
-          } else {
-              // 非单选
-              event.target.classList.toggle("active");
-              this.selectKit.select(tag,{id:tag,name:tag});
-          }
+        // 非单选
+        event.target.classList.toggle("active");
+        this.selectKit.select(tag, { id: tag, name: tag });
       }
+    }
   },
 
-  isActive(tag,content) {
-      // isActive: 判断标签是否选中
-      if(content) {
-          if(content.findBy("id",tag)) {
-              return true;
-          } else {
-              return false;
-          }
+  isActive(tag, content) {
+    // isActive: 判断标签是否选中
+    if (content) {
+      if (content.findBy("id", tag)) {
+        return true;
       } else {
-          return false;
+        return false;
       }
+    } else {
+      return false;
+    }
   },
 
   createPopper() {
-      // createPopper: 重写selct kit的popper
-      const anchor = document.querySelector(`#${this.selectKit.uniqueID}-header`);
-      const popper = document.querySelector(`#${this.selectKit.uniqueID}-body`);
-      const strategy = 'fixed';
-      const placement = 'bottom';
-      const tagModifier = {
-        name: 'tagModifier',
-        enabled: true,
-        phase: 'beforeWrite',
-        fn({ state }) {
-            state.styles.popper.bottom = "0";
-            state.styles.popper.top = "unset";
-            state.styles.popper.right = "0";
-            state.styles.popper.transform = "unset";
-        },
-      };
-      this.popper = createPopper(anchor, popper, {
-          strategy,
-          placement,
-          modifiers: [tagModifier],
-        });
+    // createPopper: 重写selct kit的popper
+    const anchor = document.querySelector(`#${this.selectKit.uniqueID}-header`);
+    const popper = document.querySelector(`#${this.selectKit.uniqueID}-body`);
+    const strategy = "fixed";
+    const placement = "bottom";
+    const tagModifier = {
+      name: "tagModifier",
+      enabled: true,
+      phase: "beforeWrite",
+      fn({ state }) {
+        state.styles.popper.bottom = "0";
+        state.styles.popper.top = "unset";
+        state.styles.popper.right = "0";
+        state.styles.popper.transform = "unset";
+      },
+    };
+    this.popper = createPopper(anchor, popper, {
+      strategy,
+      placement,
+      modifiers: [tagModifier],
+    });
   },
 
   search(query) {
