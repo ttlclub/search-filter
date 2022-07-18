@@ -735,8 +735,8 @@ input.input-xxlarge {
   position: fixed;
   bottom: 0;
   margin-bottom: unset;
-  padding-top: 1.5em;
-  padding-bottom: 1.5em;
+  padding-top: 1.2em;
+  padding-bottom: 1.8em;
   border-radius: 1.5em 1.5em 0 0;
   width: -webkit-fill-available;
   box-shadow: shadow("composer");
@@ -748,6 +748,10 @@ input.input-xxlarge {
 
     button {
       margin: 0;
+    }
+    
+    >*:last-of-type {
+      margin-right:0.3em !important;
     }
 
     button {
@@ -1107,6 +1111,8 @@ $flair-size: 5.5rem;
                 max-height:unset;
                 font-family:auto;
                 font-size: unset;
+                display: block;
+                white-space: pre-wrap;
               }
             }
             pre>*:first-child {
