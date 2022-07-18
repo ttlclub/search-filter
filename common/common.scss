@@ -63,157 +63,159 @@
 
 // 用select kit重写的tag选择器
 .tag-chooser {
-  &.is-expanded {
+  &.select-kit{
+    &.is-expanded {
 
-    // 重写select kit的自动hidden样式
-    .select-kit-body[data-popper-reference-hidden] {
-      visibility: unset !important;
-      pointer-events: unset !important;
-    }
-
-    .select-kit-body {
-      background: white;
-      display: flex;
-      justify-content: flex-start;
-      position: fixed !important;
-      width: 100%;
-      height: 500px;
-      bottom: 0 !important;
-      left: 0 !important;
-      right: 0 !important;
-      border-radius: 20px 20px 0 0;
-      transform: unset !important;
-      box-shadow: 0px -10px 20px 3px rgba(0,0,0,0.2);
-
-    }
-
-    // 搜索框
-    .select-kit-filter {
-      width: -webkit-fill-available;
-      border: 1px solid rgba(215, 215, 215, 1);
-      border-radius: 1.5em;
-      margin: 1.2em 1em 0.5em 1em;
-      padding: 0.25em 1em !important;
-      display: flex;
-      flex-direction: row-reverse;
-
-      .d-icon {
-        margin-right: 1em;
+      // 重写select kit的自动hidden样式
+      .select-kit-body[data-popper-reference-hidden] {
+        visibility: unset !important;
+        pointer-events: unset !important;
       }
-    }
-
-    // 被选中的tag
-    .selected-content {
-      border-bottom: unset;
-      border-top: unset !important;
-      @include ttl-paddings;
-      overflow-y: scroll;
-      max-height: 25%;
-
-      .selected-choice {
-        border-radius: 1.2em;
-        margin: 0.2em;
-      }
-    }
-
-    // 搜索tag结果
-    .select-kit-collection {
-      display: flex;
-      flex-direction: row;
-      flex-wrap: wrap;
-      align-items: stretch;
-      @include ttl-paddings;
-      border-top: unset !important;
-
-      .select-kit-row {
-        border-radius: 1.2em;
-        font-size: var(--font-0);
+  
+      .select-kit-body {
         background: white;
+        display: flex;
+        justify-content: flex-start;
+        position: fixed !important;
+        width: 100%;
+        height: 500px;
+        bottom: 0 !important;
+        left: 0 !important;
+        right: 0 !important;
+        border-radius: 20px 20px 0 0;
+        transform: unset !important;
+        box-shadow: 0px -10px 20px 3px rgba(0,0,0,0.2);
+  
+      }
+  
+      // 搜索框
+      .select-kit-filter {
+        width: -webkit-fill-available;
         border: 1px solid rgba(215, 215, 215, 1);
-        margin: 0.3em;
-        flex: unset;
-        padding: 0.3em 0.5em;
+        border-radius: 1.5em;
+        margin: 1.2em 1em 0.5em 1em;
+        padding: 0.25em 1em !important;
+        display: flex;
+        flex-direction: row-reverse;
+  
+        .d-icon {
+          margin-right: 1em;
+        }
       }
-
-    }
-
-    // 无结果
-    .no-content {
-      padding: 1em 1.6em;
-
-    }
-
-    // 指定tag选择面板
-    .ttl-tag-panel {
-      @include ttl-paddings;
-      width: -webkit-fill-available;
-      position: fixed;
-      bottom: 4em;
-
-      .ttl-filter-item-header {
-        margin-bottom: 0.5em;
+  
+      // 被选中的tag
+      .selected-content {
+        border-bottom: unset;
+        border-top: unset !important;
+        @include ttl-paddings;
+        overflow-y: scroll;
+        max-height: 25%;
+  
+        .selected-choice {
+          border-radius: 1.2em;
+          margin: 0.2em;
+        }
       }
-
-      .ttl-filter-item {
-        margin-bottom: 0.8em;
-
-        .btn {
+  
+      // 搜索tag结果
+      .select-kit-collection {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: stretch;
+        @include ttl-paddings;
+        border-top: unset !important;
+  
+        .select-kit-row {
           border-radius: 1.2em;
           font-size: var(--font-0);
           background: white;
           border: 1px solid rgba(215, 215, 215, 1);
-
-          // z-index: 1;
-          @include hover {
+          margin: 0.3em;
+          flex: unset;
+          padding: 0.3em 0.5em;
+        }
+  
+      }
+  
+      // 无结果
+      .no-content {
+        padding: 1em 1.6em;
+  
+      }
+  
+      // 指定tag选择面板
+      .ttl-tag-panel {
+        @include ttl-paddings;
+        width: -webkit-fill-available;
+        position: fixed;
+        bottom: 4em;
+  
+        .ttl-filter-item-header {
+          margin-bottom: 0.5em;
+        }
+  
+        .ttl-filter-item {
+          margin-bottom: 0.8em;
+  
+          .btn {
+            border-radius: 1.2em;
+            font-size: var(--font-0);
+            background: white;
+            border: 1px solid rgba(215, 215, 215, 1);
+  
+            // z-index: 1;
+            @include hover {
+              background: unset;
+              color: unset;
+            }
+  
+            >font {
+              pointer-events: none;
+            }
+  
+            &.active {
+              border: 1px solid var(--tertiary);
+              color: var(--tertiary);
+            }
+          }
+        }
+      }
+  
+      // tag chooser 按钮
+      .ttl-btn-panel {
+        @include ttl-paddings;
+        width: -webkit-fill-available;
+        position: fixed;
+        bottom: 0;
+        display: flex;
+        justify-content: center;
+        border-top: 1px solid var(--primary-100);
+  
+        button {
+          margin: unset !important;
+        }
+  
+        .ttl-reset-btn {
+          position: absolute;
+          left: 2em;
+          color: var(--primary-low-mid);
+  
+          &:focus {
             background: unset;
-            color: unset;
-          }
-
-          >font {
-            pointer-events: none;
-          }
-
-          &.active {
-            border: 1px solid var(--tertiary);
-            color: var(--tertiary);
+  
+            .d-icon {
+              color: unset;
+            }
           }
         }
-      }
-    }
-
-    // tag chooser 按钮
-    .ttl-btn-panel {
-      @include ttl-paddings;
-      width: -webkit-fill-available;
-      position: fixed;
-      bottom: 0;
-      display: flex;
-      justify-content: center;
-      border-top: 1px solid var(--primary-100);
-
-      button {
-        margin: unset !important;
-      }
-
-      .ttl-reset-btn {
-        position: absolute;
-        left: 2em;
-        color: var(--primary-low-mid);
-
-        &:focus {
-          background: unset;
-
-          .d-icon {
-            color: unset;
-          }
+  
+        .ttl-ok-btn {
+          width: 10em;
+          border-radius: 1.2em;
+          color: var(--secondary);
+          background: var(--tertiary);
         }
-      }
-
-      .ttl-ok-btn {
-        width: 10em;
-        border-radius: 1.2em;
-        color: var(--secondary);
-        background: var(--tertiary);
       }
     }
   }
