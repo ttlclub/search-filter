@@ -341,117 +341,121 @@
 }
 
 // 排序 筛选 搜索结果
-.search-advanced {
-  .search-info {
-    margin-bottom: unset !important;
-    flex-wrap: nowrap !important;
-    align-items: center;
-
-    .select-kit {
-      .select-kit-header {
-        background: var(--primary-100) !important;
-        border: unset !important;
-        outline: unset !important;
-        padding-left: 1em;
-        padding-right: 1em;
-        border-radius: 1.2em;
-      }
-    }
-
-    // 排序
-    .sort-by {
-      margin-left: 0.5em !important;
-      margin-right: 0.2em !important;
-      min-width: 30%;
-
-      details {
-        width: 100%;
-      }
-
-      label {
-        display: none;
-      }
-
+.search-container {
+  .search-advanced {
+    .search-info {
+      margin-bottom: unset !important;
+      flex-wrap: nowrap !important;
+      align-items: center;
+      background: white;
+  
       .select-kit {
-        .selected-name {
-          justify-content: center;
-          flex-grow: 1;
-
-          .name {
-            white-space: nowrap;
-            overflow: hidden;
-          }
+        .select-kit-header {
+          background: var(--primary-100) !important;
+          border: unset !important;
+          outline: unset !important;
+          padding-left: 1em;
+          padding-right: 1em;
+          border-radius: 1.2em;
         }
-
-        .select-kit-body {
-          border: unset;
-          box-shadow: unset;
-          // width:calc(100%);
-
-          .select-kit-collection {
-            max-height: unset;
-
-            .select-kit-row {
-
-              &.is-selected,
-              .is-highlighted {
-                background: var(--tertiary-very-low) !important;
+      }
+  
+      // 排序
+      .sort-by {
+        margin-left: 0.5em !important;
+        margin-right: 0.2em !important;
+        min-width: 30%;
+  
+        details {
+          width: 100%;
+        }
+  
+        label {
+          display: none;
+        }
+  
+        .select-kit {
+          .selected-name {
+            justify-content: center;
+            flex-grow: 1;
+  
+            .name {
+              white-space: nowrap;
+              overflow: hidden;
+            }
+          }
+  
+          .select-kit-body {
+            border: unset;
+            box-shadow: unset;
+            // width:calc(100%);
+  
+            .select-kit-collection {
+              max-height: unset;
+  
+              .select-kit-row {
+  
+                &.is-selected,
+                .is-highlighted {
+                  background: var(--tertiary-very-low) !important;
+                }
               }
             }
           }
         }
       }
-    }
-
-    // 筛选
-    .search-filters {
-      margin-right: 0.5em !important;
-      margin-left: 0.2em !important;
-      flex-grow: 1;
-      max-width: calc(70% - 1.4em);
-      background: white;
-
-      .select-kit-header {
-        padding-left: 1.2em;
+  
+      // 筛选
+      .search-filters {
+        margin-right: 0.5em !important;
+        margin-left: 0.2em !important;
+        flex-grow: 1;
+        max-width: calc(70% - 1.4em);
+        background: white;
+  
+        .select-kit-header {
+          padding-left: 1.2em;
+        }
+  
+        section {
+          label {
+            display: none;
+          }
+        }
       }
-
-      section {
-        label {
+    }
+  
+    // 搜索结果
+    .search-results {
+      background: var(--primary-50) !important;
+  
+      //padding-top: unset !important;
+      .loading-container {
+        @include ttl-paddings;
+      }
+  
+      .fps-result {
+        background: white;
+        border-radius: 1em;
+        margin: 0em 0.5em 1em 0.5em;
+        padding: 0.8em 1em 0.8em 1em;
+  
+        .author {
           display: none;
+        }
+  
+        .badge-category-bg {
+          border-radius: 50%;
+        }
+  
+        .blurb {
+          font-size: var(--font-down-1);
         }
       }
     }
   }
-
-  // 搜索结果
-  .search-results {
-    background: var(--primary-50) !important;
-
-    //padding-top: unset !important;
-    .loading-container {
-      @include ttl-paddings;
-    }
-
-    .fps-result {
-      background: white;
-      border-radius: 1em;
-      margin: 0em 0.5em 1em 0.5em;
-      padding: 0.8em 1em 0.8em 1em;
-
-      .author {
-        display: none;
-      }
-
-      .badge-category-bg {
-        border-radius: 50%;
-      }
-
-      .blurb {
-        font-size: var(--font-down-1);
-      }
-    }
-  }
 }
+
 
 
 // nav bar
@@ -604,11 +608,11 @@ $z-layers: (
 }
 
 .ttl-topic-list-item {
-  border-radius: 15px;
+  border-radius: 1em;
   background-color: var(--header_background);
-  padding: 15px;
-  margin: 5px;
-  margin-top: 10px;
+  padding: 1em;
+  margin: 0.8em;
+  margin-top: 0.5em;
   margin-bottom: 0;
 }
 
@@ -1274,4 +1278,10 @@ aside.onebox{
   grid-auto-flow: row;
   justify-items: center;
   align-items: center;
+}
+
+
+.list-controls {
+  padding:0.8em 0.8em 0 0.8em;
+  background: white;
 }
