@@ -82,7 +82,7 @@
       right: 0 !important;
       border-radius: 20px 20px 0 0;
       transform: unset !important;
-      box-shadow: shadow("composer");
+      box-shadow: 0px -10px 20px 3px rgba(0,0,0,0.2);
 
     }
 
@@ -644,6 +644,7 @@ tr {
 
 
 // globle css
+
 * {
   outline: none;
 }
@@ -713,6 +714,14 @@ ul.drop {
 input.input-xxlarge {
   border: none;
   @include ttl-rounded-corners;
+}
+
+.list-controls .container{
+  padding: 0 5px;
+}
+
+#toggle-hamburger-menu{
+  display: none;
 }
 
 // wj change end
@@ -851,7 +860,7 @@ $flair-size: 5.5rem;
 
     .select-kit-collection {
       display: grid;
-      grid-template-columns: min-content;
+      grid-template-columns: auto auto auto;
       grid-template-rows: min-content;
       grid-auto-flow: row;
       justify-items: center;
@@ -947,9 +956,11 @@ $flair-size: 5.5rem;
 }
 
 .category-list .category-name {
-  margin: auto;
+  font-size: 15px;
 }
-
+.category-list .category-text-title{
+  margin-top: 10px;
+}
 .category-logo.aspect-image {
   height: 6rem;
   width: 6rem;
