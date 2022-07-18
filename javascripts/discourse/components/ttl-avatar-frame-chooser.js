@@ -16,6 +16,7 @@ export default ComboBoxComponent.extend({
   
   didInsertElement() {
       // 页面渲染完成后create popper
+      // debugger
       this.createPopper();
   },
 

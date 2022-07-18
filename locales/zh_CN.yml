@@ -1,7 +1,11 @@
 zh_CN:
-  ttl-tag-chooser:
+  ttl_tag_chooser:
     ok: "确定"
     reset: "清空"
   topic:
     reply:
       title: "发条评论..."
+    owner_header:
+      created_at: "创建时间："
+      
+      

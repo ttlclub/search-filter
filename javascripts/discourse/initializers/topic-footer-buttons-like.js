@@ -2,15 +2,12 @@ import { registerTopicFooterButton, getTopicFooterButtons } from "discourse/lib/
 import { later } from "@ember/runloop";
 
 
-export function footertTggleLike(post,likeAction) {
+/* export function footertTggleLike(post,likeAction) {
     // debugger
     if (likeAction && likeAction.get("canToggle")) {
-      return likeAction.togglePromise(post).then((result) => {
-          // this.topic.appEvents.trigger("page:like-toggled", post, likeAction);
-          // return this._warnIfClose(result);
-      });
+      return likeAction.togglePromise(post);
     }
-}
+} */
 
 export default {
     name: "topic-footer-buttons-like",
@@ -38,7 +35,7 @@ export default {
                     return;
                 }               
             },
-            // 是否显示按钮
+            // fix:是否显示按钮
             displayed() {
                 if(this.topic.postStream.posts[0].likeAction) {
                     return this.topic.postStream.posts[0].likeAction.acted || this.topic.postStream.posts[0].likeAction.get("canToggle") 
@@ -69,26 +66,28 @@ export default {
                     `#topic-footer-button-like .d-icon`
                 );
                 
-                if (postLiked) {
-                    heart.closest(".toggle-like").classList.remove("has-like");
-                    // 调理不好了先这样
-                    heart.firstChild.href.baseVal = "#far-heart";
-                    return footertTggleLike(post,likeAction);
+                if (postLiked && canToggle) {
+                    return likeAction.togglePromise(post).then(() => {
+                        heart.closest(".toggle-like").classList.remove("has-like");
+                        // 调理不好了先这样
+                        heart.firstChild.href.baseVal = "#far-heart";
+                    });
                 } 
 
-                heart.closest(".toggle-like").classList.add("has-like");
-                heart.classList.add("heart-animation");
-                // 调理不好了先这样
-                heart.firstChild.href.baseVal = "#heart";
-
-            
-                return new Promise((resolve) => {
-                    later(() => {
-                        footertTggleLike(post,likeAction).then(() => resolve());
-                    }, 400);
-                });
+                if (canToggle){
+                    return new Promise((resolve) => {
+                        later(() => {
+                            likeAction.togglePromise(post).then(() => {
+                                heart.closest(".toggle-like").classList.add("has-like");
+                                heart.classList.add("heart-animation");
+                                // 调理不好了先这样
+                                heart.firstChild.href.baseVal = "#heart";
+                                // resolve();
+                            });
+                        }, 400);
+                    });
+                }
             },
         });
-
     },
 };

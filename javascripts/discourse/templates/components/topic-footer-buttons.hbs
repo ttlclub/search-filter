@@ -30,7 +30,7 @@
     {{d-button class="reply"
                action=replyToPost
                label=(theme-prefix "topic.reply.title")
-               title="topic.reply.help"}}
+               title=(theme-prefix "topic.reply.help")}}
   {{/if}}
   <!-- 强行把下拉按钮变成inline -->
   {{#each dropdownButtons as |actionable|}}

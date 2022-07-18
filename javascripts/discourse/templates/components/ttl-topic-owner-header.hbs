@@ -1,0 +1,30 @@
+
+
+<div class="topic-owner-header-wrapper">
+    <div class="header-avatar">
+        {{#if topic.posters.0.user.profile_hidden}}
+            <span class="huge-avatar">{{bound-avatar topic.posters.0.user "huge"}}</span>
+        {{else}}
+            <a href={{topic.posters.0.user.path}} {{action "showUser" topic.posters.0.user}} class="huge-avatar">{{bound-avatar topic.posters.0.user "large"}}</a>
+        {{/if}}
+
+        {{user-avatar-flair user=topic.posters.0.user}}
+
+        {{!-- {{plugin-outlet name="user-card-avatar-flair" connectorTagName="div" args=(hash user=this.user) tagName="div"}} --}}
+    </div>
+    <div class="owner-details">
+        <div class="owner-name">
+            {{topic.posters.0.user.username}}
+        </div>
+        <div class="created-at">
+            {{theme-i18n "topic.owner_header.created_at"}}
+            <a title={{i18n "post.sr_date"}}>{{format-date topic.createdAt format="tiny" noTitle="true"}}</a>
+            
+            {{!-- {{topic.created_at}} --}}
+        </div>
+    </div>
+    
+    <div class="follow-button-wrapper">
+        <button label="关注">关注</button>
+    </div>
+</div>
