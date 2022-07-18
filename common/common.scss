@@ -724,6 +724,12 @@ input.input-xxlarge {
   display: none;
 }
 
+.edit-email{
+  margin-top: 10px;
+}
+
+// wizard
+
 // wj change end
 
 // 帖子详情
@@ -959,6 +965,7 @@ $flair-size: 5.5rem;
   font-size: 15px;
 }
 .category-list .category-text-title{
+  align-items: center;
   margin-top: 10px;
 }
 .category-logo.aspect-image {
