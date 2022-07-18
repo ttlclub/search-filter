@@ -1,7 +1,9 @@
 en:
-  ttl-tag-chooser:
+  ttl_tag_chooser:
     ok: "ok"
     reset: "reset"
   topic:
     reply:
       title: "say something..."
+    owner_header:
+      created_at: "Created at:"

@@ -38,7 +38,7 @@ export default {
                     return;
                 }               
             },
-            // 是否显示按钮
+            // fix:是否显示按钮
             displayed() {
                 if(this.topic.postStream.posts[0].likeAction) {
                     return this.topic.postStream.posts[0].likeAction.acted || this.topic.postStream.posts[0].likeAction.get("canToggle") 
