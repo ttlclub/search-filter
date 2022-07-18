@@ -72,6 +72,7 @@
     }
 
     .select-kit-body {
+      background: white;
       display: flex;
       justify-content: flex-start;
       position: fixed !important;
@@ -802,6 +803,7 @@ input.input-xxlarge {
   &.topic-progress-expanded {
     .timeline-container {
       border-radius: 20px 20px 0 0;
+      background: white;
 
       .widget-component-connector {
         display: none !important;
@@ -818,6 +820,7 @@ input.input-xxlarge {
   border-radius: 2em;
   overflow: hidden;
   border: 2px solid var(--tertiary-low);
+  background: white;
 }
 
 
@@ -874,6 +877,7 @@ $flair-size: 5.5rem;
     right: 0;
     left: 0;
     box-shadow: shadow("composer");
+    background: white;
 
 
 
@@ -1020,6 +1024,7 @@ $flair-size: 5.5rem;
   .topic-category {
     align-items: flex-start;
     flex-direction: column-reverse;
+    padding-left: 0.8em;
     // 伪类标签label
     .discourse-tags {
       padding-bottom: 0.2em;
