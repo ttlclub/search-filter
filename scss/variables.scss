@@ -7,3 +7,11 @@
 @mixin ttl-paddings {
     padding: 1em;
 }
+
+@mixin ttl-large-category {
+    width: 70vw;
+}
+
+@mixin ttl-small-category {
+    width: 30vw;
+}

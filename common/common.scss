@@ -981,17 +981,17 @@ $flair-size: 5.5rem;
 
 // }
 
-.category-title-link {
-  background: var(--header_background);
-  box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.0600);
-  padding: 5px;
-  border-radius: 16px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  flex-wrap: nowrap;
-  align-items: center;
-}
+// .category-title-link {
+//   background: var(--header_background);
+//   box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.0600);
+//   padding: 5px;
+//   border-radius: 16px;
+//   display: flex;
+//   flex-direction: column;
+//   justify-content: center;
+//   flex-wrap: nowrap;
+//   align-items: center;
+// }
 
 // 帖子创建者标题栏
 .topic-owner-header-wrapper {
@@ -1229,15 +1229,14 @@ aside.onebox{
 //   align-items: center;
 //   margin-top: 10px;
 // }
-// .category-logo.aspect-image {
-//   height: 6rem;
-//   border-radius: 8px;
-//   margin: 0;
-// }
+.category-logo.aspect-image {
+  width: unset;
+  margin: 0;
+}
 
-// .category-logo.aspect-image img {
-//   height: 6rem;
-// }
+.category-logo.aspect-image img {
+  width: inherit;
+}
 
 // .categories-list navigation-categories docked {
 //   background-color: #F6FCFF;
@@ -1289,23 +1288,31 @@ aside.onebox{
 
 #category-7{
   grid-area: a;
+  @include ttl-large-category;
+
 }
 
 #category-6{
   grid-area: b;
+  @include ttl-large-category;
 }
 
 #category-8{
   grid-area: c;
+  @include ttl-large-category;
 }
 #category-2{
   grid-area: d;
+  @include ttl-small-category;
 }
 #category-4{
   grid-area: e;
+  @include ttl-small-category;
 }
 #category-3{
   grid-area: f;
+  @include ttl-small-category;
+
 }
 .list-controls {
   padding:0.8em 0.8em 0 0.8em;
