@@ -61,10 +61,10 @@
           {{~topic-link topic class="raw-link raw-topic-link"}}
         </span>
       </div>
-      {{!--
+      
       <div class="topic-category">
         {{category-link topic.category}}
-      </div> --}}
+      </div>
     </div>
 
     <div class="topic-author">
@@ -73,12 +73,6 @@
     <div class="topic-details">
       {{raw "list/topic-excerpt" topic=topic}}
     </div>
-    <div class="topic-category">
-          {{#if showCategoryBadge}}
-            {{category-link topic.category}}
-          {{/if}}
-        </div>
-
     <div class="topic-tags">
       {{discourse-tags topic mode="list"}}
     </div>
