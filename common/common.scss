@@ -985,6 +985,7 @@ $flair-size: 5.5rem;
   height: 9rem;
   background: var(--header_background);
   box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.0600);
+  padding: 0 5px;
   border-radius: 16px;
   display: flex;
   flex-direction: column;
@@ -1231,15 +1232,12 @@ aside.onebox{
 }
 .category-logo.aspect-image {
   height: 6rem;
-  width: 6rem;
   border-radius: 8px;
   margin: 0;
 }
 
 .category-logo.aspect-image img {
   height: 6rem;
-  width: 6rem;
-  border-radius: 8px;
 }
 
 // .categories-list navigation-categories docked {
@@ -1280,12 +1278,11 @@ aside.onebox{
 // }
 // daidai change end
 
-// wj change 2
+// wj change main page css
 
 .category-list {
   display: grid;
-  grid-template-columns: auto auto auto;
-  grid-template-rows: min-content;
+  grid-template: "a a a" "b b b""c c c"" d e f";
   grid-auto-flow: row;
   justify-items: center;
   align-items: center;
