@@ -7,3 +7,13 @@
 @mixin ttl-paddings {
     padding: 1em;
 }
+
+@mixin ttl-large-category {
+    width: 95vw;
+    min-height: 30vw;
+}
+
+@mixin ttl-small-category {
+    width: 45vw;
+    max-height: 45vw;
+}

@@ -61,22 +61,20 @@
           {{~topic-link topic class="raw-link raw-topic-link"}}
         </span>
       </div>
-      {{!--
-      <div class="topic-category">
-        {{category-link topic.category}}
-      </div> --}}
     </div>
-
+    
     <div class="topic-author">
       {{topic.posters.0.user.username}}
     </div>
     <div class="topic-details">
       {{raw "list/topic-excerpt" topic=topic}}
     </div>
-
     <div class="topic-tags">
       {{discourse-tags topic mode="list"}}
     </div>
+    <div class="topic-category">
+        {{category-link topic.category}}
+      </div>
 
     <div class="ttl-topic-meta">
 

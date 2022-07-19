@@ -1,7 +1,4 @@
 <a  href={{category.url}}>
-<div class="category-title-link">
-
-  <div class="category-img"> 
   {{#if category.uploaded_logo.url}}
     {{cdn-img
       src=category.uploaded_logo.url
@@ -10,9 +7,8 @@
       height=category.uploaded_logo.height
       alt=""}}
   {{/if}}
-  </div>
  
-
+  {{#if false}}
   <span class="category-text-title">
     {{category-title-before category=category}}
     {{#if category.read_restricted}}
@@ -20,5 +16,5 @@
     {{/if}}
     <span class="category-name">{{dir-span category.name}}</span>
   </span>
-</div>
+  {{/if}}
 </a>

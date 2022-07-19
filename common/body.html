@@ -1,0 +1,18 @@
+<!-- add current user's nsfw preferences to body tag -->
+<script type="text/discourse-plugin" version="0.8">
+
+    // https://meta.discourse.org/t/css-classes-for-group-membership-for-simplified-ui-mode/60838/2
+    if (window.jQuery) {
+        window.jQuery(function ($) {
+            var u = Discourse.User.current();
+    
+            // always show NSFW
+            if (u.custom_fields.user_field_2) {
+                console.log('show nsfw for user');
+                $('body').addClass('nsfw-always-show' );
+            }
+    
+        });
+    };
+    
+    </script>
