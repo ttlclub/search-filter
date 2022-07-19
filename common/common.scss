@@ -1231,6 +1231,7 @@ aside.onebox{
 // }
 .category-logo.aspect-image {
   width: unset;
+  max-height: unset;
   margin: 0;
 }
 
@@ -1313,6 +1314,13 @@ aside.onebox{
   grid-area: f;
   @include ttl-small-category;
 
+}
+#category-1{
+  @include ttl-small-category;
+}
+
+.category-heading p{
+  margin-top: 10px;
 }
 .list-controls {
   padding:0.8em 0.8em 0 0.8em;
