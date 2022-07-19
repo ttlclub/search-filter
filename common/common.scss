@@ -982,10 +982,9 @@ $flair-size: 5.5rem;
 // }
 
 .category-title-link {
-  height: 9rem;
   background: var(--header_background);
   box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.0600);
-  padding: 0 5px;
+  padding: 5px;
   border-radius: 16px;
   display: flex;
   flex-direction: column;
@@ -1223,22 +1222,22 @@ aside.onebox{
 
 
 
-.category-list .category-name {
-  font-size: 15px;
-}
-.category-list .category-text-title{
-  align-items: center;
-  margin-top: 10px;
-}
-.category-logo.aspect-image {
-  height: 6rem;
-  border-radius: 8px;
-  margin: 0;
-}
+// .category-list .category-name {
+//   font-size: 15px;
+// }
+// .category-list .category-text-title{
+//   align-items: center;
+//   margin-top: 10px;
+// }
+// .category-logo.aspect-image {
+//   height: 6rem;
+//   border-radius: 8px;
+//   margin: 0;
+// }
 
-.category-logo.aspect-image img {
-  height: 6rem;
-}
+// .category-logo.aspect-image img {
+//   height: 6rem;
+// }
 
 // .categories-list navigation-categories docked {
 //   background-color: #F6FCFF;
@@ -1288,7 +1287,26 @@ aside.onebox{
   align-items: center;
 }
 
+#category-7{
+  grid-area: a;
+}
 
+#category-6{
+  grid-area: b;
+}
+
+#category-8{
+  grid-area: c;
+}
+#category-2{
+  grid-area: d;
+}
+#category-4{
+  grid-area: e;
+}
+#category-3{
+  grid-area: f;
+}
 .list-controls {
   padding:0.8em 0.8em 0 0.8em;
   background: white;

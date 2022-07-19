@@ -4,6 +4,7 @@
     args=(hash category=category)
   }}
 
+    <div id="category-{{category.id}}">
     <div
       data-category-id={{category.id}}
       data-notification-level={{category.notificationLevelString}}
@@ -20,5 +21,6 @@
         connectorTagName="div"
         args=(hash category=category)
       }}
+    </div>
     </div>
 {{/unless}}
