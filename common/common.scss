@@ -1380,8 +1380,9 @@ aside.onebox {
 // /g &/u
 .container {
   .groups-boxes {
-    grid-template-columns: repeat(auto-fit, 6em);
+    grid-template-columns: repeat(auto-fit, 7em);
     justify-content: center;
+
 
     .group-box {
       @include ttl-rounded-corners;
@@ -1390,7 +1391,6 @@ aside.onebox {
         align-items: center;
         justify-content: center;
         align-content: center;
-        padding: 0;
 
         .group-info-wrapper {
           flex-direction: column;
