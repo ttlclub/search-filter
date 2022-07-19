@@ -1375,6 +1375,50 @@ aside.onebox {
   margin-top: 10px;
 }
 
+.container {
+  .groups-boxes {
+    grid-template-columns: repeat(auto-fit, 7em);
+
+    .group-box {
+      @include ttl-rounded-corners;
+
+      .group-box-inner {
+        align-items: center;
+        justify-content: center;
+        align-content: center;
+
+        .group-info-wrapper {
+          flex-direction: column;
+
+          .group-avatar-flair {
+            margin: 0;
+
+            .avatar-flair {
+              align-items: center;
+              background-position: center;
+              background-repeat: no-repeat;
+              background-size: 5.5rem 5.5rem;
+              display: flex;
+              justify-content: center;
+              height: 5.5rem;
+              width: 5.5rem;
+            }
+          }
+          .group-info{
+            .group-user-count{
+              display: none;
+            }
+          }
+        }
+
+      }
+    }
+  }
+
+}
+
+
+
 .list-controls {
   padding: 0.8em 0.8em 0 0.8em;
   background: white;
