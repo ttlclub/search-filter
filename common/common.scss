@@ -737,6 +737,11 @@ input.input-xxlarge {
 
 // wizard
 
+// footer
+.custom-footer{
+  border-radius: 1.5em 1.5em 0 0;
+}
+
 // wj change end
 
 // 帖子详情
@@ -977,7 +982,6 @@ $flair-size: 5.5rem;
 // }
 
 .category-title-link {
-  width: 7rem;
   height: 9rem;
   background: var(--header_background);
   box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.0600);
