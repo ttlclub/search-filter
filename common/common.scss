@@ -719,6 +719,8 @@ ul.drop {
 }
 
 input.input-xxlarge {
+  background: var(--primary-100);
+
   border: none;
   @include ttl-rounded-corners;
 }
@@ -1377,7 +1379,8 @@ aside.onebox {
 
 .container {
   .groups-boxes {
-    grid-template-columns: repeat(auto-fit, 7em);
+    grid-template-columns: repeat(auto-fit, 6em);
+    justify-content: center;
 
     .group-box {
       @include ttl-rounded-corners;
@@ -1386,6 +1389,7 @@ aside.onebox {
         align-items: center;
         justify-content: center;
         align-content: center;
+        padding: 0;
 
         .group-info-wrapper {
           flex-direction: column;
@@ -1409,6 +1413,9 @@ aside.onebox {
               display: none;
             }
           }
+        }
+        .group-membership{
+          padding-top: 0;
         }
 
       }
