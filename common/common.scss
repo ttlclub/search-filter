@@ -1448,7 +1448,7 @@ aside.onebox {
 
 // nsfw
 /* display nsfw blur and overlay text on any media in #nswf topics */
-.tag-nsfw { 
+.tag-r18 { 
 	.topic-body .cooked img, 
 	.topic-body .cooked iframe, 
 	.topic-body .cooked .lazyYT-container, 
@@ -1505,7 +1505,7 @@ aside.onebox {
 
 /* disable nsfw blurring for users who set this in their preferences */
 
-.nsfw-always-show .tag-nsfw {
+.nsfw-always-show .tag-r18 {
 	.topic-body .cooked img, 
 	.topic-body .cooked iframe, 
 	.topic-body .cooked .lazyYT-container, 
