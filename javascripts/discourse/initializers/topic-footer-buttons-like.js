@@ -13,7 +13,6 @@ export default {
     name: "topic-footer-buttons-like",
     after: 'topic-footer-buttons',
     initialize() {
-
         registerTopicFooterButton({
             id: "like",
             icon() {
@@ -45,7 +44,6 @@ export default {
                     return false;
                 }   
             },
-
             action() {
                 // debugger
                 const currentUser = this.currentUser;
@@ -68,6 +66,7 @@ export default {
                 
                 if (postLiked && canToggle) {
                     return likeAction.togglePromise(post).then(() => {
+                        this.
                         heart.closest(".toggle-like").classList.remove("has-like");
                         // 调理不好了先这样
                         heart.firstChild.href.baseVal = "#far-heart";

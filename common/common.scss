@@ -1215,12 +1215,13 @@ $flair-size: 5.5rem;
             }
 
             ul {
-
               // 楼主,最后回复, 用户数, 总赞数不显示
               .created-at,
               .last-reply,
               .users,
-              .likes {
+              .likes
+              .avatars {
+
                 display: none;
               }
 
@@ -1439,12 +1440,17 @@ aside.onebox {
   }
 }
 
-
-
+// 帖子控制nav
 .list-controls {
   padding: 0.8em 0.8em 0 0.8em;
   background: white;
 }
+
+// 进度条wrapper下的管理员按钮隐藏
+#topic-progress-wrapper .topic-admin-menu-button-container {
+  display:none;
+}
+
 
 // nsfw
 /* display nsfw blur and overlay text on any media in #nswf topics */

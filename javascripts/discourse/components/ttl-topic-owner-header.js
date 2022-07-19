@@ -1,9 +1,7 @@
 import Component from "@ember/component";
-// import discourseComputed from "discourse-common/utils/decorators";
+import { alias } from "@ember/object/computed";
 
 export default Component.extend({
-    // tagName: "div",
-    // classNames: ["ttl-nav-bar"],
-    // classNameBindings: ["isMarkerHidden"],
-
+    firstPost: alias("topic.postStream.posts.0"),
+    firstPostUser: alias("topic.posters.0.user"),
 });
