@@ -19,7 +19,7 @@
             {{#if firstPostUser.profile_hidden}}
                 <span class="large-avatar">{{bound-avatar firstPostUser "large"}}</span>
             {{else}}
-                <a href={{firstPostUser.path}} {{action "showUser" firstPostUser}} class="large-avatar">{{bound-avatar firstPostUser "large"}}</a>
+                <a href={{firstPostUser.path}} data-user-card={{@firstPostUser.username}} class="large-avatar">{{bound-avatar firstPostUser "large"}}</a>
             {{/if}}
             {{user-avatar-flair user=firstPostUser}}
         </div>
