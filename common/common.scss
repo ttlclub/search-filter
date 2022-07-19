@@ -1377,6 +1377,7 @@ aside.onebox {
   margin-top: 10px;
 }
 
+// /g &/u
 .container {
   .groups-boxes {
     grid-template-columns: repeat(auto-fit, 6em);
@@ -1422,6 +1423,19 @@ aside.onebox {
     }
   }
 
+  .users-directory.directory{
+    .directory-controls{
+      @include ttl-paddings;
+      .full-width{
+        margin-left: 0;
+      }
+    }
+    .user{
+      border: 1px solid var(--primary-low);
+      border-radius: 8px;
+      background-color: var(--header_background);
+    }
+  }
 }
 
 

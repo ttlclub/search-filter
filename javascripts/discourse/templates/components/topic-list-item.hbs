@@ -73,6 +73,11 @@
     <div class="topic-details">
       {{raw "list/topic-excerpt" topic=topic}}
     </div>
+    <div class="topic-category">
+          {{#if showCategoryBadge}}
+            {{category-link topic.category}}
+          {{/if}}
+        </div>
 
     <div class="topic-tags">
       {{discourse-tags topic mode="list"}}
