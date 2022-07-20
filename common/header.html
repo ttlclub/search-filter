@@ -1,0 +1,20 @@
+<!-- add current user's nsfw preferences to body tag -->
+<!-- update -->
+<script type="text/discourse-plugin" version="0.8">
+  // text/discourse-plugin
+  // https://meta.discourse.org/t/css-classes-for-group-membership-for-simplified-ui-mode/60838/2
+  if (window.jQuery) {
+    window.jQuery(function ($) {
+      const u = Discourse.User.current();
+      const uGroups = u.groups;
+      const hasR18Group = uGroups.find((value) => {
+        return value["id"] === 53 ? true : false;
+      });
+      // always show NSFW
+      if (hasR18Group !== undefined) {
+        console.log("show nsfw for user");
+        $("body").addClass("nsfw-always-show");
+      }
+    });
+  }
+</script>

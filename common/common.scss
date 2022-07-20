@@ -1286,6 +1286,7 @@ aside.onebox {
   align-items: center;
 }
 
+// update
 #category-7 {
   grid-area: a;
   @include ttl-large-category;
@@ -1400,6 +1401,7 @@ aside.onebox {
 }
 
 
+// update
 // nsfw
 /* display nsfw blur and overlay text on any media in #nswf topics */
 .tag-r18 { 
@@ -1426,9 +1428,9 @@ aside.onebox {
 	.topic-thumbnail a:before {
 	    z-index:2;
         padding: 5px;
-        font-size:1em;
+        font-size:0.5em;
         position:absolute;
-
+        border-radius: 5px;
         color:#fff;
         content: '⚠️ Mature content - Hover to show';
         background: #e86800;
@@ -1442,8 +1444,8 @@ aside.onebox {
 	}
 
 	.topic-thumbnail a:before {
-        top: 65px;
-        left: 20px;
+        // top: 65px;
+        // left: 20px;
 	}
 	
 	.topic-body .cooked a.lightbox:hover:before, 
