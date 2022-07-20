@@ -5,3 +5,8 @@
   ::-webkit-scrollbar {
     display: none;
   }
+
+  .category-logo.aspect-image {
+    max-width: 200px;
+    margin: 10px;
+  }
