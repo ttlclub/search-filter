@@ -1629,3 +1629,19 @@ tbody.topic-list-body {
 .select-kit.dropdown-select-box.period-chooser {
   padding: unset;
 }
+// 用户
+.my-outlet-page{
+  .navigation{
+    .mobile-nav {
+      display: flex;
+      white-space: nowrap;
+      flex-wrap: nowrap;
+      overflow: scroll;
+    }
+    .mobile-nav ::-webkit-scrollbar {
+      display: none;
+      
+    }
+
+  }
+}
