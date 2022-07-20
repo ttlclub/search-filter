@@ -1572,3 +1572,20 @@ tbody.topic-list-body {
   }
 }
 
+.groups-header {
+  padding: 1em;
+  background: white;
+  margin: 0;
+}
+
+.container .groups-boxes .group-box {
+  // background: white;
+}
+.container .groups-boxes .group-box .group-box-inner .group-info-wrapper .group-avatar-flair {
+  background: var(--primary-200);
+  border-radius: 1em;
+}
+.container .groups-boxes {
+  margin: 0;
+  background: white;
+}
