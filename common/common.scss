@@ -1549,9 +1549,9 @@ tbody.topic-list-body {
     display: flex;
     flex-direction: row;
   }
-.top-lists {
-  tbody {
-    border-top: unset;
+.topic-list {
+  tbody.topic-list-body {
+    border-top: unset !important;
   }
 }
 
