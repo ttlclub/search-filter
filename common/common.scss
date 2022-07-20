@@ -1617,3 +1617,15 @@ tbody.topic-list-body {
 //     display: none;
 //   }
 // }
+
+// 搜索用户
+.directory.users-directory .directory-group-selector {
+  display: none;
+} 
+.directory .total-rows {
+  padding: 0 0.8em 0 1.8em;
+}
+
+.select-kit.dropdown-select-box.period-chooser {
+  padding: unset;
+}
