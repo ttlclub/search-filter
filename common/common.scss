@@ -1564,6 +1564,7 @@ tbody.topic-list-body {
 
 .container .groups-boxes .group-box {
   // background: white;
+  border:unset;
 }
 .container .groups-boxes .group-box .group-box-inner .group-info-wrapper .group-avatar-flair {
   background: var(--primary-200);
@@ -1572,4 +1573,18 @@ tbody.topic-list-body {
 .container .groups-boxes {
   margin: 0;
   background: white;
+}
+
+.groups-boxes .group-box .group-box-inner .group-info-wrapper .group-info span {
+  font-size: var(--font-0);
+  padding-top: 0.5em;
+
+}
+.container .groups-boxes .group-box .group-box-inner .group-membership {
+  button {
+    padding-top: 0.2em;
+    padding-bottom: 0.2em;
+
+  }
+
 }
