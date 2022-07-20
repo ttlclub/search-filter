@@ -1600,7 +1600,20 @@ tbody.topic-list-body {
   button {
     padding-top: 0.2em;
     padding-bottom: 0.2em;
-
   }
+}
 
+.groups-boxes {
+  .r18showed,
+  .r18测试组,
+  .trust_level_0,
+  .trust_level_1,
+  .trust_level_2,
+  .trust_level_3,
+  .trust_level_4,
+  .版主,
+  .管理人员,
+  .管理员{
+    display: none;
+  }
 }
