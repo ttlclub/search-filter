@@ -1547,3 +1547,28 @@ aside.onebox {
 tbody.topic-list-body {
   padding: 0 0.5em;
 }
+
+
+// 热门时间段选择
+.select-kit.dropdown-select-box.period-chooser {
+  padding: 0.5em 1.2em 0 1.2em;
+  .select-kit-body {
+    padding: 0px 1.2em;
+  }
+}
+.select-kit.dropdown-select-box.period-chooser .period-chooser-header h2.selected-name {
+  font-size: var(--font-up-1);
+  margin-bottom: 0;
+  margin-top: 0;
+}
+.select-kit.dropdown-select-box.period-chooser .period-chooser-header {
+    display: flex;
+    flex-direction: row;
+    padding: 0.5em;
+  }
+.topic-list {
+  tbody.topic-list-body {
+    border-top: unset !important;
+  }
+}
+
