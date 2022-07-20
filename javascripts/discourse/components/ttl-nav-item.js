@@ -76,9 +76,10 @@ export default Component.extend({
     const routeParam = this.routeParam;
     if (routeParam && currentRoute) {
       // console.log("routeParam");
-      console.log(currentRoute.params["category_slug_path_with_id"]);
-      console.log(currentRoute.params["category_slug_path_with_id"] === routeParam);
-      return currentRoute.params["category_slug_path_with_id"] === routeParam;
+    //   console.log(currentRoute.params["category_slug_path_with_id"]);
+    //   console.log(currentRoute.params["category_slug_path_with_id"] === routeParam);
+      const currentRouteParams = currentRoute.attributes["category_slug_path_with_id"] || currentRoute.params["category_slug_path_with_id"];
+      return currentRouteParams === routeParam;
     }
     
     return this.router.isActive(route);
