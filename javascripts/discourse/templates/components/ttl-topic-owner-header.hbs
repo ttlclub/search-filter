@@ -19,7 +19,7 @@
             {{#if firstPostUser.profile_hidden}}
                 <span class="large-avatar">{{bound-avatar firstPostUser "large"}}</span>
             {{else}}
-                <a href={{firstPostUser.path}} {{action "showUser" firstPostUser}} class="large-avatar">{{bound-avatar firstPostUser "large"}}</a>
+                <a href={{firstPostUser.path}} class="large-avatar">{{bound-avatar firstPostUser "large"}}</a>
             {{/if}}
             {{user-avatar-flair user=firstPostUser}}
         </div>
@@ -32,10 +32,7 @@
                 <a title={{i18n "post.sr_date"}}>{{format-date topic.createdAt format="tiny" noTitle="true"}}</a>
             </div>
         </div>  
-        <div class="follow-button-wrapper">
-            {{follow-button user=user}}
-            {{!-- <button label="关注">关注</button> --}}
-         </div>
+
     {{/if}}
 
 </div>
