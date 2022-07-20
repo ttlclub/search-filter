@@ -1511,3 +1511,26 @@ aside.onebox {
 }
 
 
+// 调整图区item样式,可删
+.tiles-style .tiles-grid-item:hover {
+  background-color: unset;
+}
+.tiles-grid-item {
+  box-shadow: unset;
+}
+.mobile-view .tiles-style .topic-thumbnail {
+  padding: 0;
+}
+.mobile-view .tiles-style .topic-thumbnail {
+    border-radius: 1em;
+    overflow: hidden;
+}
+.tiles-style .topic-details {
+  font-size: var(--font-down-1);
+}
+.tiles-style .topic-header-grid {
+  display: flex;
+}
+tbody.topic-list-body {
+  padding: 0 0.5em;
+}
