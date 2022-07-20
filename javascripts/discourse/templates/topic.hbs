@@ -370,9 +370,8 @@
             deferTopic=(action "deferTopic")
             replyToPost=(action "replyToPost")}}
         {{else}}
-          <div id="topic-footer-buttons">
-            {{d-button icon="reply" class="btn-primary pull-right" action=(route-action "showLogin") label="topic.reply.title"}}
-          </div>
+        {{!-- 把提示登录回复按钮加到footer panel里 --}}
+
         {{/if}}
       {{/if}}
 
