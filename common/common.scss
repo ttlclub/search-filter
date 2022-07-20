@@ -1515,8 +1515,9 @@ aside.onebox {
 .tiles-style .tiles-grid-item:hover {
   background-color: unset;
 }
-.tiles-grid-item {
+.tiles-style .tiles-grid-item {
   box-shadow: unset;
+  cursor:unset;
 }
 .mobile-view .tiles-style .topic-thumbnail {
   padding: 0;
