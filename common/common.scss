@@ -688,8 +688,24 @@ input.input-xxlarge {
 // wizard
 
 // footer
+.wrap{
 .custom-footer {
   border-radius: 1.5em 1.5em 0 0;
+  .first-box{
+    margin-bottom: 0; 
+    padding-bottom: 0;
+  }
+  .second-box{
+    .links{
+      .lists{
+        margin-top: 0.5em;
+      }
+    }
+  }
+  .third-box{
+    margin-top: 0.2em;
+  }
+}
 }
 
 // wj change end
