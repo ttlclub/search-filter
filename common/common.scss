@@ -1642,3 +1642,20 @@ tbody.topic-list-body {
     
   }  
 }
+
+// composer 临时
+
+#reply-control .category-input, 
+#reply-control .with-tags .category-input {
+  max-width:100%;
+}
+#reply-control .tag-chooser {
+  width: 100%;
+  margin-bottom: 0.8em;
+  margin-top: 0.2em;
+}
+#reply-control .with-tags .title-input {
+  margin-top: 0.6em;
+  height: 3em;
+  margin-bottom: 0.2em;
+}
