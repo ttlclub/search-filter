@@ -1,0 +1,41 @@
+{{!-- 显示该区限制的标签 暂时去掉 --}}
+{{!-- {{add-category-tag-classes category=category}} --}}
+
+<section class="category-heading">
+  {{#if category.uploaded_logo.url}}
+    {{cdn-img
+      src=category.uploaded_logo.url
+      class="category-logo"
+      width=category.uploaded_logo.width
+      height=category.uploaded_logo.height
+      alt=""
+    }}
+
+    {{#if category.description}}
+      <p>{{dir-span category.description htmlSafe="true"}}</p>
+    {{/if}}
+  {{/if}}
+
+  {{plugin-outlet name="category-heading" tagName="span" connectorTagName="div" args=(hash category=category)}}
+</section>
+
+{{!-- 这里是点进类别界面的 navi路由，ttl nav加在这里 --}}
+{{ttl-navigation-bar}}
+
+{{#d-section class="navigation-container category-navigation"}}
+  {{d-navigation
+    category=category
+    filterMode=filterMode
+    noSubcategories=noSubcategories
+    canCreateTopic=canCreateTopic
+    createTopic=(route-action "createTopic")
+    createTopicDisabled=cannotCreateTopicOnCategory
+    hasDraft=currentUser.has_topic_draft
+    editCategory=(route-action "editCategory" category)
+  }}
+
+  {{plugin-outlet
+    name="category-navigation" connectorTagName="div"
+    args=(hash category=category)
+  }}
+{{/d-section}}
