@@ -1630,18 +1630,15 @@ tbody.topic-list-body {
   padding: unset;
 }
 // 用户
-.my-outlet-page{
-  .navigation{
-    .mobile-nav {
-      display: flex;
-      white-space: nowrap;
-      flex-wrap: nowrap;
-      overflow: scroll;
-    }
-    .mobile-nav ::-webkit-scrollbar {
-      display: none;
-      
-    }
-
+.my-outlet-page {
+  .mobile-nav {
+    display: flex;
+    white-space: nowrap;
+    flex-wrap: nowrap;
+    overflow: scroll;
   }
+  .mobile-nav::-webkit-scrollbar {
+    display: none;
+    
+  }  
 }
