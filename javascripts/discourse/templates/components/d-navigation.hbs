@@ -9,6 +9,14 @@
 
 
 <div class="navigation-controls">
+    
+    {{#if category.subcategories}}
+        <div class="subcategories">
+          {{#each category.subcategories as |subcategory|}}
+            {{sub-category-item category=subcategory listType=listType}}
+          {{/each}}
+        </div>
+    {{/if}}
 
   {{#if showCategoryAdmin}}
     {{categories-admin-dropdown
