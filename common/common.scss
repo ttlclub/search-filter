@@ -1601,31 +1601,34 @@ aside.onebox {
 
 
 // 调整图区item样式,可删
-.tiles-style .tiles-grid-item:hover {
-  background-color: unset !important;
-}
+.tiles-style{
+  .tiles-grid-item:hover {
+    background-color: unset !important;
+  }
+  .topic-details {
+    font-size: var(--font-down-1);
+  }
+  .topic-header-grid {
+    display: flex;
+  }
+} 
 
 .tiles-grid-item {
   box-shadow: unset;
   cursor: none !important;
 }
-
-.mobile-view .tiles-style .topic-thumbnail {
-  padding: 0;
-}
-
-.mobile-view .tiles-style .topic-thumbnail {
+.tiles-grid-item-content.main-link {
+  background: white;
   border-radius: 1em;
-  overflow: hidden;
 }
 
-.tiles-style .topic-details {
-  font-size: var(--font-down-1);
-}
-
-.tiles-style .topic-header-grid {
-  display: flex;
-}
+.mobile-view .tiles-style{
+  .topic-thumbnail {
+    padding: 0;
+    border-radius: 1em;
+    overflow: hidden;
+  }
+} 
 
 tbody.topic-list-body {
   padding: 0 0.5em;
