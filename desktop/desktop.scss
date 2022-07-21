@@ -33,3 +33,17 @@
   }
 
 }
+
+.category-logo.aspect-image{
+  max-width: auto;
+  img {
+  max-width: 80vw;
+  }
+}
+
+.tiles-style tbody {
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  img.thumbnail {
+    border-radius:2em;
+  }
+}
