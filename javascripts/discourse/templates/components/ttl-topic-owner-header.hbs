@@ -6,8 +6,11 @@
             {{mount-widget widget="post-avatar" args=firstPost model=firstPost}}
         </div>
         <div class="owner-details">
-            <div class="owner-name">
-                {{firstPost.username}}
+            <div class="full-name">
+                {{firstPost.displayName}}
+            </div>
+             <div class="user-name">
+                {{concat "@" firstPost.username}}
             </div>
             <div class="created-at">
                 {{theme-i18n "topic.owner_header.created_at"}}
@@ -24,8 +27,11 @@
             {{user-avatar-flair user=firstPostUser}}
         </div>
         <div class="owner-details">
-            <div class="owner-name">
-                {{firstPostUser.username}}
+            <div class="full-name">
+                {{firstPost.displayName}}
+            </div>
+             <div class="user-name">
+                {{concat "@" firstPost.username}}
             </div>
             <div class="created-at">
                 {{theme-i18n "topic.owner_header.created_at"}}
