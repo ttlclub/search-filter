@@ -1161,8 +1161,7 @@ $flair-size: 5.5rem;
             .post-menu-area {
               nav.post-controls {
 
-                // 主楼点心按钮, 分享按钮, 举报按钮, 书签按钮不显示
-                .double-button,
+                // 主楼 分享按钮, 举报按钮, 书签按钮不显示
                 .share,
                 .create-flag,
                 .bookmark,
@@ -1645,7 +1644,62 @@ tbody.topic-list-body {
   button {
     padding-top: 0.2em;
     padding-bottom: 0.2em;
-
   }
+}
 
+// .groups-boxes {
+//   .r18showed,
+//   .r18测试组,
+//   .trust_level_0,
+//   .trust_level_1,
+//   .trust_level_2,
+//   .trust_level_3,
+//   .trust_level_4,
+//   .版主,
+//   .管理人员,
+//   .管理员{
+//     display: none;
+//   }
+// }
+
+// 搜索用户
+.directory.users-directory .directory-group-selector {
+  display: none;
+} 
+.directory .total-rows {
+  padding: 0 0.8em 0 1.8em;
+}
+
+.select-kit.dropdown-select-box.period-chooser {
+  padding: unset;
+}
+// 用户
+.my-outlet-page {
+  .mobile-nav {
+    display: flex;
+    white-space: nowrap;
+    flex-wrap: nowrap;
+    overflow: scroll;
+  }
+  .mobile-nav::-webkit-scrollbar {
+    display: none;
+    
+  }  
+}
+
+// composer 临时
+
+#reply-control .category-input, 
+#reply-control .with-tags .category-input {
+  max-width:100%;
+}
+#reply-control .tag-chooser {
+  width: 100%;
+  margin-bottom: 0.8em;
+  margin-top: 0.2em;
+}
+#reply-control .with-tags .title-input {
+  margin-top: 0.6em;
+  height: 3em;
+  margin-bottom: 0.2em;
 }

@@ -26,6 +26,9 @@
   手机视图下拉框
   -->
   <!-- 回复 -->
+  {{#unless currentUser}}
+  {{d-button icon="reply" class="reply" action=(route-action "showLogin") title=(theme-prefix "topic.reply.help") label="topic.reply.title"}}
+  {{/unless}}
   {{#if topic.details.can_create_post}}
     {{d-button class="reply"
                action=replyToPost
