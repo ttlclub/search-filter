@@ -21,4 +21,5 @@ export default Component.extend({
         return categoriesList;
       }
     },
+    
 });

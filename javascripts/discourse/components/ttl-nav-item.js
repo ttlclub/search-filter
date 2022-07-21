@@ -21,12 +21,12 @@ export default Component.extend({
   // userID: alias("tag.id"),
 
 
-    didInsertElement() {
-        const marker = document.querySelector('.ttl-nav-line');
-        this.updateActiveNav( () => {
-            marker.style.visibility = "visible";
-        });
-    },
+  didInsertElement() {
+      const marker = document.querySelector('.ttl-nav-line');
+      this.updateActiveNav( () => {
+          marker.style.visibility = "visible";
+      });
+  },
     
     //    categoryAndTagUrl: function() {
     //        let selectedCategory = Category.findById(parseInt(this.categoryId, 10));
@@ -56,6 +56,21 @@ export default Component.extend({
     }
   },
 
+  @discourseComputed("category.isParent", "category.default_list_filter")
+  modifiedRoute(isParent, defaultListFilter) {
+    let categoryRoute = "discovery.category";
+    if(isParent && (defaultListFilter === "none")) {
+      return categoryRoute.replceWith("discovery.categoryNone");
+    }
+    return categoryRoute;
+  },
+
+  @discourseComputed("category.id", "category.slug")
+  buildRouteParam(categoryId, categorySlug) {
+    let buildRouteParam = [];
+    buildRouteParam.push(categorySlug, categoryId);
+    return buildRouteParam.join("/");
+  },
 
   @discourseComputed("label", "i18nLabel", "icon")
   contents(label, i18nLabel, icon) {
@@ -66,18 +81,14 @@ export default Component.extend({
     return text;
   },
 
-  @discourseComputed("route", "router.currentRoute")
+  @discourseComputed("modifiedRoute", "router.currentRoute")
   active(route, currentRoute) {
     if (!route) {
       return;
     }
-    // console.log(this.categoryAndTagUrl);
 
-    const routeParam = this.routeParam;
+    const routeParam = this.buildRouteParam;
     if (routeParam && currentRoute) {
-      // console.log("routeParam");
-    //   console.log(currentRoute.params["category_slug_path_with_id"]);
-    //   console.log(currentRoute.params["category_slug_path_with_id"] === routeParam);
       const currentRouteParams = currentRoute.attributes["category_slug_path_with_id"] || currentRoute.params["category_slug_path_with_id"];
       return currentRouteParams === routeParam;
     }

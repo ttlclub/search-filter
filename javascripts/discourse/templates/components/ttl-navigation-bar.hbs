@@ -1,28 +1,7 @@
-{{!-- <ul class="nav nav-pills">
-    {{ttl-nav-item route="discovery.category" routeParam="e69caa/1" categoryId="1" i18nLabel="未分类"}}
-    {{ttl-nav-item route="discovery.category" routeParam="2-category/2" categoryId="2" i18nLabel="站点反馈"}}
-    {{ttl-nav-item route="discovery.category" routeParam="3-category/3" categoryId="3" i18nLabel="管理人员"}}
-    {{ttl-nav-item route="discovery.category" routeParam="4-category/4" categoryId="4" i18nLabel="贵宾室"}}
-    {{ttl-nav-item route="discovery.category" routeParam="5-category/5" categoryId="5" i18nLabel="临时版务"}}
-    {{ttl-nav-item route="discovery.category" routeParam="6-category/6" categoryId="6" i18nLabel="图区(alpha版)"}}
-    {{ttl-nav-item route="discovery.category" routeParam="7-category/7" categoryId="7" i18nLabel="文区(alpha版)"}}
-    {{ttl-nav-item route="discovery.category" routeParam="8-category/8" categoryId="8" i18nLabel="灌水区(alpha版)"}}
-    {{ttl-nav-item route="discovery.category" routeParam="9-category/9" categoryId="9" i18nLabel="塔塔梨工地"}}
-    <!-- 最好设置成拿不到active就不显示-->
-    <div class="ttl-nav-line"></div>
-</ul> --}}
 <ul class="nav nav-pills">
     {{#each categories as |category|}}
-        {{ttl-nav-item path=category.url categoryId=category.id i18nLabel=category.name color=category.color}}
+        {{ttl-nav-item category=category i18nLabel=category.name color=category.color}}
     {{/each}}
-    {{!-- {{ttl-nav-item route="discovery.categoryNone" routeParam="novels/7" categoryId="1" i18nLabel="新月轩"}}
-    {{ttl-nav-item route="discovery.categoryNone" routeParam="pics/6" categoryId="2" i18nLabel="琉璃亭"}}
-    {{ttl-nav-item route="discovery.category" routeParam="forum/8" categoryId="3" i18nLabel="万民堂"}}
-    {{ttl-nav-item route="discovery.category" routeParam="feedbacks/2" categoryId="4" i18nLabel="北国银行"}}
-    {{ttl-nav-item route="discovery.category" routeParam="vip/4" categoryId="5" i18nLabel="贵宾室"}}
-    {{ttl-nav-item route="discovery.category" routeParam="admins/3" categoryId="5" i18nLabel="贵宾室"}}
-    {{ttl-nav-item route="discovery.category" routeParam="unclassified/1" categoryId="6" i18nLabel="未分类"}} --}}
-    <!-- 最好设置成拿不到active就不显示-->
     <div class="ttl-nav-line"></div>
 </ul>
 
