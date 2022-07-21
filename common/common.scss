@@ -402,6 +402,8 @@
 // nav bar
 .ttl-nav-bar {
   overflow: hidden;
+  display: flex;
+  justify-content: center;
 
   .nav-pills::-webkit-scrollbar {
     display: none;
@@ -676,9 +678,28 @@ input.input-xxlarge {
   @include ttl-rounded-corners;
 }
 
+// 整体布局
+.list-controls {
+  padding: 0.8em 0.8em 0 0.8em;
+  background: white;
+}
 .list-controls .container {
   padding: 0 5px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  .category-heading {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  #navigation-bar {
+    /* max-width: 100%; */
+  }
+
+
 }
+
 
 #toggle-hamburger-menu {
   display: none;
@@ -1437,11 +1458,7 @@ aside.onebox {
   }
 }
 
-// 帖子控制nav
-.list-controls {
-  padding: 0.8em 0.8em 0 0.8em;
-  background: white;
-}
+
 
 // 进度条wrapper下的管理员按钮隐藏
 #topic-progress-wrapper .topic-admin-menu-button-container {
@@ -1556,9 +1573,9 @@ aside.onebox {
   }
 }
 
-#navigation-bar {
-  max-width: 35%;
-}
+// #navigation-bar {
+//   max-width: 35%;
+// }
 
 .navigation-controls {
   margin-left: 0.5em;
