@@ -7,7 +7,7 @@
         </div>
         <div class="owner-details">
             <div class="full-name">
-                {{firstPost.displayName}}
+                {{firstPost.name}}
             </div>
              <div class="user-name">
                 {{concat "@" firstPost.username}}
@@ -28,17 +28,15 @@
         </div>
         <div class="owner-details">
             <div class="full-name">
-                {{firstPost.displayName}}
+                {{firstPostUser.name}}
             </div>
              <div class="user-name">
-                {{concat "@" firstPost.username}}
+                {{concat "@" firstPostUser.username}}
             </div>
             <div class="created-at">
                 {{theme-i18n "topic.owner_header.created_at"}}
                 <a title={{i18n "post.sr_date"}}>{{format-date topic.createdAt format="tiny" noTitle="true"}}</a>
             </div>
         </div>  
-
     {{/if}}
-
 </div>
