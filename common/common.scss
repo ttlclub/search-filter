@@ -689,19 +689,7 @@ input.input-xxlarge {
 
 .list-controls .container {
   padding: 0 5px;
-  display: flex;
-  flex-direction: column;
-  flex-wrap: nowrap;
 
-  .category-heading {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-
-  #navigation-bar {
-    /* max-width: 100%; */
-  }
 }
 
 .categories-list .category-list {
