@@ -403,8 +403,8 @@
 .list-controls {
   .ttl-nav-bar {
     overflow: hidden;
-    //display: flex;
-    //justify-content: center;
+    display: flex;
+    justify-content: center;
 
     .nav-pills::-webkit-scrollbar {
       display: none;

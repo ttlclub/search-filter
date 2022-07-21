@@ -16,3 +16,20 @@
 .ttl-topic-list-item {
   max-width: 100%;
 }
+
+.ttl-nav-bar {
+  display: flex;
+  justify-content: center;
+}
+
+.list-controls .container {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  .category-heading {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+}
