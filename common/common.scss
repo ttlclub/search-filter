@@ -1719,3 +1719,8 @@ tbody.topic-list-body {
   height: 3em;
   margin-bottom: 0.2em;
 }
+//  用户卡
+
+.user-card .card-content h2.username {
+  color: var(--primary-medium);
+}
