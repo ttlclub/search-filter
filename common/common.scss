@@ -399,7 +399,7 @@
 
 
 
-// nav bar
+// 塔塔梨nav bar
 .ttl-nav-bar {
   overflow: hidden;
   display: flex;
@@ -696,8 +696,16 @@ input.input-xxlarge {
   #navigation-bar {
     /* max-width: 100%; */
   }
+}
 
+div#main-container {
+  background: white;
+  padding: 1em;
+}
 
+// 关闭新话题按钮
+.dismiss-container-top {
+  display: none;
 }
 
 
@@ -1564,10 +1572,14 @@ aside.onebox {
       margin-right: 0.5em;
 
       >a,
-      >a:hover {
+      >a:hover
+      >a.active {
         justify-content: space-between;
         width: 100%;
         border-radius: 8px;
+      }
+      >a.active {
+        background-color: var(--tertiary-medium);
       }
     }
   }
