@@ -195,6 +195,7 @@
   .search-bar {
     background: unset;
     flex-direction: row;
+    margin: 0 0.5em;
 
     input.search-query {
       margin: 0 0.5em 0 0;
@@ -1085,8 +1086,8 @@ $flair-size: 5.5rem;
 
       article:not(#post1) {
         nav.post-controls .actions button .svg-icon {
-          height: 0.8em;
-          width: 0.8em;
+          // height: 0.8em;
+          // width: 0.8em;
         }
       }
 
