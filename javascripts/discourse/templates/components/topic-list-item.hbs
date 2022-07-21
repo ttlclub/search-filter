@@ -64,7 +64,11 @@
     </div>
     
     <div class="topic-author">
-      {{topic.posters.0.user.name}}
+      {{#if topic.posters.0.user.name}}
+        {{topic.posters.0.user.name}}
+      {{else}}
+        {{topic.posters.0.user.username}}
+      {{/if}}
     </div>
     <div class="topic-details">
       {{raw "list/topic-excerpt" topic=topic}}
