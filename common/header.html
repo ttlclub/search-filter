@@ -8,7 +8,8 @@
       const u = Discourse.User.current();
       const uGroups = u.groups;
       const hasR18Group = uGroups.find((value) => {
-        return value["id"] === 53 ? true : false;
+        const r18showedId = 53;
+        return value["id"] === r18showedId ? true : false;
       });
       // always show NSFW
       if (hasR18Group !== undefined) {
