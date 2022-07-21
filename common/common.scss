@@ -786,6 +786,11 @@ div#main-container {
     align-items: center;
     justify-content: space-evenly;
 
+    .bookmark.bookmarked .d-icon-bookmark,
+    .bookmark.bookmarked .d-icon-discourse-bookmark-clock {
+      color: var(--tertiary) !important;
+    }
+
     button {
       margin: 0;
     }
