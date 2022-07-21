@@ -1,0 +1,12 @@
+* {
+  scrollbar-width: 0;
+  -ms-overflow-style: none;
+}
+::-webkit-scrollbar {
+  display: none;
+}
+
+.category-logo.aspect-image {
+  max-width: 200px;
+  margin: 10px;
+}
