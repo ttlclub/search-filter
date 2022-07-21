@@ -1,6 +1,6 @@
 <!-- add current user's nsfw preferences to body tag -->
 <!-- update -->
-<script type="text/discourse-plugin" version="0.8">
+<script type="" version="0.8">
   // text/discourse-plugin
   // https://meta.discourse.org/t/css-classes-for-group-membership-for-simplified-ui-mode/60838/2
   if (window.jQuery) {
@@ -17,5 +17,15 @@
         $("body").addClass("nsfw-always-show");
       }
     });
+
+    // 禁用点击
+    console.log("add img protect")
+    document.querySelectorAll(".lightbox").addEventListener(
+      "click",
+      function (event) {
+        event.preventDefault();
+      },
+      false
+    );
   }
 </script>
