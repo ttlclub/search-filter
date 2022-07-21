@@ -691,15 +691,17 @@ input.input-xxlarge {
 
 // footer
 .custom-footer {
+  border-radius: 1.5em 1.5em 0 0;
+
   .wrap {
-    border-radius: 1.5em 1.5em 0 0;
 
     .first-box {
       margin-bottom: 0;
-      padding-bottom: 0;
+      padding-bottom: 0.5em;
 
       .heading {
-        font-size: 1em
+        font-size: 1em;
+        margin-bottom:0.25em
       }
 
       .blurb {
@@ -709,7 +711,7 @@ input.input-xxlarge {
 
     .second-box {
       .links {
-        .lists {
+        .list {
           margin-top: 0.5em;
           font-size: 1em;
 
@@ -1665,7 +1667,8 @@ tbody.topic-list-body {
 // 搜索用户
 .directory.users-directory .directory-group-selector {
   display: none;
-} 
+}
+
 .directory .total-rows {
   padding: 0 0.8em 0 1.8em;
 }
@@ -1673,6 +1676,7 @@ tbody.topic-list-body {
 .select-kit.dropdown-select-box.period-chooser {
   padding: unset;
 }
+
 // 用户
 .my-outlet-page {
   .mobile-nav {
@@ -1681,23 +1685,26 @@ tbody.topic-list-body {
     flex-wrap: nowrap;
     overflow: scroll;
   }
+
   .mobile-nav::-webkit-scrollbar {
     display: none;
-    
-  }  
+
+  }
 }
 
 // composer 临时
 
-#reply-control .category-input, 
+#reply-control .category-input,
 #reply-control .with-tags .category-input {
-  max-width:100%;
+  max-width: 100%;
 }
+
 #reply-control .tag-chooser {
   width: 100%;
   margin-bottom: 0.8em;
   margin-top: 0.2em;
 }
+
 #reply-control .with-tags .title-input {
   margin-top: 0.6em;
   height: 3em;
