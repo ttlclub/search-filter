@@ -55,7 +55,7 @@ export default MultiSelectComponent.extend(TagsMixin, {
         currentUserType = 2;
     }
     console.log(currentUserType);
-
+    console.log('test');
   },
 
   modifyComponentForRow() {
