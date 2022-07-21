@@ -10,5 +10,15 @@ export default Component.extend({
         // console.log("test nav bar");
     },
 
-
+    @discourseComputed("site.categoriesList")
+    categories(categoriesList) {
+      if (this.currentUser?.indirectly_muted_category_ids) {
+        return categoriesList.filter(
+          (category) =>
+            !this.currentUser.indirectly_muted_category_ids.includes(category.id)
+        );
+      } else {
+        return categoriesList;
+      }
+    },
 });

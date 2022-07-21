@@ -12,13 +12,16 @@
     <div class="ttl-nav-line"></div>
 </ul> --}}
 <ul class="nav nav-pills">
-    {{ttl-nav-item route="discovery.categoryNone" routeParam="novels/7" categoryId="1" i18nLabel="新月轩"}}
+    {{#each categories as |category|}}
+        {{ttl-nav-item path=category.url categoryId=category.id i18nLabel=category.name color=category.color}}
+    {{/each}}
+    {{!-- {{ttl-nav-item route="discovery.categoryNone" routeParam="novels/7" categoryId="1" i18nLabel="新月轩"}}
     {{ttl-nav-item route="discovery.categoryNone" routeParam="pics/6" categoryId="2" i18nLabel="琉璃亭"}}
     {{ttl-nav-item route="discovery.category" routeParam="forum/8" categoryId="3" i18nLabel="万民堂"}}
     {{ttl-nav-item route="discovery.category" routeParam="feedbacks/2" categoryId="4" i18nLabel="北国银行"}}
     {{ttl-nav-item route="discovery.category" routeParam="vip/4" categoryId="5" i18nLabel="贵宾室"}}
     {{ttl-nav-item route="discovery.category" routeParam="admins/3" categoryId="5" i18nLabel="贵宾室"}}
-    {{ttl-nav-item route="discovery.category" routeParam="unclassified/1" categoryId="6" i18nLabel="未分类"}}
+    {{ttl-nav-item route="discovery.category" routeParam="unclassified/1" categoryId="6" i18nLabel="未分类"}} --}}
     <!-- 最好设置成拿不到active就不显示-->
     <div class="ttl-nav-line"></div>
 </ul>
