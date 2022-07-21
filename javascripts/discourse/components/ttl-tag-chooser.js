@@ -56,7 +56,7 @@ export default MultiSelectComponent.extend(TagsMixin, {
     }
     console.log(currentUserType);
 
-  }
+  },
 
   modifyComponentForRow() {
     return "tag-chooser-row";
