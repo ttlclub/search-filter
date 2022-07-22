@@ -71,7 +71,9 @@
         }
       });
       $(document).ready(function () {
+        $scope.$on("$routeChangeSuccess", function(event, currentRoute, previousRoute){ 
           $("a.lightbox").children().unwrap();
+      }); 
       });
     }
   </script>
