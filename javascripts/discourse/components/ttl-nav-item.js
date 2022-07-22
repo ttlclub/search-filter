@@ -14,18 +14,32 @@ import { alias, and, equal, notEmpty, or } from "@ember/object/computed";
 export default Component.extend({
   tagName: "li",
   classNameBindings: ["active"],
+  // attributesBindings: ["style"],
   router: service(),
   activeChanged: observer("active", function () {
-    this.updateActiveNav();
+    // let categoryText = document.querySelector(".ttl-nav-bar .nav-pills li.active a");
+    if(this.active) {
+      this.updateActiveNav();
+    } else {
+      // categoryText.style.color = "#646464";
+    }
+    // debugger
+    // this.updateActiveNav();
+      // this.updateActiveNav();
   }),
   // userID: alias("tag.id"),
 
+  // @discourseComputed("category.color")
+  // style(categoryColor) { 
+  //   return "".concat("color:","#",categoryColor,";");
+  // },
+
 
   didInsertElement() {
-      const marker = document.querySelector('.ttl-nav-line');
-      this.updateActiveNav( () => {
-          marker.style.visibility = "visible";
-      });
+    // const marker = document.querySelector('.ttl-nav-line');
+    // this.updateActiveNav( () => {
+    //     marker.style.visibility = "visible";
+    // });
   },
     
     //    categoryAndTagUrl: function() {
@@ -34,26 +48,54 @@ export default Component.extend({
     //        console.log(categoryAndTagUrl);
     //        return categoryAndTagUrl;
     //     },
+  @discourseComputed("active")
+  getResult(active) {
+    // if (active) {
+    //   this.updateActiveNav();
+    //   return true;
+    // } else {
+    //   // return false;
+    // }
+  },
 
-  updateActiveNav(callback) {
-    const selectedItem = document.querySelector('.active');
-    const scollLeft = document.querySelector('.nav-pills').scrollLeft;
-    const fontSize = document.defaultView.getComputedStyle(document.body, '').fontSize;
-    if(selectedItem) {
-        const halfRectWidth = selectedItem.getBoundingClientRect().width / 2;
-        const leftPosition =
-            selectedItem.getBoundingClientRect().left - selectedItem.parentNode.getBoundingClientRect().left + document.querySelector('.nav-pills').scrollLeft;
-        const marker = document.querySelector('.ttl-nav-line');
-        if(this.router.currentRoute.attributes) {
-            const categoryColor = this.router.currentRoute.attributes.category.color;
-            const categoryText = document.querySelector(".ttl-nav-bar .nav-pills li.active a");
-    
-            marker.style.left = "".concat("calc(", leftPosition + halfRectWidth , "px", " - ", fontSize, ")");
-            marker.style.backgroundColor = "".concat("#",categoryColor);
-            categoryText.style.color = "".concat("#",categoryColor);
-            callback();
-        }
+ //  @discourseComputed("active", "category.color")
+  updateActiveNav() {
+    // debugger
+    // console.log(this.active);
+    if(this.active) {
+      const selectedItem = document.querySelector('.active');
+      // console.log(selectedItem);
+      const scollLeft = document.querySelector('.nav-pills').scrollLeft;
+      const fontSize = document.defaultView.getComputedStyle(document.body, '').fontSize;
+      if(selectedItem) {
+          const halfRectWidth = selectedItem.getBoundingClientRect().width / 2;
+          const leftPosition =
+              selectedItem.getBoundingClientRect().left - selectedItem.parentNode.getBoundingClientRect().left + document.querySelector('.nav-pills').scrollLeft;
+          const marker = document.querySelector('.ttl-nav-line');
+          const categoryColor = this.category.color;
+          let categoryText = document.querySelector(".ttl-nav-bar .nav-pills li.active a");
+          let no_categoryText = document.querySelectorAll(".ttl-nav-bar .nav-pills li:not(.active) a");
+  
+          marker.style.left = "".concat("calc(", leftPosition + halfRectWidth , "px", " - ", fontSize, ")");
+          marker.style.backgroundColor = "".concat("#",categoryColor);
+          // console.log(categoryColor);
+          
+          categoryText.style.color = "".concat("#",categoryColor);
+          [].forEach.call(no_categoryText, function(t) {
+            // do whatever
+            t.style.color = "#646464";
+          });
+          // no_categoryText.style.color ="#646464";
+          // console.log(categoryColor);
+          //console.log(categoryText.style.color)
+
+      }
+            // categoryText.style.color = "#646464" ;
+            // console.log("#646464");
+          
+              // callback();
     }
+    
   },
 
   @discourseComputed("category.isParent", "category.default_list_filter")
@@ -89,7 +131,7 @@ export default Component.extend({
 
     const routeParam = this.buildRouteParam;
     if (routeParam && currentRoute) {
-      const currentRouteParams = currentRoute.attributes["category_slug_path_with_id"] || currentRoute.params["category_slug_path_with_id"];
+      const currentRouteParams = currentRoute.params["category_slug_path_with_id"];
       return currentRouteParams === routeParam;
     }
     
