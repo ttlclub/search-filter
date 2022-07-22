@@ -18,18 +18,5 @@
       }
     });
 
-    // 禁用点击
-    $(window).bind("load", function () {
-      console.log("add img protect");
-      document.querySelectorAll(".lightbox").forEach((element) => {
-        element.addEventListener(
-          "click",
-          function (event) {
-            event.preventDefault();
-          },
-          false
-        );
-      });
-    });
   }
 </script>
