@@ -5,7 +5,7 @@
   // https://meta.discourse.org/t/css-classes-for-group-membership-for-simplified-ui-mode/60838/2
   if (window.jQuery) {
     window.jQuery(function ($) {
-      const u = Discourse.User.current();
+      let u = api.getCurrentUser();
       const uGroups = u.groups;
       const hasR18Group = uGroups.find((value) => {
         const r18showedId = 53;
@@ -17,17 +17,8 @@
         $("body").addClass("nsfw-always-show");
       }
     });
-
-    // 禁用点击
-    console.log("add img protect");
-    document.querySelectorAll(".lightbox").forEach((element) => {
-      element.addEventListener(
-        "click",
-        function (event) {
-          event.preventDefault();
-        },
-        false
-      );
+    $(document).ready(function () {
+        $("a.lightbox").children().unwrap();
     });
   }
 </script>
