@@ -49,7 +49,7 @@
     </div>
     <div class="search-extra">
       {{#unless searching}}
-        {{#unless hasResults}}  
+        {{#unless searchActive}}  
           {{!-- 最近的搜索 --}}
           {{#if currentUser.recent_searches}}
             <div class="ttl-recent-searches">
