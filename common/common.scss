@@ -1850,7 +1850,9 @@ tbody.topic-list-body {
     }
   }
 }
-
+a.lightbox{
+    pointer-events: none;
+}
 .navigation-controls {
 
 }
