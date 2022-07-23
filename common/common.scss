@@ -173,7 +173,7 @@
 }
 
 .search-container {
-  padding-top: 1.25em;
+  // padding-top: 1.25em;
   background: white;
 }
 
@@ -189,9 +189,7 @@
     color: var(--primary-medium);
     font-weight: normal;
     // margin-bottom: 0;
-    .default-type {
-      margin: 0.8em;
-    }
+    margin: 0.8em;
   }
 
   .search-filters {

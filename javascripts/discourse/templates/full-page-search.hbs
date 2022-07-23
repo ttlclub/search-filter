@@ -48,24 +48,24 @@
       }}
     </div>
     <div class="search-extra">
-      {{#unless hasResults}}  
-        {{!-- 最近的搜索 --}}
-        {{#if currentUser}}
-          {{#if currentUser.recent_searches.length}}
+      {{#unless searching}}
+        {{#unless hasResults}}  
+          {{!-- 最近的搜索 --}}
+          {{#if currentUser.recent_searches}}
             <div class="ttl-recent-searches">
               {{mount-widget widget="search-menu-recent-searches"}}
             </div> 
           {{/if}}
-        {{/if}}
-        {{!-- 搜索用户 --}}
-        <div class="search-user">
-          <a href="/u">
-            {{d-icon "share"}}
-            <span >
-              搜索用户
-            </span>
-          </a>
-        </div>       
+          {{!-- 搜索用户 --}}
+          <div class="search-user">
+            <a href="/u">
+              {{d-icon "share"}}
+              <span >
+                搜索用户
+              </span>
+            </a>
+          </div>       
+        {{/unless}}
       {{/unless}}
     </div>
     
