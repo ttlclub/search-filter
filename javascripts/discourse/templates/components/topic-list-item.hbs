@@ -70,6 +70,15 @@
       </div>
       <div class="topic-tags">
         {{discourse-tags topic mode="list"}}
+
+      <span class="middot inline sub"></span>
+      <div
+        class="{{likesHeat}} inline sub"
+        title="{{title}}"
+      >
+        <span class="badge-posts {{likesHeat}}">{{d-icon
+            "far-heart"
+          }}{{number topic.like_count}}</span>
       </div>
 
       <div class="ttl-topic-meta">
@@ -98,6 +107,7 @@
               }}{{number topic.like_count}}</a>
           </div>
 
+<<<<<<< HEAD
           <span class="middot inline sub"></span>
           <div
             class="{{class}}
@@ -121,3 +131,8 @@
       </div></div>
   </td>
 {{/if}}
+=======
+  </div>
+</td>
+{{/if}}
+>>>>>>> 7f4afd2cd2d02107faa233b02f7d3ae6fe608b13

@@ -19,7 +19,7 @@
         return {
             action: 'like',
             icon: 'coffee',
-            className: 'hot-coffee',
+            className: 'hot-coffee',p
             title: 'coffee.title',
             position: 'first'
         };
@@ -34,19 +34,30 @@
     });
 </script>
 
+<script type="text/discourse-plugin" version="0.8">
+    api.modifyClass("route:user",{
+        pluginId: "my-user-index",
+        redirect: function() {
+            console.log("haha");
+            this.transitionTo("user.profile-hidden");
 
+        },
+
+    });
+    
+</script>
 
 
 -->
 
 <script type="text/discourse-plugin" version="0.8">
     api.modifyClass("component:topic-notifications-button", {
+        pluginId: "my-topic-notifications-button",
         appendReason: false,
         showFullTitle: false,
     });
 </script>
 
-<script type="text/discourse-plugin" version="0.8">
 
 
-</script>
+

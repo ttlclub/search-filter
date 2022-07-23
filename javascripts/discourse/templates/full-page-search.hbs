@@ -4,15 +4,25 @@
   {{scroll-tracker name="full-page-search" tag=searchTerm class="hidden"}}
   
   <div class="search-header" role="search">
-    <h1 class="search-page-heading">
+    <h4 class="search-page-heading">
       {{#if hasResults}}
-        <div class="result-count" id="search-result-count" aria-live="polite">
-          {{html-safe resultCountLabel}}
-        </div>
+        {{#if hasAutofocus }}
+          <div class="default-type">
+            {{!-- {{i18n "search.full_page_title"}} --}}
+            在主题/帖子中搜索
+          </div>
+        {{else}}
+          <div class="result-count" id="search-result-count" aria-live="polite">
+            {{html-safe resultCountLabel}}
+          </div>
+        {{/if}}
       {{else}}
-        {{i18n "search.full_page_title"}}
+      <div class="default-type">
+        {{!-- {{i18n "search.full_page_title"}} --}}
+        在主题/帖子中搜索
+      </div>
       {{/if}}
-    </h1>
+    </h4>
     <!-- 搜索框-->
     <div class="search-bar">
       {{search-text-field
@@ -44,8 +54,19 @@
         disabled=searchButtonDisabled
       }}
     </div>
+
+    <!-- 提示警告-->
+    <div class="search-notice">
+      {{#if invalidSearch}}
+        <div class="fps-invalid">
+          {{i18n "search.too_short"}}
+        </div>
+      {{/if}}
+    </div>
+    
     {{#if usingDefaultSearchType}}
       {{!-- context is only provided when searching from mobile view --}}
+      {{!-- 上下文 --}}
       {{#if context}}
         <div class="search-context">
           <label>
@@ -65,68 +86,10 @@
         }}
       </div>
       -->
-    {{/if}}
-    
-    
-    <!-- 提示警告-->
-    <div class="search-notice">
-      {{#if invalidSearch}}
-        <div class="fps-invalid">
-          {{i18n "search.too_short"}}
-        </div>
-      {{/if}}
-    </div>
-
-  </div>
-
-  <div class="search-advanced">
-    {{#if hasResults}}
-      {{#if usingDefaultSearchType}}
-        <div class={{searchInfoClassNames}} role="region" ariaLabel={{i18n "search.sort_or_bulk_actions"}}>
-          {{#if canBulkSelect}}
-            <!-- 批量选取按钮-->
-            {{d-button icon="list" class="btn-default bulk-select" title="topics.bulk.toggle" action=(action "toggleBulkSelect")}}
-            {{#if selected}}
-              {{d-button class="btn-default bulk-select-btn" selected=selected action=(action "showBulkActions") icon="wrench"}}
-            {{/if}}
-          {{/if}}
-          <!-- 全选-->
-          {{#if bulkSelectEnabled}}
-            {{#if hasUnselectedResults}}
-              {{d-button
-                icon="check-square"
-                class="btn-default"
-                action=(action "selectAll")
-                label="search.select_all"
-              }}
-            {{/if}}
-            <!-- 全部清除-->
-            {{#if hasSelection}}
-              {{d-button
-                icon="far-square"
-                class="btn-default"
-                action=(action "clearAll")
-                label="search.clear_all"
-              }}
-            {{/if}}
-          {{/if}}
-          <!-- 排序 -->
-          <div class="sort-by inline-form">
-            <label>
-              {{i18n "search.sort_by"}}
-            </label>
-            {{combo-box
-              value=sortOrder
-              content=sortOrders
-              onChange=(action (mut sortOrder))
-              id="search-sort-by"
-              options=(hash
-                castInteger=true
-              )
-            }}
-          </div>
-          <!-- NEW -->
-          <!-- 筛选tag -->
+      <!-- NEW -->
+      <!-- 筛选tag -->
+      {{#unless searching}}
+        {{#unless searchActive}}
           <div class="search-filters">
             {{ttl-search-advanced-options
               searchTerm=(readonly searchTerm)
@@ -136,12 +99,94 @@
               expandFilters=expandFilters
             }}
           </div>
-        </div>
-      {{/if}}
-    {{else}}
-    <div class="ttl-recent-searches">
-      {{mount-widget widget="search-menu-recent-searches"}}
+        {{/unless}}
+      {{/unless}}
+    {{/if}}
+
+    <div class="search-extra">
+      {{#unless searching}}
+        {{#unless searchActive}}  
+          {{!-- 最近的搜索 --}}
+          {{#if currentUser.recent_searches}}
+            <div class="ttl-recent-searches">
+              {{mount-widget widget="search-menu-recent-searches"}}
+            </div> 
+          {{/if}}
+          {{!-- 搜索用户 --}}
+          <div class="search-user">
+            <a href="/u">
+              {{d-icon "share"}}
+              <span >
+                搜索用户
+              </span>
+            </a>
+          </div>       
+        {{/unless}}
+      {{/unless}}
     </div>
+
+  </div>
+
+  <div class="search-advanced">
+    {{#if hasResults}}
+      {{#if searchActive}}
+        {{#if usingDefaultSearchType}}
+          <div class={{searchInfoClassNames}} role="region" ariaLabel={{i18n "search.sort_or_bulk_actions"}}>
+            {{#if canBulkSelect}}
+              <!-- 批量选取按钮-->
+              {{d-button icon="list" class="btn-default bulk-select" title="topics.bulk.toggle" action=(action "toggleBulkSelect")}}
+              {{#if selected}}
+                {{d-button class="btn-default bulk-select-btn" selected=selected action=(action "showBulkActions") icon="wrench"}}
+              {{/if}}
+            {{/if}}
+            <!-- 全选-->
+            {{#if bulkSelectEnabled}}
+              {{#if hasUnselectedResults}}
+                {{d-button
+                  icon="check-square"
+                  class="btn-default"
+                  action=(action "selectAll")
+                  label="search.select_all"
+                }}
+              {{/if}}
+              <!-- 全部清除-->
+              {{#if hasSelection}}
+                {{d-button
+                  icon="far-square"
+                  class="btn-default"
+                  action=(action "clearAll")
+                  label="search.clear_all"
+                }}
+              {{/if}}
+            {{/if}}
+            <!-- 排序 -->
+            <div class="sort-by inline-form">
+              <label>
+                {{i18n "search.sort_by"}}
+              </label>
+              {{combo-box
+                value=sortOrder
+                content=sortOrders
+                onChange=(action (mut sortOrder))
+                id="search-sort-by"
+                options=(hash
+                  castInteger=true
+                )
+              }}
+            </div>
+            <!-- 筛选tag mini版-->
+            <div class="search-filters-mini">
+              {{ttl-search-advanced-options-mini
+                searchTerm=(readonly searchTerm)
+                onChangeSearchTerm=(action (mut searchTerm))
+                search=(action "search" (hash collapseFilters=true))
+                searchButtonDisabled=searchButtonDisabled
+                expandFilters=expandFilters
+              }}
+            </div>
+          </div>
+        {{/if}}
+      {{/if}}
     {{/if}}
 
     {{plugin-outlet name="full-page-search-below-search-info" tagName="span" connectorTagName="div" args=(hash search=searchTerm)}}
@@ -205,8 +250,10 @@
                       {{i18n "search.more_results"}}
                     {{/if}}
                   {{else}}
-                    <!-- 没有更多结果-->
-                    {{i18n "search.no_more_results"}}
+                    {{#if searchActive}}
+                      <!-- 没有更多结果-->
+                      {{i18n "search.no_more_results"}}
+                    {{/if}}
                   {{/if}}
                 </h3>
               {{/if}}

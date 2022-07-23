@@ -2,7 +2,7 @@
 
 
 // 用select kit重写的tag选择器
-.tag-chooser {
+.ttl-tag-chooser {
   &.select-kit {
     &.is-expanded {
 
@@ -173,7 +173,7 @@
 }
 
 .search-container {
-  padding-top: 1.25em;
+  // padding-top: 1.25em;
   background: white;
 }
 
@@ -184,7 +184,12 @@
   padding: 0.5em !important;
 
   .search-page-heading {
-    display: none;
+    //display: none;
+    font-size: var(--font-0);
+    color: var(--primary);
+    font-weight: 500;
+    // margin-bottom: 0;
+    margin: 0.8em;
   }
 
   .search-filters {
@@ -195,7 +200,7 @@
   .search-bar {
     background: unset;
     flex-direction: row;
-    margin: 0 0.5em;
+    margin: 0 0.8em;
 
     input.search-query {
       margin: 0 0.5em 0 0;
@@ -216,15 +221,30 @@
       border-radius: 1.2em;
     }
   }
+  .search-user{
+    background: var(--quaternary-low);
+    margin: 1.5em 0.8em;
+    padding: 0.5em;
+    border-radius: 1.5em;
+    text-align: center;
+    
+    .d-icon{
+      color: var(--primary);
+    }
+    span {
+      color:var(--primary);
+    }
+  }
 
   // 搜索上下文
   .search-context {
-    display: none !important;
+    // display: none !important;
   }
 }
 
 // 提示警告
 .search-notice {
+  margin:0 0.8em;
   .fps-invalid {
     border-radius: 1.2em;
     border: unset !important;
@@ -283,27 +303,57 @@
 
 // 排序 筛选 搜索结果
 .search-container {
+  // 筛选
+  .search-filters {
+    padding-bottom: 0.5em;
+    margin: 1em 0.8em 1.8em 0.8em;
+    flex-grow: 1;
+    //max-width: calc(70% - 1.4em);
+    border-bottom: 1px solid var(--primary-low);
+    background: white;
+    .matching-title-only{
+      display: flex;
+      margin-bottom: 0.5em;
+      label {
+        margin-bottom: unset;
+      }
+    }
+    .control-label {
+      color: var(--primary-medium);
+    }
+
+    .select-kit-header {
+      padding-left: 1.2em;
+    }
+
+    section {
+      label {
+        display: none;
+      }
+    }
+  }
+  .select-kit,
+  .d-date-input{
+    .select-kit-header,
+    .date-picker {
+      background: var(--primary-100) !important;
+      border: unset !important;
+      outline: unset !important;
+      padding-left: 1em;
+      padding-right: 1em;
+      border-radius: 1.2em !important;
+    }
+  }
   .search-advanced {
     .search-info {
       margin-bottom: unset !important;
       flex-wrap: nowrap !important;
       align-items: center;
       background: white;
-
-      .select-kit {
-        .select-kit-header {
-          background: var(--primary-100) !important;
-          border: unset !important;
-          outline: unset !important;
-          padding-left: 1em;
-          padding-right: 1em;
-          border-radius: 1.2em;
-        }
-      }
-
+      padding: 0.5em;
       // 排序
       .sort-by {
-        margin-left: 0.5em !important;
+        margin-left: 0.8em !important;
         margin-right: 0.2em !important;
         min-width: 30%;
 
@@ -345,19 +395,26 @@
           }
         }
       }
-
-      // 筛选
-      .search-filters {
-        margin-right: 0.5em !important;
+      .search-filters-mini {
+        .select-kit.multi-select {
+          width: 100%;
+          border-radius:1.2em;
+        }
+        //  padding-bottom: 0.5em;
         margin-left: 0.2em !important;
+        margin-right: 0.8em !important;
         flex-grow: 1;
-        max-width: calc(70% - 1.4em);
+        max-width: calc(70% - 3em);
+        // border-bottom: 1px solid var(--primary-low);
         background: white;
-
+        .control-label {
+          color: var(--primary-medium);
+        }
+    
         .select-kit-header {
           padding-left: 1.2em;
         }
-
+    
         section {
           label {
             display: none;
@@ -860,6 +917,8 @@ footer.topic-list-bottom {
 }
 
 #topic-progress {
+  width: 20vw;
+    height: 10vw;
   position: fixed;
   bottom: 20%;
   right: 2em;
@@ -867,8 +926,10 @@ footer.topic-list-bottom {
   overflow: hidden;
   border: 2px solid var(--tertiary-low);
   background: white;
+  .nums {
+    top: 3vw;
+  }
 }
-
 
 
 // 头像框选择面板
@@ -1643,6 +1704,13 @@ aside.onebox {
   }
 }
 
+#list-area {
+  .topic-count{
+    margin: 0.5em 1.2em 0 1.2em;
+    font-weight: 500;
+  }
+}
+
 tbody.topic-list-body {
   padding: 0 0.5em;
 }
@@ -1811,4 +1879,10 @@ span.second.username::before {
 
 .cooked .lightbox img:not(.thumbnail):not(.ytp-thumbnail-image):not(.emoji){
   max-width: 82vw;
+}
+a.lightbox{
+    pointer-events: none;
+}
+.navigation-controls {
+
 }
