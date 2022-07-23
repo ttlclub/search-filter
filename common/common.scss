@@ -228,7 +228,7 @@
     border-radius: 1.5em;
     text-align: center;
     .d-icon{
-      color: var(--primary-medium);
+      color: var(--primary);
     }
     span {
       color:var(--primary);
@@ -333,7 +333,7 @@
       outline: unset !important;
       padding-left: 1em;
       padding-right: 1em;
-      border-radius: 1.2em;
+      border-radius: 1.2em !important;
     }
   }
   .search-advanced {
