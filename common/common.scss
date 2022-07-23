@@ -497,8 +497,10 @@ $z-layers: (
 .topic-list {
 
   .topic-author {
-    color: var(--primary);
     padding: 0;
+    font-size: var(--font-down-1);
+    // max-width: ;
+    // overflow: hidden;
   }
 
   .topic-details {
@@ -585,6 +587,10 @@ tr {
 
 .ttl-topic-meta {
   margin-top: 0.5em;
+  display: flex;
+  justify-content: space-between;
+    align-items: center;
+    align-content: center;
 }
 
 // del unused component
@@ -1137,8 +1143,7 @@ $flair-size: 5.5rem;
     }
 
     .topic-post,
-    .time-gap
-    .small-action {
+    .time-gap .small-action {
       // 用这个元素设置页边距
       background: white;
       padding: 0 1em 0 1em;
@@ -1606,34 +1611,37 @@ aside.onebox {
 
 
 // 调整图区item样式,可删
-.tiles-style{
+.tiles-style {
   .tiles-grid-item:hover {
     background-color: unset !important;
   }
+
   .topic-details {
     font-size: var(--font-down-1);
   }
+
   .topic-header-grid {
     display: flex;
   }
-} 
+}
 
 .tiles-grid-item {
   box-shadow: unset;
   cursor: none !important;
 }
+
 .tiles-grid-item-content.main-link {
   background: white;
   border-radius: 1em;
 }
 
-.mobile-view .tiles-style{
+.mobile-view .tiles-style {
   .topic-thumbnail {
     padding: 0;
     border-radius: 1em;
     overflow: hidden;
   }
-} 
+}
 
 tbody.topic-list-body {
   padding: 0 0.5em;
@@ -1778,11 +1786,29 @@ tbody.topic-list-body {
       -moz-user-select: none;
       -ms-user-select: none;
       user-select: none;
-      pointer-events:none;
+      pointer-events: none;
     }
   }
 }
 
-.navigation-controls {
+.navigation-controls {}
 
+// wj:username
+span.second.username {
+  font-size: var(--font-down-1);
+  color: var(--primary-medium);
+  padding: 0.1em 0 0.2em 0;
+}
+
+span.second.username::before {
+  content: '@';
+}
+
+.mobile-view .topic-list .ttl-topic-list-item .topic-details {
+  min-height: unset;
+  padding-left: 5px;
+}
+
+.cooked .lightbox img:not(.thumbnail):not(.ytp-thumbnail-image):not(.emoji){
+  max-width: 82vw;
 }
