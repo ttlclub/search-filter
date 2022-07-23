@@ -6,11 +6,16 @@
   <div class="search-header" role="search">
     <h4 class="search-page-heading">
       {{#if hasResults}}
-        {{#unless hasAutofocus }}
+        {{#if hasAutofocus }}
+          <div class="default-type">
+            {{!-- {{i18n "search.full_page_title"}} --}}
+            在主题/帖子中搜索
+          </div>
+        {{else}}
           <div class="result-count" id="search-result-count" aria-live="polite">
             {{html-safe resultCountLabel}}
           </div>
-        {{/unless}}
+        {{/if}}
       {{else}}
       <div class="default-type">
         {{!-- {{i18n "search.full_page_title"}} --}}
@@ -49,6 +54,55 @@
         disabled=searchButtonDisabled
       }}
     </div>
+
+    <!-- 提示警告-->
+    <div class="search-notice">
+      {{#if invalidSearch}}
+        <div class="fps-invalid">
+          {{i18n "search.too_short"}}
+        </div>
+      {{/if}}
+    </div>
+    
+    {{#if usingDefaultSearchType}}
+      {{!-- context is only provided when searching from mobile view --}}
+      {{!-- 上下文 --}}
+      {{#if context}}
+        <div class="search-context">
+          <label>
+            {{input type="checkbox" name="searchContext" checked=searchContextEnabled}} {{searchContextDescription}}
+          </label>
+        </div>
+      {{/if}}
+      <!-- 高级搜索-->
+      <!--
+      <div class="search-filters">
+        {{ttl-search-advanced-options
+          searchTerm=(readonly searchTerm)
+          onChangeSearchTerm=(action (mut searchTerm))
+          search=(action "search" (hash collapseFilters=true))
+          searchButtonDisabled=searchButtonDisabled
+          expandFilters=expandFilters
+        }}
+      </div>
+      -->
+      <!-- NEW -->
+      <!-- 筛选tag -->
+      {{#unless searching}}
+        {{#unless searchActive}}
+          <div class="search-filters">
+            {{ttl-search-advanced-options
+              searchTerm=(readonly searchTerm)
+              onChangeSearchTerm=(action (mut searchTerm))
+              search=(action "search" (hash collapseFilters=true))
+              searchButtonDisabled=searchButtonDisabled
+              expandFilters=expandFilters
+            }}
+          </div>
+        {{/unless}}
+      {{/unless}}
+    {{/if}}
+
     <div class="search-extra">
       {{#unless searching}}
         {{#unless searchActive}}  
@@ -69,39 +123,6 @@
           </div>       
         {{/unless}}
       {{/unless}}
-    </div>
-    
-    {{#if usingDefaultSearchType}}
-      {{!-- context is only provided when searching from mobile view --}}
-      {{#if context}}
-        <div class="search-context">
-          <label>
-            {{input type="checkbox" name="searchContext" checked=searchContextEnabled}} {{searchContextDescription}}
-          </label>
-        </div>
-      {{/if}}
-      <!-- 高级搜索-->
-      <!--
-      <div class="search-filters">
-        {{ttl-search-advanced-options
-          searchTerm=(readonly searchTerm)
-          onChangeSearchTerm=(action (mut searchTerm))
-          search=(action "search" (hash collapseFilters=true))
-          searchButtonDisabled=searchButtonDisabled
-          expandFilters=expandFilters
-        }}
-      </div>
-      -->
-    {{/if}}
-    
-    
-    <!-- 提示警告-->
-    <div class="search-notice">
-      {{#if invalidSearch}}
-        <div class="fps-invalid">
-          {{i18n "search.too_short"}}
-        </div>
-      {{/if}}
     </div>
 
   </div>
@@ -153,10 +174,9 @@
                 )
               }}
             </div>
-            <!-- NEW -->
-            <!-- 筛选tag -->
-            <div class="search-filters">
-              {{ttl-search-advanced-options
+            <!-- 筛选tag mini版-->
+            <div class="search-filters-mini">
+              {{ttl-search-advanced-options-mini
                 searchTerm=(readonly searchTerm)
                 onChangeSearchTerm=(action (mut searchTerm))
                 search=(action "search" (hash collapseFilters=true))

@@ -2,7 +2,7 @@
 
 
 // 用select kit重写的tag选择器
-.tag-chooser {
+.ttl-tag-chooser {
   &.select-kit {
     &.is-expanded {
 
@@ -186,8 +186,8 @@
   .search-page-heading {
     //display: none;
     font-size: var(--font-0);
-    color: var(--primary-medium);
-    font-weight: normal;
+    color: var(--primary);
+    font-weight: 500;
     // margin-bottom: 0;
     margin: 0.8em;
   }
@@ -222,22 +222,22 @@
     }
   }
   .search-user{
-    background: var(--primary-200);
+    background: var(--quaternary-low);
     margin: 1.5em 0.8em;
     padding: 0.5em;
     border-radius: 1.5em;
     text-align: center;
     .d-icon{
-      color: var(--primary-low-mid);
+      color: var(--primary-medium);
     }
     span {
-      color:var(--primary-medium);
+      color:var(--primary);
     }
   }
 
   // 搜索上下文
   .search-context {
-    display: none !important;
+    // display: none !important;
   }
 }
 
@@ -302,27 +302,50 @@
 
 // 排序 筛选 搜索结果
 .search-container {
+  // 筛选
+  .search-filters {
+    padding-bottom: 0.5em;
+    margin: 1em 0.8em 1.8em 0.8em;
+    flex-grow: 1;
+    //max-width: calc(70% - 1.4em);
+    border-bottom: 1px solid var(--primary-low);
+    background: white;
+    .control-label {
+      color: var(--primary-medium);
+    }
+
+    .select-kit-header {
+      padding-left: 1.2em;
+    }
+
+    section {
+      label {
+        display: none;
+      }
+    }
+  }
+  .select-kit,
+  .d-date-input{
+    .select-kit-header,
+    .date-picker {
+      background: var(--primary-100) !important;
+      border: unset !important;
+      outline: unset !important;
+      padding-left: 1em;
+      padding-right: 1em;
+      border-radius: 1.2em;
+    }
+  }
   .search-advanced {
     .search-info {
       margin-bottom: unset !important;
       flex-wrap: nowrap !important;
       align-items: center;
       background: white;
-
-      .select-kit {
-        .select-kit-header {
-          background: var(--primary-100) !important;
-          border: unset !important;
-          outline: unset !important;
-          padding-left: 1em;
-          padding-right: 1em;
-          border-radius: 1.2em;
-        }
-      }
-
+      padding: 0.5em;
       // 排序
       .sort-by {
-        margin-left: 0.5em !important;
+        margin-left: 0.8em !important;
         margin-right: 0.2em !important;
         min-width: 30%;
 
@@ -364,19 +387,25 @@
           }
         }
       }
-
-      // 筛选
-      .search-filters {
-        margin-right: 0.5em !important;
+      .search-filters-mini {
+        .select-kit.multi-select {
+          width: 100%;
+        }
+        //  padding-bottom: 0.5em;
         margin-left: 0.2em !important;
+        margin-right: 0.8em !important;
         flex-grow: 1;
-        max-width: calc(70% - 1.4em);
+        max-width: calc(70% - 3em);
+        // border-bottom: 1px solid var(--primary-low);
         background: white;
-
+        .control-label {
+          color: var(--primary-medium);
+        }
+    
         .select-kit-header {
           padding-left: 1.2em;
         }
-
+    
         section {
           label {
             display: none;
