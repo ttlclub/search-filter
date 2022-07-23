@@ -184,7 +184,14 @@
   padding: 0.5em !important;
 
   .search-page-heading {
-    display: none;
+    //display: none;
+    font-size: var(--font-0);
+    color: var(--primary-medium);
+    font-weight: normal;
+    // margin-bottom: 0;
+    .default-type {
+      margin: 0.8em;
+    }
   }
 
   .search-filters {
@@ -195,7 +202,7 @@
   .search-bar {
     background: unset;
     flex-direction: row;
-    margin: 0 0.5em;
+    margin: 0 0.8em;
 
     input.search-query {
       margin: 0 0.5em 0 0;
@@ -216,6 +223,19 @@
       border-radius: 1.2em;
     }
   }
+  .search-user{
+    background: var(--primary-200);
+    margin: 1.5em 0.8em;
+    padding: 0.5em;
+    border-radius: 1.5em;
+    text-align: center;
+    .d-icon{
+      color: var(--primary-low-mid);
+    }
+    span {
+      color:var(--primary-medium);
+    }
+  }
 
   // 搜索上下文
   .search-context {
@@ -225,6 +245,7 @@
 
 // 提示警告
 .search-notice {
+  margin:0 0.8em;
   .fps-invalid {
     border-radius: 1.2em;
     border: unset !important;

@@ -4,15 +4,18 @@
   {{scroll-tracker name="full-page-search" tag=searchTerm class="hidden"}}
   
   <div class="search-header" role="search">
-    <h1 class="search-page-heading">
+    <h4 class="search-page-heading">
       {{#if hasResults}}
         <div class="result-count" id="search-result-count" aria-live="polite">
           {{html-safe resultCountLabel}}
         </div>
       {{else}}
-        {{i18n "search.full_page_title"}}
+      <div class="default-type">
+        {{!-- {{i18n "search.full_page_title"}} --}}
+        在主题/帖子中搜索
+      </div>
       {{/if}}
-    </h1>
+    </h4>
     <!-- 搜索框-->
     <div class="search-bar">
       {{search-text-field
@@ -44,6 +47,28 @@
         disabled=searchButtonDisabled
       }}
     </div>
+    <div class="search-extra">
+      {{#unless hasResults}}  
+        {{!-- 最近的搜索 --}}
+        {{#if currentUser}}
+          {{#if currentUser.recent_searches.length}}
+            <div class="ttl-recent-searches">
+              {{mount-widget widget="search-menu-recent-searches"}}
+            </div> 
+          {{/if}}
+        {{/if}}
+        {{!-- 搜索用户 --}}
+        <div class="search-user">
+          <a href="/u">
+            {{d-icon "share"}}
+            <span >
+              搜索用户
+            </span>
+          </a>
+        </div>       
+      {{/unless}}
+    </div>
+    
     {{#if usingDefaultSearchType}}
       {{!-- context is only provided when searching from mobile view --}}
       {{#if context}}
@@ -138,10 +163,6 @@
           </div>
         </div>
       {{/if}}
-    {{else}}
-    <div class="ttl-recent-searches">
-      {{mount-widget widget="search-menu-recent-searches"}}
-    </div>
     {{/if}}
 
     {{plugin-outlet name="full-page-search-below-search-info" tagName="span" connectorTagName="div" args=(hash search=searchTerm)}}
