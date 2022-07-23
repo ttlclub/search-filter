@@ -7,8 +7,8 @@ import { createPopper } from "@popperjs/core";
 // 重写原来的tag chooser组件，原来的tag chooser也是extend的多选下拉框且没有新方法，所以直接重写
 export default MultiSelectComponent.extend(TagsMixin, {
   //tagName: "",
-  pluginApiIdentifiers: ["tag-chooser"],
-  classNames: ["tag-chooser"],
+  pluginApiIdentifiers: ["ttl-tag-chooser"],
+  classNames: ["ttl-tag-chooser"],
   ttlTags: [
     {
       header: "分级",
@@ -144,7 +144,7 @@ export default MultiSelectComponent.extend(TagsMixin, {
     },
   },
 
-  @action
+@action
 setTagActive(tag, collection, event) {
   // setTagActive: 设置标签为选中状态
 
