@@ -227,6 +227,7 @@
     padding: 0.5em;
     border-radius: 1.5em;
     text-align: center;
+    
     .d-icon{
       color: var(--primary);
     }
@@ -310,6 +311,13 @@
     //max-width: calc(70% - 1.4em);
     border-bottom: 1px solid var(--primary-low);
     background: white;
+    .matching-title-only{
+      display: flex;
+      margin-bottom: 0.5em;
+      label {
+        margin-bottom: unset;
+      }
+    }
     .control-label {
       color: var(--primary-medium);
     }
@@ -903,6 +911,8 @@ footer.topic-list-bottom {
 }
 
 #topic-progress {
+  width: 20vw;
+    height: 10vw;
   position: fixed;
   bottom: 20%;
   right: 2em;
@@ -910,8 +920,10 @@ footer.topic-list-bottom {
   overflow: hidden;
   border: 2px solid var(--tertiary-low);
   background: white;
+  .nums {
+    top: 3vw;
+  }
 }
-
 
 
 // 头像框选择面板
