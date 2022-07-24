@@ -1,12 +1,12 @@
 ttl_tags_age:
   type: list
-  default: "大众向|少年|成年|成年↑"
+  default: "大众|少年|r18"
   description: 
     zh_CN: "预设置标签:分级"
     en: "A list of tags"
 ttl_tags_state:
   type: list
-  default: "连载中|短篇完结|长篇完结"
+  default: "连载|短篇完结|长篇完结"
   description: 
     zh_CN: "预设置标签：篇幅/状态"
     en: "A list of tags"
