@@ -124,7 +124,7 @@ export default Component.extend({
   modifiedRoute(isParent, defaultListFilter) {
     let categoryRoute = "discovery.category";
     if(isParent && (defaultListFilter === "none")) {
-      return categoryRoute.replceWith("discovery.categoryNone");
+      return "discovery.categoryNone";
     }
     return categoryRoute;
   },
