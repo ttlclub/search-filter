@@ -5,9 +5,16 @@
 {{topic-dismiss-buttons position="top" selectedTopics=selected
 model=model showResetNew=showResetNew showDismissRead=showDismissRead resetNew=(action "resetNew")}}
 <div class="topic-count">
+    {{#if (eq category.id 7)}}
     <span>
         已有{{category.topic_count}}篇产出
     </span>
+    {{/if}}
+    {{#if (eq category.id 1)}}
+    <span>
+        已有{{category.topic_count}}篇图
+    </span>
+    {{/if}}
 </div>
 
 {{#if model.sharedDrafts}}

@@ -39,6 +39,7 @@
 
             {{#if canEditTags}}
                 {{ttl-tag-chooser
+                category=model.categoryId
                 tags=buffered.tags
                 everyTag=true
                 onChange=(action "topicTagsChanged")
