@@ -561,8 +561,7 @@ $z-layers: (
     // display: -webkit-inline-box;
     // display: -moz-inline-box;
     padding: 0;
-   
-    font-size: var(--font-down-1);
+  
     white-space: nowrap; 
     overflow: hidden;
     // max-width: 30vw;
@@ -696,6 +695,9 @@ tr {
 #reply-control {
   border-top-left-radius: 8px;
   border-top-right-radius: 8px;
+  .d-editor-button-bar {
+    overflow: unset;
+}
 }
 
 .topic-body {
