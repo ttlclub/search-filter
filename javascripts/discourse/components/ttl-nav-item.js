@@ -36,6 +36,10 @@ export default Component.extend({
 
 
   didInsertElement() {
+    if(this.active) {
+      this.updateActiveNav();
+
+    }
     // const marker = document.querySelector('.ttl-nav-line');
     // this.updateActiveNav( () => {
     //     marker.style.visibility = "visible";
@@ -50,15 +54,16 @@ export default Component.extend({
     //     },
   @discourseComputed("active")
   getResult(active) {
-    // if (active) {
-    //   this.updateActiveNav();
-    //   return true;
-    // } else {
-    //   // return false;
-    // }
+    // this.updateActiveNav();
+    if (active) {
+      this.updateActiveNav();
+      return true;
+    } else {
+      // return false;
+    }
   },
 
- //  @discourseComputed("active", "category.color")
+  @discourseComputed("active", "category.color")
   updateActiveNav() {
     // debugger
     // console.log(this.active);
@@ -131,7 +136,7 @@ export default Component.extend({
 
     const routeParam = this.buildRouteParam;
     if (routeParam && currentRoute) {
-      const currentRouteParams = currentRoute.params["category_slug_path_with_id"];
+      const currentRouteParams = currentRoute.params["category_slug_path_with_id"] || currentRoute.params["category_slug_path_with_id"];
       return currentRouteParams === routeParam;
     }
     

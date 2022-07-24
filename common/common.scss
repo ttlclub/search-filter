@@ -471,60 +471,59 @@
 
 
 // 塔塔梨nav bar
-
-.ttl-nav-bar {
-  overflow: hidden;
-  display: flex;
-  justify-content: center;
-
-  .nav-pills::-webkit-scrollbar {
-    display: none;
-
-  }
-
-  .nav-pills {
-    position: relative;
-    white-space: nowrap;
-    overflow-x: auto;
-    overflow-y: hidden;
-    margin: 0.5em 0 1em 0;
-
-    li {
-      border: unset;
-
-      a {
-        color: var(--primary-high);
+.list-controls {
+  .ttl-nav-bar {
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+  
+    .nav-pills::-webkit-scrollbar {
+      display: none;
+  
+    }
+  
+    .nav-pills {
+      position: relative;
+      white-space: nowrap;
+      overflow-x: auto;
+      overflow-y: hidden;
+      margin: 0.5em 0 1em 0;
+  
+      li {
+        border: unset;
+  
+        a {
+          color: var(--primary-high);
+        }
       }
-    }
-
-
-    li a.active {
-      font-weight: bold;
-      color: var(--tertiary);
-      background-color: unset;
-    }
-
-    li a:hover {
-      color: var(--tertiary);
-      background-color: unset;
-    }
-
-    .ttl-nav-line {
-      position: absolute;
-      bottom: 0;
-      left: 0.5em;
-
-      height: 0.3em;
-      width: 1.5em;
-      border-radius: 0.2em;
-      // background-color: transparent;
-      transition: all .3s;
-      // visibility: hidden;
+  
+  
+      li a.active {
+        font-weight: bold;
+        color: var(--tertiary);
+        background-color: unset;
+      }
+  
+      li a:hover {
+        color: var(--tertiary);
+        background-color: unset;
+      }
+  
+      .ttl-nav-line {
+        position: absolute;
+        bottom: 0;
+        left: 0.5em;
+  
+        height: 0.3em;
+        width: 1.5em;
+        border-radius: 0.2em;
+        // background-color: transparent;
+        transition: all .5s;
+        // visibility: hidden;
+      }
     }
   }
 }
-
-
 
 
 // 创建topic按钮
