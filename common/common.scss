@@ -554,10 +554,14 @@ $z-layers: (
 .topic-list {
 
   .topic-author {
-    display: inline;
+    display: -webkit-inline-box;
+    display: -moz-inline-box;
     padding: 0;
     font-size: var(--font-down-1);
+    white-space: nowrap; 
     overflow: hidden;
+    max-width: 30vw;
+    text-overflow: ellipsis;
   }
 
   .topic-details {

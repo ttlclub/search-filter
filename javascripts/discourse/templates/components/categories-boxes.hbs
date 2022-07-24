@@ -1,7 +1,7 @@
 <div class="ttl-desktop-categories">
 {{#each this.categories as |c|}}
   <PluginOutlet @name="category-box-before-each-box" @args={{hash category=c}} />
-
+ <a  href={{c.url}}>
 <div class="ttl-desktop-category-item">
       {{#unless c.isMuted}}
         <div class="category-logo">
@@ -11,6 +11,7 @@
         </div>
       {{/unless}}
 </div>
+</a>
 
       <PluginOutlet @name="category-box-below-each-category" @args={{hash category=c}} />
 
