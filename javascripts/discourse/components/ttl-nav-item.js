@@ -39,9 +39,7 @@ export default Component.extend({
 
     // }
     const marker = document.querySelector('.ttl-nav-line');
-    this.updateActiveNav( () => {
-        marker.style.visibility = "visible";
-    });
+    this.updateActiveNav();
   },
   didRender() {
     // this.updateActiveNav();
@@ -103,7 +101,7 @@ export default Component.extend({
   //             // callback();
   //   }
   // },
-  updateActiveNav(callback) {
+  updateActiveNav() {
     const selectedItem = document.querySelector('.active');
     const scollLeft = document.querySelector('.nav-pills').scrollLeft;
     const fontSize = document.defaultView.getComputedStyle(document.body, '').fontSize;
@@ -119,7 +117,7 @@ export default Component.extend({
             marker.style.left = "".concat("calc(", leftPosition + halfRectWidth , "px", " - ", fontSize, ")");
             marker.style.backgroundColor = "".concat("#",categoryColor);
             categoryText.style.color = "".concat("#",categoryColor);
-            callback();
+            // callback();
         }
     }
   },
