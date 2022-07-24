@@ -110,7 +110,7 @@ export default Component.extend({
         const marker = document.querySelector('.ttl-nav-line');
         if(this.router.currentRoute.attributes) {
             const categoryColor = this.router.currentRoute.attributes.category.color;
-            const categoryText = document.querySelector(".ttl-nav-bar .nav-pills li.active a");
+            const categoryText = document.querySelector(".ttl-nav-bar .nav-pills li a.active");
     
             marker.style.left = "".concat("calc(", leftPosition + halfRectWidth , "px", " - ", fontSize, ")");
             marker.style.backgroundColor = "".concat("#",categoryColor);
