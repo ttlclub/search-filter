@@ -44,7 +44,7 @@ export default Component.extend({
     });
   },
   didRender() {
-    this.updateActiveNav();
+    // this.updateActiveNav();
 
   },
     
