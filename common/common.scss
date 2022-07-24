@@ -169,6 +169,11 @@
   // background: var(--primary-50);
   #main-outlet {
     padding-top: unset;
+    .container{
+      .about{
+        @include ttl-paddings
+      }
+    }
   }
 }
 
@@ -1887,6 +1892,9 @@ tbody.topic-list-body {
       -ms-user-select: none;
       user-select: none;
       pointer-events: none;
+    }
+    .meta{
+      display: none;
     }
   }
 }
