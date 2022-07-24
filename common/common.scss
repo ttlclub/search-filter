@@ -1209,6 +1209,16 @@ $flair-size: 5.5rem;
     }
   }
 }
+.subcategories{
+  .badge-wrapper {
+    &.bullet {
+      .badge-category-bg {
+        border-radius: unset;
+      }
+    }
+  }
+}
+
 
 // 帖子内容 帖子流
 .container.posts {
