@@ -87,7 +87,7 @@ export default MultiSelectComponent.extend(TagsMixin, {
     return this.cType === 1 ? false : true; 
   }),
   showAge1Tag: computed("cType", function() {
-    return （this.cType === 2 || this.cType === 3） ? true : false;
+    return (this.cType === 2 || this.cType === 3) ? true : false;
   }),
   showAge2Tag: computed("cType", "uType", function() {
     if(this.uType === 0) {
