@@ -1894,17 +1894,17 @@ tbody.topic-list-body {
   }
 }
 .user-main .about .user-profile-image .details .secondary dl {
-  padding-left: 2em;
-  padding-right: 2em;
-  border-bottom-right-radius: unset;
-  border-bottom-left-radius: unset;
-  display: flex;
-  white-space: nowrap;
-  flex-wrap: wrap;
+  padding-left: 2em !important;
+  padding-right: 2em !important;
+  border-bottom-right-radius: unset !important;
+  border-bottom-left-radius: unset !important;
+  display: flex !important;
+  white-space: nowrap !important;
+  flex-wrap: wrap !important;
   >div {
-    flex: 1 1 auto;
-    width: 35vw;
-    font-size: var(--font-down-1);
+    flex: 1 1 auto !important;
+    width: 35vw !important;
+    font-size: var(--font-down-1) !important;
   }
 }
 
