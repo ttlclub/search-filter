@@ -108,7 +108,7 @@ export default Component.extend({
         const leftPosition =
             selectedItem.getBoundingClientRect().left - selectedItem.parentNode.getBoundingClientRect().left + document.querySelector('.nav-pills').scrollLeft;
         const marker = document.querySelector('.ttl-nav-line');
-        if(this.router.currentRoute.attributes) {
+        if(this.router.currentRoute.attributes || this.router.currentRoute.params) {
             const categoryColor = this.router.currentRoute.attributes.category.color;
             const categoryText = document.querySelector(".ttl-nav-bar .nav-pills li a.active") || document.querySelector(".ttl-nav-bar .nav-pills li.active a");
     
