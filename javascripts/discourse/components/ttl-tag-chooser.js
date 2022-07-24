@@ -35,6 +35,7 @@ export default MultiSelectComponent.extend(TagsMixin, {
   ],
   ages:["大众", "少年", "r18"],
   states:["连载", "短篇完结", "长篇完结"],
+  freeTags: settings.ttl_tags_free.split("|"),
 
   selectKitOptions: {
     filterable: true,
