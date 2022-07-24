@@ -58,13 +58,6 @@
         </div>
       </div>
 
-      <div class="topic-author">
-        {{#if topic.posters.0.user.name}}
-          {{topic.posters.0.user.name}}
-        {{else}}
-          {{topic.posters.0.user.username}}
-        {{/if}}
-      </div>
       <div class="topic-details">
         {{raw "list/topic-excerpt" topic=topic}}
       </div>
@@ -77,6 +70,13 @@
           {{category-link topic.category}}
         </div>
         <div>
+          <div class="topic-author">
+            {{#if topic.posters.0.user.name}}
+              {{topic.posters.0.user.name}}
+            {{else}}
+              {{topic.posters.0.user.username}}
+            {{/if}}
+          </div>
           <div class="topic-views {{topic.viewsHeat}} inline sub">
             {{d-icon "far-eye"}}
             {{number topic.views numberKey="views_long"}}
@@ -119,7 +119,7 @@
         </div>
 
       </div>
-      </div>
+    </div>
 
   </td>
 {{/if}}

@@ -556,8 +556,8 @@ $z-layers: (
   .topic-author {
     padding: 0;
     font-size: var(--font-down-1);
-    // max-width: ;
-    // overflow: hidden;
+    max-width: 50px;
+    overflow: hidden;
   }
 
   .topic-details {
