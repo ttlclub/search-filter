@@ -64,19 +64,20 @@
       <div class="topic-tags">
         {{discourse-tags topic mode="list"}}
       </div>
-
-      <div class="ttl-topic-meta">
-        <div class="topic-category">
-          {{category-link topic.category}}
-        </div>
-        <div>
-          <div class="topic-author">
+<div class="topic-author">
             {{#if topic.posters.0.user.name}}
               {{topic.posters.0.user.name}}
             {{else}}
               {{topic.posters.0.user.username}}
             {{/if}}
           </div>
+
+      <div class="ttl-topic-meta">
+        <div class="topic-category">
+          {{category-link topic.category}}
+        </div>
+        <div>
+          
           <div class="topic-views {{topic.viewsHeat}} inline sub">
             {{d-icon "far-eye"}}
             {{number topic.views numberKey="views_long"}}

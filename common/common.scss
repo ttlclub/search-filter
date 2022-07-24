@@ -554,13 +554,13 @@ $z-layers: (
 .topic-list {
 
   .topic-author {
-    display: -webkit-inline-box;
-    display: -moz-inline-box;
+    // display: -webkit-inline-box;
+    // display: -moz-inline-box;
     padding: 0;
     font-size: var(--font-down-1);
     white-space: nowrap; 
     overflow: hidden;
-    max-width: 30vw;
+    // max-width: 30vw;
     text-overflow: ellipsis;
   }
 
@@ -647,7 +647,7 @@ tr {
 }
 
 .ttl-topic-meta {
-  margin-top: 5px;
+  margin-top: 0;
   display: flex;
   justify-content: space-between;
     align-items: center;
