@@ -315,6 +315,9 @@
     //max-width: calc(70% - 1.4em);
     border-bottom: 1px solid var(--primary-low);
     background: white;
+    .select-kit.multi-select {
+      background: unset !important;
+    }
 
     .matching-title-only {
       display: flex;
