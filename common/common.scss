@@ -583,11 +583,13 @@ $z-layers: (
     color: var(--primary-medium);
   }
 
-  .topic-author {
+  .topic-author,
+  .topic-author span {
     // display: -webkit-inline-box;
     // display: -moz-inline-box;
     padding: 0;
-    font-size: var(--font-down-1);
+    // font-size: var(--font-0);
+    color: var(--primary);
 
     white-space: nowrap;
     // overflow: hidden;
