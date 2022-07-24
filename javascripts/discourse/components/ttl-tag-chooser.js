@@ -71,12 +71,16 @@ export default MultiSelectComponent.extend(TagsMixin, {
         cType = 1;
       } 
       if(this.category === 12) {
-        // 2 子区
+        // 2 图区子区
         cType = 2;
       } 
       if(this.category === 13) {
         // 3 文区子区
         cType = 3;
+      } 
+      if(this.category === 6 {
+        // 4 图区
+        cType = 4;
       } 
 
     }
@@ -98,7 +102,7 @@ export default MultiSelectComponent.extend(TagsMixin, {
     }
   }),
   showAge3Tag: computed("cType", "uType", function() {
-    return this.uType === 2 ? false : true;
+    return (this.uType === 2 && (this.cType === 2 || this.cType === 3))? false : true;
   }),
 
   modifyComponentForRow() {
