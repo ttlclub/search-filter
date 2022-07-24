@@ -56,7 +56,22 @@
         {{/if}}
     {{else}}
         <!-- 预置的tag组 --> 
-        <div class="ttl-tag-panel">
+       <div class="ttl-tag-panel">
+          <div class="ttl-filter-item">
+              <div class="ttl-filter-item-header">分级：</div>
+              <button id="age1" disabled={{showAge1Tag}} label="大众" class={{if (ttl-is-active "大众" content) "btn btn-default active" "btn btn-default"}} {{on "click" (fn this.setTagActive "大众" this.ages)}}>大众</button>
+              <button id="age2" disabled={{showAge2Tag}} label="少年" class={{if (ttl-is-active "少年" content) "btn btn-default active" "btn btn-default"}} {{on "click" (fn this.setTagActive "少年" this.ages)}}>少年</button>
+              <button id="age3" disabled={{showAge3Tag}} label="r18" class={{if (ttl-is-active "r18" content) "btn btn-default active" "btn btn-default"}} {{on "click" (fn this.setTagActive "r18" this.ages)}}>r18</button>
+        </div>
+        <div id="states" class="ttl-filter-item">
+            <div class="ttl-filter-item-header">篇幅/状态：</div>
+              {{#each this.states as |state|}}
+                  <button disabled={{showStateTag}} label={{state}} class={{if (ttl-is-active state content) "btn btn-default active" "btn btn-default"}} {{on "click" (fn this.setTagActive state this.states)}}>{{state}}</button>
+              {{/each}}
+        </div>
+        <div>uType{{uType}}</div>
+        <div>cType{{cType}}</div>
+        {{!-- <div class="ttl-tag-panel">
             {{#each ttlTags as |ttlTags|}}
                 <div class="ttl-filter-item">
                     <div class="ttl-filter-item-header">{{concat ttlTags.header "："}}</div>
@@ -65,7 +80,8 @@
                     {{/each}}
                 </div>
             {{/each}}
-        </div>
+        </div> --}}
+      </div>
               
     <!-- reset 确认 按钮组 -->  
     {{/if}}

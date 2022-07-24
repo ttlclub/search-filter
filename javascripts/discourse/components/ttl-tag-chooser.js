@@ -3,6 +3,7 @@ import TagsMixin from "select-kit/mixins/tags";
 import { action, computed } from "@ember/object";
 import { makeArray } from "discourse-common/lib/helpers";
 import { createPopper } from "@popperjs/core";
+import discourseComputed from "discourse-common/utils/decorators";
 
 // 重写原来的tag chooser组件，原来的tag chooser也是extend的多选下拉框且没有新方法，所以直接重写
 export default MultiSelectComponent.extend(TagsMixin, {
@@ -15,20 +16,25 @@ export default MultiSelectComponent.extend(TagsMixin, {
       body: settings.ttl_tags_age.split("|"),
       active: false,
       isSingleSelect: true,
+      disable: true,
     },
     {
       header: "篇幅/状态",
       body: settings.ttl_tags_state.split("|"),
       active: false,
       isSingleSelect: true,
+      disable: true,
     },
     {
       header: "标签",
       body: settings.ttl_tags_free.split("|"),
       active: false,
       isSingleSelect: false,
+      disable: true,
     },
   ],
+  ages:["大众", "少年", "r18"],
+  states:["连载", "短篇完结", "长篇完结"],
 
   selectKitOptions: {
     filterable: true,
@@ -38,25 +44,57 @@ export default MultiSelectComponent.extend(TagsMixin, {
     allowAny: "canCreateTag",
     maximum: "maximumTagCount",
   },
-
-  // wj:currentUserIdentity
-  disabledTag() {
-    // const disabledtags=[[]];
-    let currentUserType = 0;
-    const u = Discourse.User.current();
+  uType: computed("currentUser", function() {
+    // 0 游客
+    let uType = 0;
+    const u = this.currentUser;
     if (u) {
-      currentUserType = 1;
+      // 1 注册用户
+      uType = 1;
       const uGroups = u.groups;
       const inR18Group = uGroups.find((value) => {
         const r18Id = 52;
         return value["id"] === r18Id ? true : false;
       });
       if (inR18Group)
-        currentUserType = 2;
+      // 2 r18用户
+        uType = 2;
     }
-    console.log(currentUserType);
-    console.log('test');
-  },
+    return uType;
+  }),
+  cType: computed("category", function(){
+    // 0 普通区or无
+    let cType = 0;
+    if(this.category) { 
+      if(this.category === 5) {
+        // 1 文区
+        cType = 1;
+      } 
+      if(this.category === 12 || this.category === 13) {
+        // 2 子区
+        cType = 2;
+      } 
+    }
+    return cType;
+  }),
+
+  showStateTag: computed("cType", function(){
+    return this.cType === 1 ? false : true; 
+  }),
+  showAge1Tag: computed("cType", function() {
+    return this.cType === 2 ? true : false;
+  }),
+  showAge2Tag: computed("cType", "uType", function() {
+    if(this.uType === 0) {
+      return true;
+    } 
+    if(this.cType === 2) {
+      return true;
+    }
+  }),
+  showAge3Tag: computed("cType", "uType", function() {
+    return this.uType === 2 ? false : true;
+  }),
 
   modifyComponentForRow() {
     return "tag-chooser-row";
@@ -101,9 +139,10 @@ export default MultiSelectComponent.extend(TagsMixin, {
     // 页面渲染完成后create popper
 
     this.createPopper();
-
     // wj:check currentuser
-    this.disabledTag()
+  },
+
+  didRender() {
 
   },
   // // wj:rewrite toggle fun open card-cloak (fun from discourse/app/assets/javascripts/select-kit/addon/components/select-kit.js 891)
@@ -144,58 +183,100 @@ export default MultiSelectComponent.extend(TagsMixin, {
     },
   },
 
-@action
-setTagActive(tag, collection, event) {
-  // setTagActive: 设置标签为选中状态
 
-  if (this.isActive(tag, this.content)) {
-    // 已选中
-    event.target.classList.toggle("active");
-    this.selectKit.deselect({ id: tag, name: tag });
-  } else {
-    // 未选中
-    if (collection.isSingleSelect) {
-      // 单选
-      if (
-        collection.body.some((element) =>
-          this.isActive(element, this.content)
-        )
-      ) {
-        // 该组已有其他tag被选中
-        const selected_tag = collection.body.find((element) =>
-          this.isActive(element, this.content)
-        );
+  @action
+  setTagActive(tag, collection, event) {
+    // setTagActive: 设置标签为选中状态
+    if (this.isActive(tag, this.content)) {
+      // 已选中
+      event.target.classList.toggle("active");
+      this.selectKit.deselect({ id: tag, name: tag });
+    } else {
+      // 未选中
+      if (collection.isSingleSelect) {
+        // 单选
+        if (
+          collection.body.some((element) =>
+            this.isActive(element, this.content)
+          )
+        ) {
+          // 该组已有其他tag被选中
+          const selected_tag = collection.body.find((element) =>
+            this.isActive(element, this.content)
+          );
 
-        this.selectKit.deselect({ id: selected_tag, name: selected_tag });
-        event.target.parentNode.classList.remove("active");
+          this.selectKit.deselect({ id: selected_tag, name: selected_tag });
+          event.target.parentNode.classList.remove("active");
 
-        this.selectKit.select(tag, { id: tag, name: tag });
-        event.target.classList.add("active");
+          this.selectKit.select(tag, { id: tag, name: tag });
+          event.target.classList.add("active");
+        } else {
+          // 该组未有其他tag被选中
+          event.target.classList.toggle("active");
+          this.selectKit.select(tag, { id: tag, name: tag });
+        }
       } else {
-        // 该组未有其他tag被选中
+        // 非单选
         event.target.classList.toggle("active");
         this.selectKit.select(tag, { id: tag, name: tag });
       }
-    } else {
-      // 非单选
-      event.target.classList.toggle("active");
-      this.selectKit.select(tag, { id: tag, name: tag });
     }
-  }
-},
+  },
 
-isActive(tag, content) {
-  // isActive: 判断标签是否选中
-  if (content) {
-    if (content.findBy("id", tag)) {
-      return true;
+  disableTag(tag) {
+    let age1 = document.querySelector(tag);
+    age1.disabled = true;
+    console.log("disabled");
+  },
+
+  isActive(tag, content) {
+    // isActive: 判断标签是否选中
+    if (content) {
+      if (content.findBy("id", tag)) {
+        return true;
+      } else {
+        return false;
+      }
     } else {
       return false;
     }
-  } else {
-    return false;
-  }
-},
+  },
+
+  // wj:currentUserIdentity
+  @discourseComputed("category","currentUser")
+  disabledTags(category, currentUser) {
+    // const disabledtags=[[]];
+    // 0 游客
+    let uType = 0;
+    const u = currentUser;
+    if (u) {
+      // 1 注册用户
+      uType = 1;
+      const uGroups = u.groups;
+      const inR18Group = uGroups.find((value) => {
+        const r18Id = 52;
+        return value["id"] === r18Id ? true : false;
+      });
+      if (inR18Group)
+      // 2 r18用户
+        uType = 2;
+    }
+    // 0 普通区or无
+    let cType = 0;
+    if(this.category) { 
+      if(this.category == 5) {
+        // 1 文区
+        cType = 1;
+      } 
+      if(this.category == 12 || this.category == 13) {
+        cType = 2;
+      } 
+    }
+
+    if(cType !== 1) {
+      disableTag("#states button");
+    }
+  },
 
 createPopper() {
   // createPopper: 重写selct kit的popper

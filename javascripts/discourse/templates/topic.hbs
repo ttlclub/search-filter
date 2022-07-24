@@ -40,6 +40,7 @@
             {{#if canEditTags}}
                 {{ttl-tag-chooser
                 tags=buffered.tags
+                everyTag=true
                 onChange=(action "topicTagsChanged")
                 options=(hash
                     filterable=true
