@@ -1906,7 +1906,7 @@ tbody.topic-list-body {
       -moz-user-select: none;
       -ms-user-select: none;
       user-select: none;
-      pointer-events: none;
+      // pointer-events: none;
     }
     .meta{
       display: none;
@@ -1933,11 +1933,11 @@ span.second.username::before {
 }
 
 .cooked .lightbox img:not(.thumbnail):not(.ytp-thumbnail-image):not(.emoji) {
-  max-width: 82vw !important;
+  // max-width: 82vw !important;
 }
 
 a.lightbox {
-  pointer-events: none;
+  // pointer-events: none;
 }
 
 .navigation-controls {}
