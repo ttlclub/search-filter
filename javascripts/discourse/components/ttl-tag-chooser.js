@@ -66,7 +66,7 @@ export default MultiSelectComponent.extend(TagsMixin, {
     // 0 普通区or无
     let cType = 0;
     if(this.category) { 
-      if(this.category === 5) {
+      if(this.category === 7) {
         // 1 文区
         cType = 1;
       } 
