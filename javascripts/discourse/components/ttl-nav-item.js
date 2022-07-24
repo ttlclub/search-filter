@@ -120,10 +120,10 @@ export default Component.extend({
     }
   },
 
-  @discourseComputed("category.isParent", "category.default_list_filter")
-  modifiedRoute(isParent, defaultListFilter) {
+  @discourseComputed("category.id")
+  modifiedRoute(id) {
     let categoryRoute = "discovery.category";
-    if(isParent && (defaultListFilter === "none")) {
+    if(id === 7 || id === 6) {
       return "discovery.categoryNone";
     }
     return categoryRoute;
