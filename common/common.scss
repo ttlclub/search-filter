@@ -578,10 +578,10 @@ $z-layers: (
     font-size: var(--font-down-1);
 
     white-space: nowrap;
-    overflow: hidden;
-    max-width: 10vw;
+    // overflow: hidden;
+    // max-width: 10vw;
     // max-width: 30vw;
-    text-overflow: ellipsis;
+    // text-overflow: ellipsis;
   }
 
   .topic-details {
@@ -628,6 +628,7 @@ $z-layers: (
   }
 
   .discourse-tags {
+font-size: var(--font-down-1);
     float: initial;
     clear: initial;
     margin-right: 30px;
