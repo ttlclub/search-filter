@@ -69,7 +69,7 @@
                     <button disabled={{showStateTag}} label={{state}} class={{if (ttl-is-active state content) "btn btn-default active" "btn btn-default"}} {{on "click" (fn this.setTagActive state this.states)}}>{{state}}</button>
                 {{/each}}
           </div>
-          <div class="ttl-filter-item">
+          <div id="free" class="ttl-filter-item">
             <div class="ttl-filter-item-header">类型：</div>
                 {{#each freeTags as |tag|}}
                     <button label={{tag}} class={{if (ttl-is-active tag content) "btn btn-default active" "btn btn-default"}} {{on "click" (fn this.setTagActive tag this.freeTags)}}>{{tag}}</button>
