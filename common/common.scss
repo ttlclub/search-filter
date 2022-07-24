@@ -1882,6 +1882,15 @@ tbody.topic-list-body {
   margin-left: 2em !important;
   margin-right: 2em !important;
 }
+.my-user-page .user-primary-navigation .mobile-nav {
+  line-height: 3.5em !important;
+  margin: 1em !important;
+  margin-left: 3em !important;
+  margin-right: 3em !important;
+  li {
+    border-bottom: solid var(--primary-300) 0.1px;
+  }
+}
 
 #main-outlet-wrapper #main-outlet .container .about {
   padding: unset;
