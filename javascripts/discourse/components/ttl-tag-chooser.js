@@ -70,13 +70,13 @@ export default MultiSelectComponent.extend(TagsMixin, {
         // 1 文区
         cType = 1;
       } 
-      if(this.category === 12 ) {
+      if(this.category === 12) {
         // 2 子区
         cType = 2;
       } 
       if(this.category === 13) {
         // 3 文区子区
-        cType = 2;
+        cType = 3;
       } 
 
     }
