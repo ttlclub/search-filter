@@ -15,6 +15,11 @@
 
   {{#if model.postStream.loaded}}
     {{#if model.postStream.firstPostPresent}}
+      {{#unless model.postStream.loadingFilter}}
+        {{#if loadedAllPosts}}
+          {{ttl-topic-owner-header topic=model}}
+        {{/if}}
+      {{/unless}}
       {{!-- 帖子标题 --}}
       {{#topic-title cancelled=(action "cancelEditingTopic") save=(action "finishedEditingTopic") model=model}}
         {{!-- 编辑标题 --}}
@@ -199,6 +204,7 @@
 
           <div class="posts-wrapper">
             {{conditional-loading-spinner condition=model.postStream.loadingAbove}}
+            
 
             {{plugin-outlet name="topic-above-posts" tagName="span" connectorTagName="div" args=(hash model=model)}}
 
