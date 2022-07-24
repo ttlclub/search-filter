@@ -43,6 +43,10 @@ export default Component.extend({
         marker.style.visibility = "visible";
     });
   },
+  didRender() {
+    this.updateActiveNav();
+
+  },
     
     //    categoryAndTagUrl: function() {
     //        let selectedCategory = Category.findById(parseInt(this.categoryId, 10));
