@@ -197,15 +197,15 @@ export default MultiSelectComponent.extend(TagsMixin, {
       this.selectKit.deselect({ id: tag, name: tag });
     } else {
       // 未选中
-      if (collection.isSingleSelect) {
+      if (collection === this.ages || collection === this.states) {
         // 单选
         if (
-          collection.body.some((element) =>
+          collection.some((element) =>
             this.isActive(element, this.content)
           )
         ) {
           // 该组已有其他tag被选中
-          const selected_tag = collection.body.find((element) =>
+          const selected_tag = collection.find((element) =>
             this.isActive(element, this.content)
           );
 
