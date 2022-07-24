@@ -550,12 +550,12 @@ $z-layers: (
 .list-controls {
   .container {
     #create-topic {
-      opacity: 0.7;
+      opacity: 0.8;
       position: fixed;
       bottom: 5em;
       right: 1.5em;
-      width: 3em;
-      height: 3em;
+      width: 4em;
+      height: 4em;
       border-radius: 50%;
       z-index: z("create-topic-button");
 
@@ -567,8 +567,8 @@ $z-layers: (
         }
 
         .svg-icon {
-          width: 1.5em;
-          height: 1.5em;
+          width: 2em;
+          height: 2em;
         }
       }
     }
