@@ -1909,6 +1909,16 @@ tbody.topic-list-body {
   height: 3em;
   margin-bottom: 0.2em;
 }
+.my-return-btn {
+  width: 4em;
+  height: 4em;
+  border-radius: 50%;
+  opacity: 0.8;
+  .svg-icon, .svg-icon-title {
+    height: 1.5em;
+    width: 1.5em;
+  }
+}
 
 //  用户卡
 
