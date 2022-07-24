@@ -1893,6 +1893,20 @@ tbody.topic-list-body {
     border-bottom: solid var(--primary-300) 0.1px;
   }
 }
+.user-main .about .user-profile-image .secondary dl {
+  padding-left: 2em;
+  padding-right: 2em;
+  border-bottom-right-radius: unset;
+  border-bottom-left-radius: unset;
+  display: flex;
+  white-space: nowrap;
+  flex-wrap: wrap;
+  >div {
+    flex: 1 1 auto;
+    width: 35vw;
+    font-size: var(--font-down-1);
+  }
+}
 
 #main-outlet-wrapper #main-outlet .container .about {
   padding: unset;
