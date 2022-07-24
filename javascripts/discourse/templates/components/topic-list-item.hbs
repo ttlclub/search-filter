@@ -62,9 +62,11 @@
         {{raw "list/topic-excerpt" topic=topic}}
       </div>
       <div class="topic-tags">
+      <span class="ttl-topic-label">标签：</span>
         {{discourse-tags topic mode="list"}}
       </div>
 <div class="topic-author">
+<span class="ttl-topic-label">作者：</span>
             {{#if topic.posters.0.user.name}}
               {{topic.posters.0.user.name}}
             {{else}}
