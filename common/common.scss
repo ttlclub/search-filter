@@ -552,11 +552,16 @@ $z-layers: (
 // wjchange 
 
 .topic-list {
+  .ttl-topic-label{
+  font-size: var(--font-down-1);
+     color: var(--primary-medium);
+  }
 
   .topic-author {
     // display: -webkit-inline-box;
     // display: -moz-inline-box;
     padding: 0;
+   
     font-size: var(--font-down-1);
     white-space: nowrap; 
     overflow: hidden;
