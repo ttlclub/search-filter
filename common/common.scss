@@ -967,8 +967,7 @@ footer.topic-list-bottom {
 }
 
 #topic-progress {
-  width: 20vw;
-  height: 10vw;
+  width: 25vw;
   position: fixed;
   bottom: 20%;
   right: 2em;
@@ -978,7 +977,6 @@ footer.topic-list-bottom {
   background: white;
 
   .nums {
-    top: 3vw;
   }
 }
 
@@ -1967,7 +1965,9 @@ tbody.topic-list-body {
 .user-card .card-content h2.username {
   color: var(--primary-medium);
 }
-
+.user-card .first-row .new-user a {
+  color: var(--primary);
+}
 
 // wj:add img unchooseable
 .lightbox-wrapper {
