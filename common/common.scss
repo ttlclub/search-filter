@@ -174,10 +174,9 @@
   // background: var(--primary-50);
   #main-outlet {
     padding-top: unset;
-    .container{
-      .about{
-        @include ttl-paddings
-      }
+
+    .container {
+      @include ttl-paddings
     }
   }
 }
@@ -325,6 +324,7 @@
     //max-width: calc(70% - 1.4em);
     border-bottom: 1px solid var(--primary-low);
     background: white;
+
     .select-kit.multi-select {
       background: unset !important;
     }
@@ -489,44 +489,44 @@
     overflow: hidden;
     display: flex;
     justify-content: center;
-  
+
     .nav-pills::-webkit-scrollbar {
       display: none;
-  
+
     }
-  
+
     .nav-pills {
       position: relative;
       white-space: nowrap;
       overflow-x: auto;
       overflow-y: hidden;
       margin: 0.5em 0 1em 0;
-  
+
       li {
         border: unset;
-  
+
         a {
           color: var(--primary-high);
         }
       }
-  
-  
+
+
       li a.active {
         font-weight: bold;
         color: var(--tertiary);
         background-color: unset;
       }
-  
+
       li a:hover {
         color: var(--tertiary);
         background-color: unset;
       }
-  
+
       .ttl-nav-line {
         position: absolute;
         bottom: 0;
         left: 0.5em;
-  
+
         height: 0.3em;
         width: 1.5em;
         border-radius: 0.2em;
@@ -642,12 +642,13 @@ $z-layers: (
   }
 
   .discourse-tags {
-font-size: var(--font-down-1);
+    font-size: var(--font-down-1);
     float: initial;
     clear: initial;
     margin-right: 30px;
     flex-wrap: wrap;
   }
+
 }
 
 .topic-header-grid {
@@ -681,12 +682,18 @@ tr {
   border-bottom: none;
 }
 
-.ttl-topic-meta {
-  margin-top: 0;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  align-content: center;
+.ttl-topic-list-item {
+  .ttl-topic-meta {
+    margin-top: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    align-content: center;
+
+    .topic-category {
+      margin-top: 0;
+    }
+  }
 }
 
 // del unused component
@@ -1216,7 +1223,8 @@ $flair-size: 5.5rem;
     }
   }
 }
-.subcategories{
+
+.subcategories {
   .badge-wrapper {
     &.bullet {
       .badge-category-bg {
@@ -1610,7 +1618,7 @@ aside.onebox {
 /* display nsfw blur and overlay text on any media in #nswf topics */
 .tag-r18 {
 
-  .topic-body .cooked img,
+  .topic-body .cooked img :not(.emoji),
   .topic-body .cooked iframe,
   .topic-body .cooked .lazyYT-container,
   .topic-thumbnail img {
@@ -1873,10 +1881,12 @@ tbody.topic-list-body {
 
   }
 }
+
 .user-additional-controls {
   margin: 0.5em 1.5em 0em 1.5em;
-  
+
 }
+
 // 主页
 .my-user-page .user-secondary-navigation .mobile-nav {
   line-height: 2em !important;
@@ -1884,16 +1894,19 @@ tbody.topic-list-body {
   margin-left: 2em !important;
   margin-right: 2em !important;
 }
+
 .my-user-page .user-primary-navigation .mobile-nav {
   line-height: 3.5em !important;
   margin: 1em !important;
   margin-left: 3em !important;
   margin-right: 3em !important;
+
   li {
     border-bottom: solid var(--primary-300) 0.1px;
   }
 }
-.my-user-page .user-main .about .secondary dl{
+
+.my-user-page .user-main .about .secondary dl {
   padding-left: 2em !important;
   padding-right: 2em !important;
   border-bottom-right-radius: unset !important;
@@ -1901,6 +1914,7 @@ tbody.topic-list-body {
   display: flex !important;
   white-space: nowrap !important;
   flex-wrap: wrap !important;
+
   >div {
     flex: 1 1 auto !important;
     width: 35vw !important;
@@ -1934,12 +1948,15 @@ tbody.topic-list-body {
   height: 3em;
   margin-bottom: 0.2em;
 }
+
 .my-return-btn {
   width: 4em;
   height: 4em;
   border-radius: 50%;
   opacity: 0.8;
-  .svg-icon, .svg-icon-title {
+
+  .svg-icon,
+  .svg-icon-title {
     height: 1.5em;
     width: 1.5em;
   }
@@ -1962,7 +1979,8 @@ tbody.topic-list-body {
       user-select: none;
       // pointer-events: none;
     }
-    .meta{
+
+    .meta {
       display: none;
     }
   }
@@ -2005,6 +2023,15 @@ a.lightbox {
   margin-right: 1em;
 }
 
-.posts-filtered-notice{
-  margin:unset;
+.posts-filtered-notice {
+  margin: unset;
+}
+
+.like-color-style {
+  color: var(--love);
+}
+
+// line-height up up
+.cooked p {
+  line-height: var(--font-up-4);
 }
