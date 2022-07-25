@@ -174,9 +174,14 @@
   // background: var(--primary-50);
   #main-outlet {
     padding-top: unset;
-
-    .container {
-      @include ttl-paddings
+  }
+}
+.staff{
+  #main-outlet-wrapper {
+    #main-outlet {
+      .container {
+        @include ttl-paddings
+      }
     }
   }
 }
