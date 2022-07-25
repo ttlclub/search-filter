@@ -1948,7 +1948,9 @@ tbody.topic-list-body {
 .user-card .card-content h2.username {
   color: var(--primary-medium);
 }
-
+.user-card .first-row .new-user a {
+  color: var(--primary);
+}
 
 // wj:add img unchooseable
 .lightbox-wrapper {
