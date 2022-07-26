@@ -1750,6 +1750,9 @@ aside.onebox {
 
 // 调整图区item样式,可删
 .tiles-style {
+  .topic-title a.title {
+    font-size: var(--font-down-1) !important;
+  }
   .tiles-grid-item:hover {
     background-color: unset !important;
   }
