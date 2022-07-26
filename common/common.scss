@@ -1768,7 +1768,7 @@ aside.onebox {
           align-items: center;
         }
         span {
-          font-size: var(--font-down-1);
+          font-size: var(--font-down-1) !important;
         }
       }
       margin-top: 0.2em;
