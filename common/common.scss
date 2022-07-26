@@ -1764,6 +1764,8 @@ aside.onebox {
     font-size: var(--font-down-1);
     .topic-meta{
       display: flex;
+      margin-top: 0.2em;
+      align-items: flex-start;
       .topic-views {
         margin-right: 0.5em;
       }
@@ -1783,8 +1785,6 @@ aside.onebox {
         }
         
       }
-      margin-top: 0.2em;
-      align-items: center;
     }
   }
 
