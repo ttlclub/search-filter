@@ -689,12 +689,21 @@ tr {
 }
 
 .ttl-topic-list-item {
+  >div{
+    margin-top: 0.2em;
+  }
   .ttl-topic-meta {
     margin-top: 0;
     display: flex;
     justify-content: space-between;
     align-items: center;
     align-content: center;
+    span.number {
+      padding-left: 0.2em;
+    }
+    .inline {
+      margin-left: 0.1em;
+    }
 
     .topic-category {
       margin-top: 0;
@@ -2009,7 +2018,7 @@ span.second.username::before {
 
 .mobile-view .topic-list .ttl-topic-list-item .topic-details {
   min-height: unset;
-  padding-left: 5px;
+  padding-left: 0;
 }
 
 .cooked .lightbox img:not(.thumbnail):not(.ytp-thumbnail-image):not(.emoji) {
