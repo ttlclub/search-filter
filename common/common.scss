@@ -1771,8 +1771,10 @@ aside.onebox {
           display: flex;
           align-items: center;
         }
-        span,a{
-          font-size: var(--font-down-1) !important;
+        &.topic-tags{
+          span,a{
+            font-size: var(--font-down-1) !important;
+          }
         }
         &.topic-views{
           span,a {
