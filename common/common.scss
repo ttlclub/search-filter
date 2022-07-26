@@ -1774,6 +1774,11 @@ aside.onebox {
         span,a{
           font-size: var(--font-down-1) !important;
         }
+        &.topic-views{
+          span,div {
+            font-size: var(--font-0) !important;
+          }
+        }
       }
       margin-top: 0.2em;
       align-items: center;
