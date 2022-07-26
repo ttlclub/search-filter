@@ -1214,7 +1214,6 @@ $flair-size: 5.5rem;
   }
   
   .topic-category {
-    margin-top: 0;
     align-items: flex-start;
     flex-direction: column-reverse;
     padding-left: 0.8em;
@@ -1776,7 +1775,9 @@ aside.onebox {
 
   .topic-header-grid {
     display: flex;
-    align-items: center;
+    .topic-category {
+      margin-top: 0;
+    }
   }
 }
 
