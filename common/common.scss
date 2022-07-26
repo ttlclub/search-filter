@@ -1350,8 +1350,7 @@ $flair-size: 5.5rem;
 
                 // 主楼 分享按钮, 举报按钮, 书签按钮不显示
                 .share,
-                .create-flag,
-                .bookmark {
+                .create-flag {
                   display: none;
                 }
               }
