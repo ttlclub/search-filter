@@ -1621,7 +1621,7 @@ aside.onebox {
 /* display nsfw blur and overlay text on any media in #nswf topics */
 .tag-r18 {
 
-  .topic-body .cooked img :not(.emoji),
+  .topic-body .cooked img:not(.emoji),
   .topic-body .cooked iframe,
   .topic-body .cooked .lazyYT-container,
   .topic-thumbnail img {
