@@ -347,7 +347,7 @@
       </div>
 
     </div>
-    {{#if loadedAllPosts}}
+    {{!-- {{#if loadedAllPosts}} --}}
       {{#if session.showSignupCta}}
         {{! replace "Log In to Reply" with the infobox }}
         {{signup-cta}}
@@ -384,14 +384,16 @@
 
       {{plugin-outlet name="topic-above-suggested" tagName="span" connectorTagName="div" args=(hash model=model)}}
       <div class="{{if model.relatedMessages.length "related-messages-wrapper"}} {{if model.suggestedTopics.length "suggested-topics-wrapper"}}">
+        {{!-- 关联信息 --}}
         {{#if model.relatedMessages.length}}
           {{related-messages topic=model}}
         {{/if}}
+        {{!-- 建议的话题 --}}
         {{#if model.suggestedTopics.length}}
           {{suggested-topics topic=model}}
         {{/if}}
       </div>
-    {{/if}}
+    {{!-- {{/if}} --}}
   {{else}}
     <div class="container">
       {{#conditional-loading-spinner condition=noErrorYet}}
