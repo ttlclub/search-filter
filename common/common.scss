@@ -1759,10 +1759,22 @@ aside.onebox {
 
   .topic-details {
     font-size: var(--font-down-1);
+    .topic-meta{
+      .inline {
+        margin-left: 0.3em;
+        a {
+          display: flex;
+          align-items: center;
+        }
+      }
+      margin-top: 0.2em;
+      align-items: center;
+    }
   }
 
   .topic-header-grid {
     display: flex;
+    align-items: center;
   }
 }
 
