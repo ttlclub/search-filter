@@ -707,7 +707,7 @@ tr {
 
     .topic-category {
       margin-top: 0;
-      .badge-category-bg {
+      .badge-category-parent-bg+.badge-category-bg {
         border-radius: unset;
       }
     }
