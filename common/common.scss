@@ -1767,6 +1767,9 @@ aside.onebox {
           display: flex;
           align-items: center;
         }
+        span {
+          font-size: var(--font-down-1);
+        }
       }
       margin-top: 0.2em;
       align-items: center;
