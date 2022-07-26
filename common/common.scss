@@ -1214,6 +1214,7 @@ $flair-size: 5.5rem;
   }
   
   .topic-category {
+    margin-top: 0;
     align-items: flex-start;
     flex-direction: column-reverse;
     padding-left: 0.8em;
@@ -1762,7 +1763,7 @@ aside.onebox {
     .topic-meta{
       display: flex;
       .inline {
-        margin-left: 0.3em;
+        // margin-left: 0.3em;
         a {
           display: flex;
           align-items: center;
