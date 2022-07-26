@@ -550,6 +550,7 @@ $z-layers: (
   "create-topic-button": 1000,
   "topic-footer-panel": 350,
   "topic-progress": 351,
+  "edit-topic-title":352,
 );
 
 .list-controls {
@@ -1199,6 +1200,10 @@ $flair-size: 5.5rem;
   background: white;
   margin-top: 0.5em;
 
+  .edit-topic-title{
+    z-index: z("edit-topic-title");
+  }
+  
   .topic-category {
     align-items: flex-start;
     flex-direction: column-reverse;
