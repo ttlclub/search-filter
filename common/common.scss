@@ -1760,6 +1760,7 @@ aside.onebox {
   .topic-details {
     font-size: var(--font-down-1);
     .topic-meta{
+      display: flex;
       .inline {
         margin-left: 0.3em;
         a {
