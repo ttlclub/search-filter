@@ -1762,12 +1762,13 @@ aside.onebox {
     .topic-meta{
       display: flex;
       .inline {
+        font-size: var(--font-down-1) !important;
         // margin-left: 0.3em;
         a {
           display: flex;
           align-items: center;
         }
-        div,span,a{
+        span,a{
           font-size: var(--font-down-1) !important;
         }
       }
