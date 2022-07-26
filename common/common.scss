@@ -707,6 +707,9 @@ tr {
 
     .topic-category {
       margin-top: 0;
+      .badge-category-bg {
+        border-radius: unset;
+      }
     }
   }
 }
