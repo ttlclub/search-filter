@@ -1764,6 +1764,9 @@ aside.onebox {
     font-size: var(--font-down-1);
     .topic-meta{
       display: flex;
+      .topic-views {
+        margin-right: 0.5em;
+      }
       .inline {
         font-size: var(--font-down-1) !important;
         // margin-left: 0.3em;
@@ -1773,6 +1776,10 @@ aside.onebox {
         }
         span,a {
           font-size: var(--font-0) !important;
+        }
+        .svg-icon{
+          height: 1.3em;
+          width: 1.3em;
         }
         
       }
