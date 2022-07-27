@@ -707,9 +707,6 @@ tr {
 
     .topic-category {
       margin-top: 0;
-      .badge-category-parent-bg+.badge-category-bg {
-        border-radius: unset;
-      }
     }
   }
 }
@@ -993,9 +990,6 @@ footer.topic-list-bottom {
   overflow: hidden;
   border: 2px solid var(--tertiary-low);
   background: white;
-
-  .nums {
-  }
 }
 
 
@@ -1240,6 +1234,9 @@ $flair-size: 5.5rem;
   &.bullet {
     .badge-category-bg {
       border-radius: 50%;
+    }
+    .badge-category-parent-bg+.badge-category-bg {
+      border-radius: unset;
     }
   }
 }
