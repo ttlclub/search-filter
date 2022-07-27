@@ -104,11 +104,12 @@ export default Component.extend({
   updateActiveNav() {
     const selectedItem = document.querySelector('.active');
     const scollLeft = document.querySelector('.nav-pills').scrollLeft;
+    const navLeft = document.querySelector('.nav-pills').etBoundingClientRect().left;
     const fontSize = document.defaultView.getComputedStyle(document.body, '').fontSize;
     if(selectedItem) {
         const halfRectWidth = selectedItem.getBoundingClientRect().width / 2;
         const leftPosition =
-            selectedItem.getBoundingClientRect().left - selectedItem.parentNode.getBoundingClientRect().left + document.querySelector('.nav-pills').scrollLeft;
+            selectedItem.getBoundingClientRect().left - navLeft + document.querySelector('.nav-pills').scrollLeft;
         const marker = document.querySelector('.ttl-nav-line');
         if(this.router.currentRoute.attributes || this.router.currentRoute.params) {
             const categoryColor = this.router.currentRoute.attributes.category.color;
