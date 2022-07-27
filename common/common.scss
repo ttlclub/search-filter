@@ -693,18 +693,21 @@ tr {
 }
 
 .ttl-topic-list-item {
-  >div{
+  >div {
     margin-top: 0.2em;
   }
+
   .ttl-topic-meta {
     margin-top: 0;
     display: flex;
     justify-content: space-between;
     align-items: center;
     align-content: center;
+
     span.number {
       padding-left: 0.2em;
     }
+
     .inline {
       margin-left: 0.1em;
     }
@@ -1241,6 +1244,7 @@ $flair-size: 5.5rem;
     .badge-category-bg {
       border-radius: 50%;
     }
+
     .badge-category-parent-bg+.badge-category-bg {
       border-radius: unset;
     }
@@ -1761,40 +1765,49 @@ aside.onebox {
   .topic-title a.title {
     font-size: var(--font-down-1) !important;
   }
+
   .tiles-grid-item:hover {
     background-color: unset !important;
   }
 
   .topic-details {
     font-size: var(--font-down-1);
-    .topic-meta{
+
+    .topic-meta {
       display: flex;
       margin-top: 0.2em;
       align-items: flex-start;
+
       .topic-views {
         margin-right: 0.5em;
       }
+
       .inline {
         font-size: var(--font-down-1) !important;
+
         // margin-left: 0.3em;
         a {
           display: flex;
           align-items: center;
         }
-        span,a {
+
+        span,
+        a {
           font-size: var(--font-0) !important;
         }
-        .svg-icon{
+
+        .svg-icon {
           height: 1.3em;
           width: 1.3em;
         }
-        
+
       }
     }
   }
 
   .topic-header-grid {
     display: flex;
+
     .topic-category {
       margin-top: 0;
     }
@@ -2090,14 +2103,14 @@ a.lightbox {
 }
 
 // waterdrop and rock
-.category-6 .badge-wrapper.bullet span.badge-category-bg {
+.badge-wrapper.bullet[href="/c/pics/6"] span.badge-category-bg {
   width: 7px;
   height: 7px;
   border-radius: 0px 20px 25px 20px;
   transform: rotate(45deg);
 }
 
-.category-7 .badge-wrapper.bullet span.badge-category-bg {
+.badge-wrapper.bullet[href="/c/novels/7"] span.badge-category-bg {
   border-radius: unset;
   background-color: unset !important;
   width: 0;
@@ -2108,7 +2121,7 @@ a.lightbox {
   top: -5px;
 }
 
-.category-7 .badge-wrapper.bullet span.badge-category-bg:after {
+.badge-wrapper.bullet[href="/c/novels/7"] span.badge-category-bg:after {
   content: '';
   position: absolute;
   left: -5px;
@@ -2119,7 +2132,7 @@ a.lightbox {
   border-top-color: #F7941D;
 }
 
-.category-8 .badge-wrapper.bullet span.badge-category-bg {
+.badge-wrapper.bullet[href="/c/forum/8"] span.badge-category-bg {
   background-color:
     unset !important;
   position: relative;
@@ -2127,8 +2140,8 @@ a.lightbox {
   height: 9px;
 }
 
-.category-8 .badge-wrapper.bullet span.badge-category-bg:before,
-.category-8 .badge-wrapper.bullet span.badge-category-bg:after {
+.badge-wrapper.bullet[href="/c/forum/8"] span.badge-category-bg:before,
+.badge-wrapper.bullet[href="/c/forum/8"] span.badge-category-bg:after {
   position: absolute;
   content: "";
   left: 5px;
@@ -2141,7 +2154,7 @@ a.lightbox {
   transform-origin: 0 100%;
 }
 
-.category-8 .badge-wrapper.bullet span.badge-category-bg:after {
+.badge-wrapper.bullet[href="/c/forum/8"] span.badge-category-bg:after {
   left: 0;
   transform: rotate(46deg);
   transform-origin: 100% 100%;
