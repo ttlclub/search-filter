@@ -10,7 +10,7 @@ import { later } from "@ember/runloop";
 } */
 
 export default {
-    name: "topic-footer-buttons-like",
+    name: "topic-footer-buttons-extra",
     after: 'topic-footer-buttons',
     initialize() {
         registerTopicFooterButton({
@@ -83,9 +83,19 @@ export default {
                                 heart.firstChild.href.baseVal = "#heart";
                                 // resolve();
                             });
-                        }, 400);
+                        }, 100);
                     });
                 }
+            },
+        });
+        registerTopicFooterButton({
+            id: "jump-to-comments",
+            icon: "arrow-arc-left",
+            classNames: ["comments"],
+            displayed: true,
+            action() {
+                //debugger
+                this.jumpToIndex(2);
             },
         });
     },
