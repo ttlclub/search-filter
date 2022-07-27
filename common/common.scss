@@ -1718,6 +1718,7 @@ aside.onebox {
 .list-controls {
   .nav-pills .navigation-toggle {
     flex: 1 1 auto;
+    white-space: nowrap;
   }
 
   .navigation-container {
