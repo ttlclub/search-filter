@@ -104,7 +104,7 @@ export default Component.extend({
   updateActiveNav() {
     const selectedItem = document.querySelector('.active');
     const scollLeft = document.querySelector('.nav-pills').scrollLeft;
-    const navLeft = document.querySelector('.nav-pills').etBoundingClientRect().left;
+    const navLeft = document.querySelector('.nav-pills').getBoundingClientRect().left;
     const fontSize = document.defaultView.getComputedStyle(document.body, '').fontSize;
     if(selectedItem) {
         const halfRectWidth = selectedItem.getBoundingClientRect().width / 2;
