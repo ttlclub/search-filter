@@ -1634,8 +1634,8 @@ aside.onebox {
 
 
 
-// 进度条wrapper下的管理员按钮隐藏
-#topic-progress-wrapper .topic-admin-menu-button-container {
+// 进度条wrapper下的管理员按钮，返回按钮隐藏
+#topic-progress-wrapper .topic-admin-menu-button-container,.progress-back-container {
   display: none;
 }
 
