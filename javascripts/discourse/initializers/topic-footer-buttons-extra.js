@@ -90,7 +90,7 @@ export default {
         });
         registerTopicFooterButton({
             id: "jump-to-comments",
-            icon: "arrow-arc-left",
+            icon: "comments",
             classNames: ["comments"],
             displayed: true,
             action() {
