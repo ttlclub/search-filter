@@ -25,7 +25,7 @@
     <div class="topic-details">
       <div class="topic-header-grid">
         {{raw "list/topic-list-title" topic=topic tilesStyle=tilesStyle}}
-        <div class="topic-category">
+        <div class="topic-category category-{{category.id}}">
           {{#if showCategoryBadge}}
             {{category-link topic.category}}
           {{/if}}
@@ -75,7 +75,7 @@
           </div>
 
       <div class="ttl-topic-meta">
-        <div class="topic-category">
+        <div class="topic-category category-{{category.id}}">
           {{category-link topic.category}}
         </div>
         <div>
