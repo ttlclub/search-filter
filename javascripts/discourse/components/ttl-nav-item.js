@@ -116,8 +116,8 @@ export default Component.extend({
             const categoryText = document.querySelector(".ttl-nav-bar .nav-pills li a.active") || document.querySelector(".ttl-nav-bar .nav-pills li.active a");
     
             marker.style.left = "".concat("calc(", leftPosition + halfRectWidth , "px", " - ", fontSize, ")");
-            const test = "".concat("calc(", marker.style.left, " - 50vw");
-            console.log(test);
+            // const test = "".concat("calc(", marker.style.left, " - 50vw");
+            // console.log(test);
             
             marker.style.backgroundColor = "".concat("#",categoryColor);
             categoryText.style.color = "".concat("#",categoryColor);
