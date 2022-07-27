@@ -1,12 +1,12 @@
 {{#if canCreateTopic}}
-{{#if disabled}}
-{{else}}
-  {{d-button
-    class=btnClass
-    id="create-topic"
-    action=action
-    icon="plus"
-    disabled=disabled
-    label=""}}
-{{/if}}
+  {{#if disabled}}
+  {{else}}
+    {{d-button
+      class=btnClass
+      id="create-topic"
+      action=action
+      icon="plus"
+      disabled=disabled
+      label=""}}
+  {{/if}}
 {{/if}}
