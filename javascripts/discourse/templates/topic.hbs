@@ -16,9 +16,9 @@
   {{#if model.postStream.loaded}}
     {{#if model.postStream.firstPostPresent}}
       {{#unless model.postStream.loadingFilter}}
-        {{#if loadedAllPosts}}
+        {{!-- {{#if loadedAllPosts}} --}}
           {{ttl-topic-owner-header topic=model}}
-        {{/if}}
+        {{!-- {{/if}} --}}
       {{/unless}}
       {{!-- 帖子标题 --}}
       {{#topic-title cancelled=(action "cancelEditingTopic") save=(action "finishedEditingTopic") model=model}}
