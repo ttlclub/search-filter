@@ -104,17 +104,21 @@ export default Component.extend({
   updateActiveNav() {
     const selectedItem = document.querySelector('.active');
     const scollLeft = document.querySelector('.nav-pills').scrollLeft;
+    const navLeft = document.querySelector('.nav-pills').getBoundingClientRect().left;
     const fontSize = document.defaultView.getComputedStyle(document.body, '').fontSize;
     if(selectedItem) {
         const halfRectWidth = selectedItem.getBoundingClientRect().width / 2;
         const leftPosition =
-            selectedItem.getBoundingClientRect().left - selectedItem.parentNode.getBoundingClientRect().left + document.querySelector('.nav-pills').scrollLeft;
+            selectedItem.getBoundingClientRect().left - navLeft + document.querySelector('.nav-pills').scrollLeft;
         const marker = document.querySelector('.ttl-nav-line');
         if(this.router.currentRoute.attributes || this.router.currentRoute.params) {
             const categoryColor = this.router.currentRoute.attributes.category.color;
             const categoryText = document.querySelector(".ttl-nav-bar .nav-pills li a.active") || document.querySelector(".ttl-nav-bar .nav-pills li.active a");
     
             marker.style.left = "".concat("calc(", leftPosition + halfRectWidth , "px", " - ", fontSize, ")");
+            // const test = "".concat("calc(", marker.style.left, " - 50vw");
+            // console.log(test);
+            
             marker.style.backgroundColor = "".concat("#",categoryColor);
             categoryText.style.color = "".concat("#",categoryColor);
             // callback();
