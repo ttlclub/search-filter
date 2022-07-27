@@ -1293,7 +1293,8 @@ $flair-size: 5.5rem;
     }
 
     .topic-post,
-    .time-gap .small-action {
+    .gap,
+    .time-gap {
       // 用这个元素设置页边距
       background: white;
       padding: 0 1em 0 1em;
