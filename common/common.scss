@@ -2161,14 +2161,17 @@ a.lightbox {
   transform-origin: 100% 100%;
 }
 
-// .d-toc-timeline-visible #topic-progress{
-//   display: unset !important;
-//   bottom: 10%;
-// }
-// .d-toc-mini {
-//   bottom: 18%;
-//   right: 10%;
-// }
+.d-toc-timeline-visible #topic-progress{
+  display: unset !important;
+  // bottom: 10%;
+}
+.d-toc-mini {
+  position: fixed;
+  bottom: 10%;
+  right: 10%;
+}
 // .d-toc-timeline-visible .d-toc-mini {
 //   position: fixed;
+//   bottom: 10%;
+//   right: 10%;
 // }
