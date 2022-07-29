@@ -2195,5 +2195,8 @@ a.lightbox {
   box-shadow:0 0 15px 5px #ccc;
 }
 .d-nav-buttons{
-
+display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: stretch;
 }
