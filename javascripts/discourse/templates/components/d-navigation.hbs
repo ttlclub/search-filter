@@ -56,13 +56,12 @@
       }}
     {{/if}}
   {{/if}}
-  {{#if tag}}
-    {{#unless category}}
+    {{#if showToggleInfo}}
+
       {{! don't show tag notification menu on category pages }}
       <a id="sort-topic-order">
         {{button icon="arrow" class="btn-default" id="sort-topic-order-button"}}
         </a>
-    {{/unless}}
   {{/if}}
 
   {{plugin-outlet
