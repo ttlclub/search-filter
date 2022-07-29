@@ -1,9 +1,5 @@
 <script type="text/discourse-plugin" version="0.8">
-    console.log('test');
-  
-    $(document).ready(function () {
-      console.log('test');
-  
+    api.onPageChange(function () {
       if($("a#sort-topic-order")){
         const ascending="?ascending=true&order=created"
         const decending="?order=created"
