@@ -559,13 +559,13 @@ $z-layers: (
 
 .list-controls {
   .container {
-    #create-topic {
+    #create-topic,#totop {
       opacity: 0.8;
       position: fixed;
       bottom: 5em;
       right: 1.5em;
-      width: 4em;
-      height: 4em;
+      width: 3em;
+      height: 3em;
       border-radius: 50%;
       z-index: z("create-topic-button");
 
@@ -577,10 +577,14 @@ $z-layers: (
         }
 
         .svg-icon {
-          width: 2em;
-          height: 2em;
+          width: 1.5em;
+          height: 1.5em;
         }
       }
+    }
+
+    #totop{
+      bottom: 8.5em;
     }
   }
 }
@@ -2176,32 +2180,3 @@ a.lightbox {
 //   right: 10%;
 // }
 
-.list-controls {
-  .container {
-    #totop {
-      opacity: 0.8;
-      position: fixed;
-      bottom: 5em;
-      right: 1.5em;
-      width: 4em;
-      height: 4em;
-      border-radius: 50%;
-      z-index: 1000;
-      margin-right: 0.5em;
-      
-
-      &.btn {
-        background: var(--primary-high);
-
-        .d-icon {
-          color: white;
-        }
-
-        .svg-icon {
-          width: 2em;
-          height: 2em;
-        }
-      }
-    }
-  }
-}

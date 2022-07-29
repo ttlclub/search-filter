@@ -41,6 +41,7 @@
           ariaLabel="category.edit"
         }}
       {{/if}}
+
     {{/unless}}
   {{/if}}
 
@@ -54,6 +55,26 @@
         id="show-tag-info"
       }}
     {{/if}}
+  {{/if}}
+  {{#if tag}}
+    {{#unless category}}
+      {{! don't show tag notification menu on category pages }}
+      {{#if showTagNotifications}}
+        {{plugin-outlet
+          name="sort-by-order-button"
+          connectorTagName="div"
+          tagName=""
+          args=(hash
+            canCreateTopic=canCreateTopic
+            createTopicDisabled=createTopicDisabled
+            createTopicLabel=createTopicLabel
+            additionalTags=additionalTags
+            category=category
+            tag=tag
+          )
+        }}
+      {{/if}}
+    {{/unless}}
   {{/if}}
 
   {{plugin-outlet
@@ -112,16 +133,6 @@
           onChange=changeTagNotificationLevel
           value=tagNotification.notification_level
         }}
-      {{/if}}
-    {{/unless}}
-  {{/if}}
-  {{! add sort order button }}
-  {{#if tag}}
-    {{#unless category}}
-      {{! don't show tag notification menu on category pages }}
-      {{#if showTagNotifications}}
-        {{plugin-outlet name="sort-order-button"}}
-
       {{/if}}
     {{/unless}}
   {{/if}}
