@@ -2175,3 +2175,33 @@ a.lightbox {
 //   bottom: 10%;
 //   right: 10%;
 // }
+
+.list-controls {
+  .container {
+    #totop {
+      opacity: 0.8;
+      position: fixed;
+      bottom: 5em;
+      right: 1.5em;
+      width: 4em;
+      height: 4em;
+      border-radius: 50%;
+      z-index: 1000;
+      margin-right: 0.5em;
+      
+
+      &.btn {
+        background: var(--primary-high);
+
+        .d-icon {
+          color: white;
+        }
+
+        .svg-icon {
+          width: 2em;
+          height: 2em;
+        }
+      }
+    }
+  }
+}
