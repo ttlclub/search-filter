@@ -23,7 +23,7 @@
       }
       
     api.onPageChange(function () {
-      if($("a#sort-topic-order")){
+      if($("a#sort-topic-order")[0]){
         const ascending="?ascending=true&order=created"
         const decending="?order=created"
         let a=$("a#sort-topic-order")[0];
