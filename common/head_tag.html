@@ -35,9 +35,9 @@
         }
       }
 
-      if($(".cooked")){
+      if($(".cooked".length>0)){
         console.log("init warning");
-        $(".cooked").each((v)=>{v.innerText=replaceFontWarning(v.innerText)})
+        $.each($(".cooked"),(index,value)=>{v.innerText=replaceFontWarning(v.innerText)})
       }
   });
   </script>
