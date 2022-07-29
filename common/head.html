@@ -1,4 +1,3 @@
-
 <!-- add current user's nsfw preferences to body tag -->
 <!-- update -->
 <!-- <script type="text/discourse-plugin" version="0.8">
@@ -35,3 +34,23 @@
   });
     
   </script> -->
+
+<script type="text/discourse-plugin" version="0.8">
+
+    Discourse.ExternalNavItem = Discourse.NavItem.extend({
+        href : function() {
+          return this.get('href');
+        }.property('href')
+      });
+    
+      I18n.translations.zh_CN.js.filters.create_order = { title: "创建顺序", help: "创建顺序从早到晚排列" };
+      Discourse.NavItem.reopenClass({
+        buildList : function(category, args) {
+          var list = this._super(category, args);
+          if(!category) {
+            list.push(Discourse.ExternalNavItem.create({href: '?ascending=true&order=created', name: 'create_order'}));
+          }
+          return list;
+        }
+      });
+    </script>
