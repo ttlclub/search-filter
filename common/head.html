@@ -37,12 +37,13 @@
 
   <!-- text/discourse-plugin -->
 <script type="text/discourse-plugin" version="0.8">
-
   $(document).ready(function () {
+    console.log('test');
+
     if($("a#sort-topic-order")){
       const ascending="?ascending=true&order=created"
       const decending="?order=created"
-      let a=$("a#sort-topic-order")[0]
+      let a=$("a#sort-topic-order")[0];
       console.log(a);
       console.log(window.location.search);
 
