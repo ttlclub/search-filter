@@ -1,6 +1,12 @@
 <script type="text/discourse-plugin" version="0.8">
+    api.modifyClass("component:topic-notifications-button", {
+        appendReason: false,
+        showFullTitle: false,
+    });
+</script>
+<script type="text/discourse-plugin" version="0.8">
     api.onPageChange(function () {
-      if($("a#sort-topic-order")){
+      if($("a#sort-topic-order")[0]){
         const ascending="?ascending=true&order=created"
         const decending="?order=created"
         let a=$("a#sort-topic-order")[0];
@@ -23,18 +29,6 @@
       }
       
     api.onPageChange(function () {
-      if($("a#sort-topic-order")[0]){
-        const ascending="?ascending=true&order=created"
-        const decending="?order=created"
-        let a=$("a#sort-topic-order")[0];
-        if(window.location.search.match("ascending")){
-          a.href=decending;
-          a.style="transform:rotate(180deg);"
-        }else{
-          a.href=ascending;
-        }
-      }
-
       if($(".cooked".length>0)){
         console.log("init warning");
         $.each($(".cooked"),(index,value)=>{v.innerText=replaceFontWarning(v.innerText)})
