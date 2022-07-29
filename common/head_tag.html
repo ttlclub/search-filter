@@ -13,3 +13,31 @@
       }
   });
   </script>
+  <script type="text/discourse-plugin" version="0.8">
+
+    function replaceFontWarning (text) {
+        while (text !== (text = text.replace(/\[warning=([^\]]+)\]((?:(?!\[warning=[^\]]+\]|\[\/warning\])[\S\s])*)\[\/warning\]/ig, function (match, p1, p2) {
+          return `<div class="warning-among-text" color='${p1}'>${p2}</font>`;
+        })));
+        return text;
+      }
+      
+    api.onPageChange(function () {
+      if($("a#sort-topic-order")){
+        const ascending="?ascending=true&order=created"
+        const decending="?order=created"
+        let a=$("a#sort-topic-order")[0];
+        if(window.location.search.match("ascending")){
+          a.href=decending;
+          a.style="transform:rotate(180deg);"
+        }else{
+          a.href=ascending;
+        }
+      }
+
+      if($(".cooked")){
+        console.log("init warning");
+        $(".cooked").each((v)=>{v.innerText=replaceFontWarning(v)})
+      }
+  });
+  </script>
