@@ -60,19 +60,9 @@
     {{#unless category}}
       {{! don't show tag notification menu on category pages }}
       {{#if showTagNotifications}}
-        {{plugin-outlet
-          name="sort-by-order-button"
-          connectorTagName="div"
-          tagName=""
-          args=(hash
-            canCreateTopic=canCreateTopic
-            createTopicDisabled=createTopicDisabled
-            createTopicLabel=createTopicLabel
-            additionalTags=additionalTags
-            category=category
-            tag=tag
-          )
-        }}
+      <a id="sort-topic-order">
+        {{button icon="arrow" class="btn-default" id="sort-topic-order-button"}}
+        </a>
       {{/if}}
     {{/unless}}
   {{/if}}
