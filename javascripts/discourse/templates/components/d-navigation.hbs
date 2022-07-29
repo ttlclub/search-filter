@@ -23,6 +23,8 @@
     </div>
   {{/if}}
 
+  <div class="d-nav-buttons">
+
   {{#if showCategoryAdmin}}
     {{categories-admin-dropdown
       onChange=(action "selectCategoryAdminDropdownAction")
@@ -122,5 +124,5 @@
       {{/if}}
     {{/unless}}
   {{/if}}
-
+</div>
 </div>

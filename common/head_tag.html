@@ -31,7 +31,7 @@
     api.onPageChange(function () {
       if($(".cooked".length>0)){
         console.log("init warning");
-        $.each($(".cooked"),(index,value)=>{v.innerText=replaceFontWarning(v.innerText)})
+        $.each($(".cooked"),(index,value)=>{value.innerText=replaceFontWarning(value.innerText)})
       }
   });
   </script>

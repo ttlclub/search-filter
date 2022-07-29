@@ -1763,6 +1763,8 @@ aside.onebox {
 
 .navigation-controls {
   margin-left: 0.5em;
+  width: 100%;
+  justify-content: space-between;
 }
 
 
@@ -2191,4 +2193,7 @@ a.lightbox {
   position:relative;
   border-radius:5px;
   box-shadow:0 0 15px 5px #ccc;
+}
+.d-nav-buttons{
+
 }
