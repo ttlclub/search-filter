@@ -46,7 +46,19 @@
     });
     
 </script>
+<script type="text/discourse-plugin" version="0.8">
+    api.modifyClass("controller:topic", {
+        pluginId: "my-filter-poster",
+        firstPost: alias("topic.postStream.posts.0"),
 
+        filterParticipant(post) {
+            this.get("model.postStream")
+              .filterParticipant(post.username)
+              .then(() => this.updateQueryParams);
+        },
+
+    });
+</script>
 
 -->
 
