@@ -1,0 +1,6 @@
+{{!-- {{#if model.loadedAllPosts}}
+  {{d-button label="lightbox.download" action=(action "filterPoster")}}
+{{/if}} --}}
+{{#if currentUser.admin}}
+  {{d-button label="lightbox.download" action=(action "filterPoster")}}
+{{/if}}
