@@ -1,40 +1,37 @@
-<!--
 
 <script type="text/discourse-plugin" version="0.8">
-    api.modifyClass("controller:user", {
-        forceExpand: true ,
-        collapsedInfo: false,
-        collapsedInfoState:{
-            isExpanded: true,
-            icon: "angle-double-up",
-            label: "collapse_profile",
-            ariaLabel: "user.sr_collapse_profile",
-            action: "expandProfile",
-        },
-    });
+    api.onPageChange(function () {
+      if($("a#sort-topic-order")[0]){
+        const ascending="?ascending=true&order=created"
+        const decending="?order=created"
+        let a=$("a#sort-topic-order")[0];
+        if(window.location.search.match("ascending")){
+          a.href=decending;
+          a.style="transform:rotate(180deg);"
+        }else{
+          a.href=ascending;
+        }
+      }
+  });
 </script>
-
-<script type="text/discourse-plugin" version="0.8"></script>
-    api.addPostMenuButton('coffee', () => {
-        return {
-            action: 'like',
-            icon: 'coffee',
-            className: 'hot-coffee',p
-            title: 'coffee.title',
-            position: 'first'
-        };
-    });
-</script>
-
 <script type="text/discourse-plugin" version="0.8">
-    api.modifyClass("component:topic-notifications-button", {
-        appendReason: false,
-        showFullTitle: false,
 
-    });
+    function replaceFontWarning (text) {
+        while (text !== (text = text.replace(/\[warning=([^\]]+)\]((?:(?!\[warning=[^\]]+\]|\[\/warning\])[\S\s])*)\[\/warning\]/ig, function (match, p1, p2) {
+          return `<div class="warning-among-text" color='${p1}'>${p2}</font>`;
+        })));
+        return text;
+      }
+      
+   // api.onPageChange(function () {
+     // if($(".cooked".length>0)){
+       // console.log("init warning");
+       // $.each($(".cooked"),(index,value)=>{value.innerText=replaceFontWarning(value.innerText)})
+    //  }
+ // });
 </script>
 
-<script type="text/discourse-plugin" version="0.8">
+<!-- <script type="text/discourse-plugin" version="0.8">
     api.modifyClass("route:user",{
         pluginId: "my-user-index",
         redirect: function() {
@@ -58,9 +55,9 @@
         },
 
     });
-</script>
+</script> -->
 
--->
+
 
 <script type="text/discourse-plugin" version="0.8">
     api.modifyClass("component:topic-notifications-button", {

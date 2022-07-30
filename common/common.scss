@@ -559,14 +559,15 @@ $z-layers: (
 
 .list-controls {
   .container {
-    #create-topic {
+    #create-topic,#totop {
       opacity: 0.8;
       position: fixed;
       bottom: 5em;
       right: 1.5em;
-      width: 4em;
-      height: 4em;
+      width: 3em;
+      height: 3em;
       border-radius: 50%;
+      margin: 0;
       z-index: z("create-topic-button");
 
       &.btn {
@@ -577,10 +578,14 @@ $z-layers: (
         }
 
         .svg-icon {
-          width: 2em;
-          height: 2em;
+          width: 1.5em;
+          height: 1.5em;
         }
       }
+    }
+
+    #totop{
+      bottom: 8.5em;
     }
   }
 }
@@ -728,7 +733,7 @@ tr {
 }
 
 .topic-list .views.topic-list-data {
-  //display: none;
+  display: none;
 }
 
 .topic-list .activity.topic-list-data {
@@ -1758,6 +1763,8 @@ aside.onebox {
 
 .navigation-controls {
   margin-left: 0.5em;
+  width: 100%;
+  justify-content: space-between;
 }
 
 
@@ -2175,3 +2182,21 @@ a.lightbox {
 //   bottom: 10%;
 //   right: 10%;
 // }
+
+.before-create-topic-button-outlet.totop{
+  margin-right: 0;
+}
+.cook .warning-among-text{
+  width:50%;
+  margin:20px auto;
+  padding:30px;
+  position:relative;
+  border-radius:5px;
+  box-shadow:0 0 15px 5px #ccc;
+}
+.d-nav-buttons{
+display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: stretch;
+}
