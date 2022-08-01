@@ -7,7 +7,7 @@ export default DButton.extend({
     const ascending = "?ascending=true&order=created";
     const decending = "?order=created";
 
-    if (!window.location.search.test("ascending")) {
+    if (!window.location.search.match("ascending")) {
         api.addDiscoveryQueryParam(decending, { replace: true, refreshModel: true });
         this.classList.add("rotate")
     } else {
