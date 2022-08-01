@@ -559,7 +559,9 @@ $z-layers: (
 
 .list-controls {
   .container {
-    #create-topic,#totop {
+
+    #create-topic,
+    #totop {
       opacity: 0.8;
       position: fixed;
       bottom: 5em;
@@ -584,7 +586,7 @@ $z-layers: (
       }
     }
 
-    #totop{
+    #totop {
       bottom: 8.5em;
     }
   }
@@ -1640,7 +1642,8 @@ aside.onebox {
 
 
 // 进度条wrapper下的管理员按钮，返回按钮隐藏
-#topic-progress-wrapper .topic-admin-menu-button-container,.progress-back-container {
+#topic-progress-wrapper .topic-admin-menu-button-container,
+.progress-back-container {
   display: none;
 }
 
@@ -1765,6 +1768,15 @@ aside.onebox {
   margin-left: 0.5em;
   width: 100%;
   justify-content: space-between;
+  .d-nav-buttons {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: stretch;
+    .btn-default{
+      margin-left: 10px;
+    }
+  }
 }
 
 
@@ -2183,17 +2195,16 @@ a.lightbox {
 //   right: 10%;
 // }
 
-.before-create-topic-button-outlet.totop{
+.before-create-topic-button-outlet.totop {
   margin-right: 0;
 }
-.cook .warning-among-text{
-  width:50%;
-  margin:20px auto;
-  padding:30px;
-  position:relative;
-  border-radius:5px;
-  box-shadow:0 0 15px 5px #ccc;
-}
-.d-nav-buttons{
 
+.cook .warning-among-text {
+  width: 50%;
+  margin: 20px auto;
+  padding: 30px;
+  position: relative;
+  border-radius: 5px;
+  box-shadow: 0 0 15px 5px #ccc;
 }
+
