@@ -25,7 +25,8 @@
     before: "top",
     href: "?order=op_likes&status=open",
     customFilter: category => {
-      return category && category.name === "Testing"
+      console.log(category);
+      return category ;
     },
     forceActive: (category, args, router) => { 
         const queryParams = router.currentRoute.queryParams;
