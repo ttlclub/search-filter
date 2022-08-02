@@ -23,14 +23,14 @@
     displayName: "按创建排序",
     name: "按创建排序",
     before: "top",
-    href: "/?order=created",
+    href: "?order=created",
     customFilter: category => {
-      console.log(category);
-      return category ;
+      // console.log(category);
+      return false;
     },
     forceActive: (category, args, router) => { 
         const queryParams = router.currentRoute.queryParams;
-        console.log(router.currentRoute);
+        // console.log(router.currentRoute);
         return (
           queryParams &&
           Object.keys(queryParams).length === 1 &&
