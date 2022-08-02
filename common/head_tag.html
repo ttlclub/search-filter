@@ -20,10 +20,10 @@
   I18n.translations[I18n.locale].js.filters.topliked = { help: "Top Liked" };
 
   api.addNavigationBarItem({
-    displayName: "Top Liked",
-    name: "topliked",
+    displayName: "按创建排序",
+    name: "按创建排序",
     before: "top",
-    href: "?order=op_likes&status=open",
+    href: "/?order=created",
     customFilter: category => {
       console.log(category);
       return category ;
@@ -33,9 +33,8 @@
         console.log(router.currentRoute);
         return (
           queryParams &&
-          Object.keys(queryParams).length === 2 &&
-          queryParams["order"] === "op_likes" &&
-          queryParams["status"] === "open"
+          Object.keys(queryParams).length === 1 &&
+          queryParams["order"] === "created"
         );
     }
   });
