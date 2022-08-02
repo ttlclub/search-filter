@@ -9,7 +9,7 @@ export default DButton.extend({
 
     if (!window.location.search.match("ascending")) {
         addDiscoveryQueryParam("order", { replace: "created", refreshModel: true });
-        this.classList.add("rotate")
+        // this.classList.add("rotate")
     } else {
         // addDiscoveryQueryParam(ascending, { replace: true, refreshModel: true });
     }
