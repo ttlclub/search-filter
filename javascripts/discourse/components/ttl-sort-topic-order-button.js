@@ -1,5 +1,5 @@
 import DButton from "discourse/components/d-button";
-
+import { addDiscoveryQueryParam } from "discourse/controllers/discovery-sortable";
 export default DButton.extend({
   pluginApiIdentifiers: ["ttl-sort-topic-order-button"],
   classNames: ["ttl-sort-topic-order-button"],
@@ -8,10 +8,10 @@ export default DButton.extend({
     const decending = "?order=created";
 
     if (!window.location.search.match("ascending")) {
-        api.addDiscoveryQueryParam(decending, { replace: true, refreshModel: true });
+        addDiscoveryQueryParam("order", { replace: "created", refreshModel: true });
         this.classList.add("rotate")
     } else {
-      api.addDiscoveryQueryParam(ascending, { replace: true, refreshModel: true });
+        // addDiscoveryQueryParam(ascending, { replace: true, refreshModel: true });
     }
   },
 });
