@@ -8,7 +8,8 @@ export default DButton.extend({
     const decending = "?order=created";
 
     if (!window.location.search.match("ascending")) {
-        addDiscoveryQueryParam("order", { replace: "created", refreshModel: true });
+        addDiscoveryQueryParam("order", "created");
+        console.log("test");
         // this.classList.add("rotate")
     } else {
         // addDiscoveryQueryParam(ascending, { replace: true, refreshModel: true });
