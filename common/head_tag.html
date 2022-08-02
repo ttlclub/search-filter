@@ -14,6 +14,31 @@
       }
   });
 </script>
+
+<script type="text/discourse-plugin" version="0.10.0">
+  const I18n = require("I18n").default;
+  I18n.translations[I18n.locale].js.filters.topliked = { help: "Top Liked" };
+
+  api.addNavigationBarItem({
+    displayName: "Top Liked",
+    name: "topliked",
+    before: "top",
+    href: "?order=op_likes&status=open",
+    customFilter: category => {
+      return category && category.name === "Testing"
+    },
+    forceActive: (category, args, router) => { 
+        const queryParams = router.currentRoute.queryParams;
+        console.log(router.currentRoute.)
+        return (
+          queryParams &&
+          Object.keys(queryParams).length === 2 &&
+          queryParams["order"] === "op_likes" &&
+          queryParams["status"] === "open"
+        );
+    }
+  });
+</script>
 <script type="text/discourse-plugin" version="0.8">
 
     function replaceFontWarning (text) {
