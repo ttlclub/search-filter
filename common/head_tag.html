@@ -1,4 +1,4 @@
-<script type="text/discourse-plugin" version="0.8">
+<!-- <script type="text/discourse-plugin" version="0.8">
     api.onPageChange(function () {
       if($("a#sort-topic-order")[0]){
         const ascending="?ascending=true&order=created"
@@ -12,17 +12,18 @@
         }
       }
   });
-</script>
+</script> -->
 
 <script type="text/discourse-plugin" version="0.10.0">
-  // 
-  const I18n = require("I18n").default;
-  I18n.translations[I18n.locale].js.filters.topliked = { help: "Top Liked" };
+  // text/discourse-plugin
+  // const I18n = require("I18n").default;
+  // I18n.translations[I18n.locale].js.filters.topliked = { help: "Top Liked" };
 
+  // sort by topic create time (new 2 old)
   api.addNavigationBarItem({
-    displayName: "按创建排序",
-    name: "按创建排序",
-    before: "latest",
+    displayName: "最新发布",
+    name: "最新发布",
+    before: "top",
     customHref: (category, args, router) => {
       // console.log(navItem, category, args, router);
       const sortOrderParam = "?order=created";
@@ -32,7 +33,7 @@
             /\/l\/latest$|\/l\/new$|\/l\/unread$|\/l\/top$/g,
             ""
           ) + sortOrderParam;
-          return href;
+        return href;
       }
     },
     href: "?order=created",

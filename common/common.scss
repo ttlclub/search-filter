@@ -1768,12 +1768,14 @@ aside.onebox {
   margin-left: 0.5em;
   width: 100%;
   justify-content: space-between;
+
   .d-nav-buttons {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     align-items: stretch;
-    .btn-default{
+
+    .btn-default {
       margin-left: 10px;
     }
   }
@@ -2206,4 +2208,93 @@ a.lightbox {
   position: relative;
   border-radius: 5px;
   box-shadow: 0 0 15px 5px #ccc;
+}
+
+// pointer-center
+#main-outlet-wrapper {
+  .main-outlet {
+    .nav.nav-pills {
+      @include ttl-paddings;
+
+      .active {
+        @include ttl-rounded-corners;
+      }
+    }
+
+    .admin-container {
+      @include ttl-paddings;
+
+      .my-points {
+        .empty-state {
+          padding: 5px;
+          margin-top: 1em;
+        }
+
+        .transactions-list {
+          .transactions {
+            .transaction-header {
+              .header {
+                white-space: nowrap;
+              }
+            }
+          }
+        }
+      }
+
+      .rewards {
+        .discourse-rewards-rewards-list {
+          grid-template-columns: 1fr 1fr;
+
+          .discourse-rewards-reward-card {
+            background: var(--header_background);
+            @include ttl-rounded-corners;
+
+            .card {
+              .reward-image {
+                @include ttl-rounded-corners;
+              }
+
+              .content {
+                .quantity {
+                  color: var(---secondary)
+                }
+              }
+
+            }
+          }
+        }
+
+      }
+
+      .leaderboard {
+        .leaderboard-users-list {
+
+          .leaderboard-card {
+            background: var(--header_background);
+            @include ttl-rounded-corners;
+
+            .card {
+              display: flex;
+              flex-direction: row;
+              align-items: center;
+
+              img {
+                max-width: 7rem;
+                max-height: 7rem;
+
+              }
+
+              .break-line {
+                display: none;
+              }
+
+            }
+          }
+
+        }
+
+      }
+
+    }
+  }
 }
