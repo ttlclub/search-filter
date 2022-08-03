@@ -1,4 +1,3 @@
-
 <script type="text/discourse-plugin" version="0.8">
     api.onPageChange(function () {
       if($("a#sort-topic-order")[0]){
@@ -16,43 +15,54 @@
 </script>
 
 <script type="text/discourse-plugin" version="0.10.0">
+  // 
   const I18n = require("I18n").default;
   I18n.translations[I18n.locale].js.filters.topliked = { help: "Top Liked" };
 
   api.addNavigationBarItem({
     displayName: "按创建排序",
     name: "按创建排序",
-    before: "top",
-    init:(navItem, category, args, router)=>{
-      console.log(navItem, category, args, router);
+    before: "latest",
+    init: (navItem, category, args, router) => {
+      // console.log(navItem, category, args, router);
+      const sortOrderParam = "?order=created";
+      if (router) {
+        const href =
+          router._router.currentURL.replace(
+            /\/l\/latest$|\/l\/new$|\/l\/unread$|\/l\/top$/g,
+            ""
+          ) + sortOrderParam;
+        console.log(href);
+        this.set("href", href);
+      }
     },
     href: "?order=created",
-    forceActive: (category, args, router) => { 
-        const queryParams = router.currentRoute.queryParams;
-        // console.log(router.currentRoute);
-        return (
-          queryParams &&
-          Object.keys(queryParams).length === 1 &&
-          queryParams["order"] === "created"
-        );
-    }
+    forceActive: (category, args, router) => {
+      const queryParams = router.currentRoute.queryParams;
+      // console.log(router.currentRoute);
+      return (
+        queryParams &&
+        Object.keys(queryParams).length === 1 &&
+        queryParams["order"] === "created"
+      );
+    },
   });
 </script>
 <script type="text/discourse-plugin" version="0.8">
 
-    function replaceFontWarning (text) {
-        while (text !== (text = text.replace(/\[warning=([^\]]+)\]((?:(?!\[warning=[^\]]+\]|\[\/warning\])[\S\s])*)\[\/warning\]/ig, function (match, p1, p2) {
-          return `<div class="warning-among-text" color='${p1}'>${p2}</font>`;
-        })));
-        return text;
-      }
-      
-   // api.onPageChange(function () {
-     // if($(".cooked".length>0)){
-       // console.log("init warning");
-       // $.each($(".cooked"),(index,value)=>{value.innerText=replaceFontWarning(value.innerText)})
-    //  }
- // });
+     function replaceFontWarning (text) {
+         while (text !== (text = text.replace(/\[warning=([^\]]+)\]((?:(?!\[warning=[^\]]+\]|\[\/warning\])[\S\s])*)\[\/warning\]/ig, function (match, p1, p2) {
+           return `<div class="warning-among-text" color='${p1}'>${p2}</font>`;
+         })));
+         return text;
+       }
+
+    // api.onPageChange(function () {
+      // if($(".cooked".length>0)){
+        // console.log("init warning");
+        // $.each($(".cooked"),(index,value)=>{value.innerText=replaceFontWarning(value.innerText)})
+     //  }
+  // });
 </script>
 
 <!-- <script type="text/discourse-plugin" version="0.8">
@@ -81,16 +91,10 @@
     });
 </script> -->
 
-
-
 <script type="text/discourse-plugin" version="0.8">
-    api.modifyClass("component:topic-notifications-button", {
-        pluginId: "my-topic-notifications-button",
-        appendReason: false,
-        showFullTitle: false,
-    });
+  api.modifyClass("component:topic-notifications-button", {
+      pluginId: "my-topic-notifications-button",
+      appendReason: false,
+      showFullTitle: false,
+  });
 </script>
-
-
-
-
