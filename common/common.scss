@@ -2212,7 +2212,7 @@ a.lightbox {
 
 // pointer-center
 #main-outlet-wrapper {
-  .main-outlet {
+  #main-outlet {
     .nav.nav-pills {
       @include ttl-paddings;
 
@@ -2296,5 +2296,11 @@ a.lightbox {
       }
 
     }
+  }
+}
+
+.mobile-view {
+  .rewards .discourse-rewards-rewards-list{
+    grid-template-columns: 1fr 1fr;
   }
 }
