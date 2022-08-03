@@ -23,7 +23,7 @@
     displayName: "按创建排序",
     name: "按创建排序",
     before: "latest",
-    init: (navItem, category, args, router) => {
+    customHref: (category, args, router) => {
       // console.log(navItem, category, args, router);
       const sortOrderParam = "?order=created";
       if (router) {
@@ -32,8 +32,7 @@
             /\/l\/latest$|\/l\/new$|\/l\/unread$|\/l\/top$/g,
             ""
           ) + sortOrderParam;
-        console.log(href);
-        console.log(this);
+          return href;
       }
     },
     href: "?order=created",
