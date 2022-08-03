@@ -2213,6 +2213,7 @@ a.lightbox {
 // pointer-center
 #main-outlet-wrapper {
   #main-outlet {
+    nav{
     .nav.nav-pills {
       @include ttl-paddings;
 
@@ -2220,6 +2221,7 @@ a.lightbox {
         @include ttl-rounded-corners;
       }
     }
+  }
 
     .admin-container {
       @include ttl-paddings;
