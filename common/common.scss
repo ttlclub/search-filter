@@ -1765,7 +1765,7 @@ aside.onebox {
 }
 
 .navigation-controls {
-  margin-left: 0.5em;
+  // margin-left: 0.5em;
   width: 100%;
   justify-content: space-between;
 
@@ -1776,7 +1776,7 @@ aside.onebox {
     align-items: stretch;
 
     .btn-default {
-      margin-left: 10px;
+      // margin-left: 10px;
     }
   }
 }
@@ -2213,6 +2213,7 @@ a.lightbox {
 // pointer-center
 #main-outlet-wrapper {
   #main-outlet {
+    nav{
     .nav.nav-pills {
       @include ttl-paddings;
 
@@ -2220,6 +2221,7 @@ a.lightbox {
         @include ttl-rounded-corners;
       }
     }
+  }
 
     .admin-container {
       @include ttl-paddings;
