@@ -840,7 +840,11 @@ input.input-xxlarge {
 
 div#main-container {
   background: white;
-  padding: 1em 1em 0 1em;
+  // padding: 1em 1em 0 1em;
+}
+
+.row{
+  margin: 1em 1em 0 1em;
 }
 
 footer.topic-list-bottom {
