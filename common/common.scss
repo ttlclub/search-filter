@@ -843,7 +843,7 @@ div#main-container {
   // padding: 1em 1em 0 1em;
 }
 
-.global-notice{
+.global-notice {
   margin: 1em 1em 0 1em;
 }
 
@@ -2217,15 +2217,15 @@ a.lightbox {
 // pointer-center
 #main-outlet-wrapper {
   #main-outlet {
-    nav{
-    .nav.nav-pills {
-      @include ttl-paddings;
+    nav {
+      .nav.nav-pills {
+        @include ttl-paddings;
 
-      .active {
-        @include ttl-rounded-corners;
+        .active {
+          @include ttl-rounded-corners;
+        }
       }
     }
-  }
 
     .admin-container {
       @include ttl-paddings;
@@ -2275,6 +2275,11 @@ a.lightbox {
       .leaderboard {
         .leaderboard-users-list {
 
+          .rank {
+            border: unset;
+            background-color: unset;
+          }
+
           .leaderboard-card {
             background: var(--header_background);
             @include ttl-rounded-corners;
@@ -2293,16 +2298,58 @@ a.lightbox {
               }
 
               .rank-user-info {
-                max-width: 35vw;
+                width: 35vw;
                 display: flex;
                 flex-direction: column;
                 align-items: center;
+                white-space: nowrap;
+
               }
 
             }
           }
 
         }
+
+      }
+
+      .lottery {
+        background: var(--header_background);
+        @include ttl-paddings;
+        @include ttl-rounded-corners;
+        display: flex;
+        flex-direction: row;
+        align-items: stretch;
+
+        #lottery-description-img {
+          width: 35%;
+          background-color: #e86800;
+          @include ttl-rounded-corners;
+
+        }
+
+        .lottery-instructions {
+          width: 60%;
+          display: flex;
+          flex-direction: column;
+          align-items: stretch;
+
+          .title {
+            font-weight: bold;
+            font-size: var(--font-up-2);
+
+          }
+
+          .help {
+            font-size: var(--font-0);
+            color: var(--primary-medium);
+          }
+
+          .lottery-button {
+            border-radius: 1.5em;
+          }
+        }
+
 
       }
 
