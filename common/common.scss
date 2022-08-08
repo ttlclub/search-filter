@@ -2313,45 +2313,45 @@ a.lightbox {
 
       }
 
-      .lottery {
-        background: var(--header_background);
-        @include ttl-paddings;
-        @include ttl-rounded-corners;
-        display: flex;
-        flex-direction: row;
-        align-items: stretch;
+      // .lottery {
+      //   background: var(--header_background);
+      //   @include ttl-paddings;
+      //   @include ttl-rounded-corners;
+      //   display: flex;
+      //   flex-direction: row;
+      //   align-items: stretch;
 
-        #lottery-description-img {
-          width: 35%;
-          background-color: #e86800;
-          @include ttl-rounded-corners;
+      //   #lottery-description-img {
+      //     width: 35%;
+      //     background-color: #e86800;
+      //     @include ttl-rounded-corners;
 
-        }
+      //   }
 
-        .lottery-instructions {
-          width: 60%;
-          display: flex;
-          flex-direction: column;
-          align-items: stretch;
+      //   .lottery-instructions {
+      //     width: 60%;
+      //     display: flex;
+      //     flex-direction: column;
+      //     align-items: stretch;
 
-          .title {
-            font-weight: bold;
-            font-size: var(--font-up-2);
+      //     .title {
+      //       font-weight: bold;
+      //       font-size: var(--font-up-2);
 
-          }
+      //     }
 
-          .help {
-            font-size: var(--font-0);
-            color: var(--primary-medium);
-          }
+      //     .help {
+      //       font-size: var(--font-0);
+      //       color: var(--primary-medium);
+      //     }
 
-          .lottery-button {
-            border-radius: 1.5em;
-          }
-        }
+      //     .lottery-button {
+      //       border-radius: 1.5em;
+      //     }
+      //   }
 
 
-      }
+      // }
 
     }
   }
