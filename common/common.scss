@@ -837,7 +837,9 @@ input.input-xxlarge {
   padding: 0 5px;
 
 }
-
+body {
+  background-color: var(--header_background);
+}
 .categories-list .category-list {
   // background: var(--header_background);
 }
