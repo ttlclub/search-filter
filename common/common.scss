@@ -2384,8 +2384,8 @@ a.lightbox {
 }
 
 .lottery .lottery-img {
-  background-image: url($stone);
+  background-image: url($stone) !important;
   img{
-    display: none;
+    display: none !important;
   }
 }
