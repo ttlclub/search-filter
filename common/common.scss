@@ -170,11 +170,14 @@
 // main-outlet-wrapper，改成full width结果其他页面崩了，暂时先这样
 #main-outlet-wrapper {
   padding: unset;
-  background: var(--primary-50) !important;
+  // background: var(--primary-50) !important;
 
   // background: var(--primary-50);
   #main-outlet {
     padding-top: unset;
+  }
+  .list-container{
+    background: var(--primary-50) !important;
   }
 }
 
