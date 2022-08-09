@@ -136,7 +136,7 @@
         bottom: 0;
         display: flex;
         justify-content: center;
-        border-top: 1px solid var(--primary-100);
+        border-top: 1px solid var(--secondary);
 
         button {
           margin: unset !important;
@@ -368,7 +368,7 @@
 
     .select-kit-header,
     .date-picker {
-      background: var(--primary-100) !important;
+      background: var(--secondary) !important;
       border: unset !important;
       outline: unset !important;
       padding-left: 1em;
@@ -793,7 +793,7 @@ body .admin-customize .admin-container {
 
 .select-kit .select-kit-header {
   border: none !important;
-  background: var(--primary-100) !important;
+  background: var(--secondary) !important;
   @include ttl-rounded-corners;
 }
 
@@ -809,7 +809,7 @@ body .admin-customize .admin-container {
 
 li.navigation-toggle {
   border: none !important;
-  background: var(--primary-100) !important;
+  background: var(--secondary) !important;
   @include ttl-rounded-corners;
 }
 
@@ -818,7 +818,7 @@ ul.drop {
 }
 
 input.input-xxlarge {
-  background: var(--primary-100);
+  background: var(--secondary);
 
   border: none;
   @include ttl-rounded-corners;
@@ -1115,7 +1115,7 @@ $flair-size: 5.5rem;
       display: flex;
       justify-content: center;
       background: var(--header_background);
-      border-top: 1px solid var(--primary-100);
+      border-top: 1px solid var(--secondary);
 
       button {
         margin: unset !important;
@@ -1348,11 +1348,11 @@ $flair-size: 5.5rem;
               margin: unset;
               border-left: unset;
               border-radius: 1em 1em;
-              background-color: var(--primary-100);
+              background-color: var(--secondary);
               padding: 0.8em 0.5em 1em 0.5em;
 
               code {
-                background-color: var(--primary-100);
+                background-color: var(--secondary);
                 max-height: unset;
                 font-family: auto;
                 font-size: unset;
