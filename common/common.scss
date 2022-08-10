@@ -2076,7 +2076,7 @@ tbody.topic-list-body {
 }
 
 .card-row.metadata-row {
-  .metadata:not(.discourse-rewards-user-card-total-points) {
+  .metadata>*:not(.discourse-rewards-user-card-total-points) {
     display: none;
   }
 }
