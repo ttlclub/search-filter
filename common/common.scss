@@ -2230,7 +2230,7 @@ a.lightbox {
     nav {
       .nav.nav-pills {
         @include ttl-nav-paddings;
-        margin: 0.8em 0;
+        margin: 0 0.8em;
         white-space: nowrap;
         overflow: scroll;
       ul.nav.nav-pills::-webkit-scrollbar{
