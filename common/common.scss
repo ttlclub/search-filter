@@ -2228,14 +2228,14 @@ a.lightbox {
 #main-outlet-wrapper {
   #main-outlet {
     nav {
+      ul.nav.nav-pills::-webkit-scrollbar{
+        display: none;
+      }
       .nav.nav-pills {
         @include ttl-nav-paddings;
         margin: 0 0.8em;
         white-space: nowrap;
         overflow: scroll;
-      ul.nav.nav-pills::-webkit-scrollbar{
-        display: none;
-      }
 
         .active {
           @include ttl-rounded-corners;
