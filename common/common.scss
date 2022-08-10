@@ -2229,7 +2229,7 @@ a.lightbox {
   #main-outlet {
     nav {
       .nav.nav-pills {
-        margin: 0.5em;
+        margin: 0.8em 0;
         @include ttl-nav-paddings;
         white-space: nowrap;
         overflow: scroll;
