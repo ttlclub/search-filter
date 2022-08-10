@@ -2230,6 +2230,7 @@ a.lightbox {
     nav {
       .nav.nav-pills {
         @include ttl-nav-paddings;
+        white-space: nowrap;
 
         .active {
           @include ttl-rounded-corners;
