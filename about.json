@@ -8,7 +8,8 @@
   "minimum_discourse_version": null,
   "maximum_discourse_version": null,
   "assets": {
-    "doubleseven":"asset/doubleseven.png"
+    "doubleseven":"asset/doubleseven.png",
+    "icons-sprite":"assets/ttl-mora-icon.svg"
   },
   "color_schemes": {
   },
