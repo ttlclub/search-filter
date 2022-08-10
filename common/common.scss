@@ -598,6 +598,9 @@ $z-layers: (
 }
 
 // wjchange 
+.topic-list-item.visited .ttl-topic-list-item {
+  opacity: 0.5;
+}
 
 .topic-list {
   .ttl-topic-label {
@@ -2300,6 +2303,7 @@ a.lightbox {
         .leaderboard-users-list {
 
           grid-template-columns: 1fr;
+
           .rank {
             border: unset;
             background-color: unset;
@@ -2342,19 +2346,20 @@ a.lightbox {
         background: var(--secondary);
         padding: 0.5em;
         border-radius: 8px;
-      
+
         .lottery-img {
           background-repeat: no-repeat;
           background-position: 50% 50%;
           width: 100%;
           max-width: 120px;
           margin: unset;
-      
+
           img {
             display: none !important;
           }
         }
       }
+
       // .lottery {
       //   background: var(--header_background);
       //   @include ttl-paddings;
@@ -2420,4 +2425,3 @@ a.lightbox {
 .switch {
   height: 30px;
 }
-
