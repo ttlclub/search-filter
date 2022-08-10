@@ -1,5 +1,6 @@
-<svg width="0" height="0" class="hidden">
-  <symbol version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 20 20" id="mora">
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol viewBox="0 0 20 20" id="mora">
     <title>椭圆形备份</title>
     <defs>
       <linearGradient x1="20.7903655%" y1="9.47403999%" x2="84.0825664%" y2="84.2716315%" id="linearGradient-1">
