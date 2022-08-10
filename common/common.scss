@@ -2276,7 +2276,7 @@ a.lightbox {
           grid-template-columns: 1fr 1fr;
 
           .discourse-rewards-reward-card {
-            background: var(--header_background);
+            background: var(--secondary);
             @include ttl-rounded-corners;
 
             .card {
@@ -2299,13 +2299,14 @@ a.lightbox {
       .leaderboard {
         .leaderboard-users-list {
 
+          grid-template-columns: 1fr;
           .rank {
             border: unset;
             background-color: unset;
           }
 
           .leaderboard-card {
-            background: var(--header_background);
+            background: var(--secondary);
             @include ttl-rounded-corners;
 
             .card {
@@ -2313,7 +2314,6 @@ a.lightbox {
               flex-direction: row;
               align-items: center;
               justify-content: space-between;
-              width: 65vw;
 
               img {
                 max-width: 20vw;
@@ -2322,6 +2322,7 @@ a.lightbox {
               }
 
               .rank-user-info {
+                margin-left: 10vw;
                 width: 35vw;
                 display: flex;
                 flex-direction: column;
@@ -2337,6 +2338,23 @@ a.lightbox {
 
       }
 
+      .lottery {
+        background: var(--secondary);
+        padding: 0.5em;
+        border-radius: 8px;
+      
+        .lottery-img {
+          background-repeat: no-repeat;
+          background-position: 50% 50%;
+          width: 100%;
+          max-width: 120px;
+          margin: unset;
+      
+          img {
+            display: none !important;
+          }
+        }
+      }
       // .lottery {
       //   background: var(--header_background);
       //   @include ttl-paddings;
@@ -2403,25 +2421,3 @@ a.lightbox {
   height: 30px;
 }
 
-#main-outlet-wrapper #main-outlet .admin-container .rewards .discourse-rewards-rewards-list .discourse-rewards-reward-card,
-#main-outlet-wrapper #main-outlet .admin-container .leaderboard .leaderboard-users-list .leaderboard-card {
-  background: var(--secondary);
-}
-
-.lottery {
-  background: var(--secondary);
-  padding: 0.5em;
-  border-radius: 8px;
-
-  .lottery-img {
-    background-repeat: no-repeat;
-    background-position: 50% 50%;
-    width: 100%;
-    max-width: 120px;
-    margin: unset;
-
-    img {
-      display: none !important;
-    }
-  }
-}
