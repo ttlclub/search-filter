@@ -2381,7 +2381,12 @@ a.lightbox {
 
 #discourse-rewards-total-points{
   .available-points-count{
-    display: none;
+    //display: none;
+    font-size: var(--font-up-1);
+    font-weight: normal;
+  }
+  .d-icon {
+    width:0.8em !important;
   }
 }
 
