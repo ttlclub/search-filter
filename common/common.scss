@@ -2229,7 +2229,7 @@ a.lightbox {
   #main-outlet {
     nav {
       .nav.nav-pills {
-        @include ttl-paddings;
+        @include ttl-nav-paddings;
 
         .active {
           @include ttl-rounded-corners;
