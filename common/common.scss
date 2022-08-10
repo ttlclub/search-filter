@@ -2229,11 +2229,11 @@ a.lightbox {
   #main-outlet {
     nav {
       .nav.nav-pills {
-        margin: 0.8em 0;
         @include ttl-nav-paddings;
+        margin: 0.8em 0;
         white-space: nowrap;
         overflow: scroll;
-      .nav-pills::-webkit-scrollbar{
+      ul.nav.nav-pills::-webkit-scrollbar{
         display: none;
       }
 
