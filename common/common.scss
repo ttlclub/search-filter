@@ -2232,7 +2232,7 @@ a.lightbox {
         @include ttl-nav-paddings;
         white-space: nowrap;
         overflow: scroll;
-      .nav.nav-pills::-webkit-scrollbar{
+      .nav-pills::-webkit-scrollbar{
         display: none;
       }
 
