@@ -600,9 +600,11 @@ $z-layers: (
 
 // wjchange 
 .topic-list-item.visited .ttl-topic-list-item {
-  opacity: 0.5;
+  opacity: 0.7;
 }
-
+.tiles-grid-item.topic-list-item:not(.unseen-topic){
+  opacity:0.7
+}
 .topic-list {
   .ttl-topic-label {
     font-size: var(--font-down-1);
@@ -1456,6 +1458,15 @@ $flair-size: 5.5rem;
           }
         }
       }
+    }
+
+    // change border color
+    .post-stream{
+      .topic-post{
+        article{
+          border-top: 1px solid var(--primary-medium);
+        }
+      } 
     }
   }
 }
