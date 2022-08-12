@@ -668,6 +668,9 @@ $z-layers: (
     max-width: 80px;
     max-height: 80px;
   }
+  img.thumbnail{
+    max-height: 200px;
+  }
 
   .discourse-tags {
     font-size: var(--font-down-1);
