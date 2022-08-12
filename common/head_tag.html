@@ -28,11 +28,11 @@
       // console.log(navItem, category, args, router);
       const sortOrderParam = "?order=created";
       if (router) {
-        const href =
-          router._router.currentURL.replace(
-            /\/l\/latest$|\/l\/new$|\/l\/unread$|\/l\/top$/g,
-            ""
-          ) + sortOrderParam;
+        let href = router._router.currentURL.replace(
+          /\/l\/latest$|\/l\/new$|\/l\/unread$|\/l\/top|\/latest$|\/new$|\/unread$|\/top$/g,
+          ""
+        );
+        href = href ? href + sortOrderParam : "/latest?order=created";
         return href;
       }
     },
@@ -250,4 +250,3 @@
     });
   
   </script> -->
-  
