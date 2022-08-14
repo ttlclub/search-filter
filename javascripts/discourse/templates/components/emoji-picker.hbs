@@ -52,9 +52,6 @@
               </div>
             </div>
           {{/if}}
-
-          {{emoji-group-sections}}
-
           {{#each-in customEmojis as |group emojis|}}
             <div class="section" data-section="custom-{{group}}">
               <div class="section-header">
@@ -71,6 +68,9 @@
               {{/if}}
             </div>
           {{/each-in}}
+
+          {{emoji-group-sections}}
+
         </div>
       </div>
 
