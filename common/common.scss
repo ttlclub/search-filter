@@ -2292,6 +2292,10 @@ a.lightbox {
       .rewards {
         .discourse-rewards-rewards-list {
           grid-template-columns: 1fr 1fr;
+          
+          .discourse-rewards-reward-card:not(.full-view) p.category {
+            display: none;
+          }
 
           .discourse-rewards-reward-card {
             background: var(--secondary);
