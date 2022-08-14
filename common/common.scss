@@ -2303,8 +2303,11 @@ a.lightbox {
               }
 
               .contents {
-                p.quantity,p.points {
+                p.quantity {
                   margin: 0.2em 0;
+                }
+                p.points {
+                  margin: 0.4em 0;
                 }
                 p.quantity span {
                   color: var(--quaternary);
