@@ -8,7 +8,7 @@ img.emoji-custom {
 .emoji-picker .emoji-picker-emoji-area {
     [data-section*="custom-"],[data-section*="recent"]{
         img.emoji {
-            width: 50px !important;
+            width: auto !important;
             height: 50px !important;
         }
     }
