@@ -6,6 +6,11 @@ img.emoji-custom {
     max-height: 100px;
 }
 
+img.emoji.only-emoji {
+    width: auto;
+    height: auto;
+}
+
 
 .emoji-picker .emoji-picker-emoji-area {
     [data-section*="custom-"]{
