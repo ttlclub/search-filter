@@ -2303,8 +2303,11 @@ a.lightbox {
               }
 
               .content {
-                .quantity {
-                  color: var(---secondary)
+                p.quantity span {
+                  color: var(--quaternary);
+                }
+                .title-contents .title {
+                  font-size: var(--font-up-2);
                 }
               }
 
