@@ -2,6 +2,8 @@ img.emoji-custom {
     width: auto;
     height: auto;
     vertical-align: middle;
+    aspect-ratio: auto !important;
+    max-height: 100px;
 }
 
 
