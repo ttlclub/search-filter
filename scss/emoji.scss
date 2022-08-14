@@ -3,7 +3,7 @@ img.emoji-custom {
     height: auto;
     vertical-align: middle;
     aspect-ratio: auto !important;
-    max-height: 70px;
+    max-width: 70px;
 }
 
 img.emoji.only-emoji.emoji-custom {
@@ -15,14 +15,14 @@ img.emoji.only-emoji.emoji-custom {
 .emoji-picker .emoji-picker-emoji-area {
     [data-section*="custom-"]{
         img.emoji {
-            width: auto !important;
-            height: 50px !important;
+            height: auto !important;
+            width: 50px !important;
         }
     }
     [data-section*="recent"]{
         img.emoji-custom {
-            width: auto !important;
-            height: 50px !important;
+            height: auto !important;
+            width: 50px !important;
         }
     }
 }
