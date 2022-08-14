@@ -2292,10 +2292,12 @@ a.lightbox {
       .rewards {
         .discourse-rewards-rewards-list {
           grid-template-columns: 1fr 1fr;
-          
-          .discourse-rewards-reward-card:not(.full-view) p.category {
-            display: none;
-          }
+
+          .discourse-rewards-reward-card:not(.full-view){
+            p.category {
+              display: none;
+            }
+          } 
 
           .discourse-rewards-reward-card {
             background: var(--secondary);
@@ -2452,4 +2454,25 @@ a.lightbox {
 
 .switch {
   height: 30px;
+}
+
+
+
+// test
+.discourse-rewards-reward-card:not(.full-view) .description {
+    display: inline-block;
+    overflow: visible;
+    height: unset;
+    margin-bottom: 0.6em;
+    font-size: var(--font-down-1);
+}
+
+.discourse-rewards-rewards-list {
+  display: inherit;
+  column-count: 2;
+  column-gap: 10px;
+}
+.discourse-rewards-rewards-list div .modal-body {
+  margin-bottom: 1em;
+  height: 100%;
 }
