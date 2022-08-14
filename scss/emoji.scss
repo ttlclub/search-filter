@@ -3,3 +3,8 @@ img.emoji-custom {
     height: auto;
     vertical-align: middle;
 }
+
+[data-section="recent"] .selection-group img.emoji {
+    width: 50px !important;
+    height: 50px !important;
+}
