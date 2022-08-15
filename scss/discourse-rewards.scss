@@ -231,6 +231,7 @@
 .reward-view-modal.fixed-modal .modal-inner-container {
   max-width: 90vw;
 }
-.discourse-rewards-reward-card.full-view .reward-image{
+.discourse-rewards-reward-card.full-view .reward-image,
+.mobile-view .discourse-rewards-reward-card.full-view .reward-image{
   height: 100%;
 }
