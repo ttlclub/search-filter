@@ -15,6 +15,9 @@
         .active {
           @include ttl-rounded-corners;
         }
+        a:hover {
+          @include ttl-rounded-corners;
+        }
       }
     }
 
@@ -124,7 +127,7 @@
       .lottery {
         background: var(--secondary);
         padding: 0.5em;
-        border-radius: 8px;
+        @include ttl-rounded-corners;
 
         .lottery-img {
           background-repeat: no-repeat;
