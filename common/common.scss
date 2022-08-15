@@ -599,11 +599,11 @@ $z-layers: (
 }
 
 // wjchange 
-.topic-list-item.visited .ttl-topic-list-item *{
-  opacity: 0.8;
+.topic-list-item.visited .ttl-topic-list-item ＞*{
+  opacity: 0.7;
 }
 .tiles-grid-item.topic-list-item:not(.unseen-topic) .tiles-grid-item-content .topic-details{
-  opacity:0.8;
+  opacity:0.7;
 }
 .topic-list {
   .ttl-topic-label {
