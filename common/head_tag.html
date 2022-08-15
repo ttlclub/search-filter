@@ -32,11 +32,11 @@
           /\/l\/latest$|\/l\/new$|\/l\/unread$|\/l\/top|\/latest$|\/new$|\/unread$|\/top$/g,
           ""
         );
-        href = href ? href + sortOrderParam : "/latest?order=created";
+        href = href !== "/" ? href + sortOrderParam : "/latest?order=created";
         return href;
       }
     },
-    href: "/latest?order=created",
+    href: "?order=created",
     forceActive: (category, args, router) => {
       const queryParams = router.currentRoute.queryParams;
       // console.log(router.currentRoute);
