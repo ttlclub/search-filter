@@ -1,26 +1,24 @@
 // pointer-center
 #main-outlet-wrapper {
   #main-outlet {
-    nav {
-      ul.nav.nav-pills::-webkit-scrollbar {
-        display: none;
-      }
-
-      .nav.nav-pills {
-        @include ttl-nav-paddings;
-        margin: 0 0.8em;
-        white-space: nowrap;
-        overflow: scroll;
-
-        .active {
-          @include ttl-rounded-corners;
-        }
-        a:hover {
-          @include ttl-rounded-corners;
-        }
-      }
+    ul.nav.nav-pills::-webkit-scrollbar {
+      display: none;
     }
 
+    .nav.nav-pills {
+      @include ttl-nav-paddings;
+      margin: 0 0.8em;
+      white-space: nowrap;
+      overflow: scroll;
+
+      .active {
+        @include ttl-rounded-corners;
+      }
+      a:hover {
+        @include ttl-rounded-corners;
+      }
+    }
+    
     .admin-container {
       @include ttl-paddings;
 
