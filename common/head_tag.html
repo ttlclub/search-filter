@@ -100,8 +100,10 @@
 </script>
 
 <script type="text/x-handlebars" data-template-name="/connectors/full-page-search-below-search-info/search_id">
+  <div class="search-header">
   <input placeholder="输入帖子id" name="search-topic-id" type="number" id="search-topic-id"/>
   <button id="search-topic-id-submit">进入帖子</button>
+  </div>
 </script>
 
 <script>
@@ -109,6 +111,8 @@
     $("button#search-topic-id-submit").bind("click",()=>{
     let topic_id=$("input#search-topic-id").val();
     console.log(topic_id);
+    let url="/t/"+topic_id;
+    window.location.replace(url);
   })
   })
   
