@@ -100,12 +100,19 @@
 </script>
 
 <script type="text/x-handlebars" data-template-name="/connectors/full-page-search-below-search-info/search_id">
-  // 
   <input placeholder="输入帖子id" name="search-topic-id" type="number" id="search-topic-id"/>
-  <button onclick="()=>{
-    let topic_id=$(input#search-topic-id).val();
+  <button id="search-topic-id-submit">进入帖子</button>
+</script>
+
+<script>
+  $(document).ready(()=>{
+    $("button#search-topic-id-submit").bind("click",()=>{
+    let topic_id=$("input#search-topic-id").val();
     console.log(topic_id);
-  }">进入帖子</button>
+  })
+  })
+  
+  
 </script>
 <!-- <script type="text/discourse-plugin" version="0.8">
   api.replaceIcon('trophy', 'mora');
