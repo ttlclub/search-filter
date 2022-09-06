@@ -202,6 +202,12 @@
   background: white;
 }
 
+
+input#search-topic-id{
+  flex: 1 0 60%;
+  margin-bottom: 0;
+}
+
 // 搜索栏
 .search-header {
   background: var(--header_background) !important;
