@@ -126,10 +126,10 @@
 
 <!-- init theme banner -->
 <script type="text/discourse-plugin" version="0.8">
-  import cookie from "discourse/lib/cookie";
+  const cookie = require("discourse/lib/cookie").default;
   $(document).ready(() => {
     console.log(cookie("userSelectedScheme"));
-    const theme = localStorage.getItem("theme");
+    const theme = cookie("userSelectedScheme");
     document.querySelector("div#festival-banner").classList.add("banner-" + (theme === "light" ? "moon" : "night"));
   });
 </script>
