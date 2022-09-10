@@ -14,15 +14,15 @@
         background-position: center;
     }
 
-    a::after {
-        content: '';
-        width: 100%;
-        height: 20%;
-        position: absolute;
-        bottom: -5px;
-        border-radius: 100% 100% 0 0;
-        background-color: var(--header_background);
-    }
+    // a::after {
+    //     content: '';
+    //     width: 100%;
+    //     height: 20%;
+    //     position: absolute;
+    //     bottom: -5px;
+    //     border-radius: 100% 100% 0 0;
+    //     background-color: var(--header_background);
+    // }
 
 }
 #festival-banner.banner-doubleseven{
