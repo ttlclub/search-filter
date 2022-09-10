@@ -127,6 +127,7 @@
 <!-- init theme banner -->
 <script type="text/discourse-plugin" version="0.8">
   $(document).ready(() => {
+    console.log(cookie("userSelectedScheme"));
     const theme = localStorage.getItem("theme");
     document.querySelector("div#festival-banner").classList.add("banner-" + (theme === "light" ? "moon" : "night"));
   });
