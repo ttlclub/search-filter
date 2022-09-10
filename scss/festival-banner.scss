@@ -25,19 +25,19 @@
     }
 
 }
-#banner-doubleseven{
+#festival-banner.banner-doubleseven{
     a {
         background: url($doubleseven) top left no-repeat;
     }
 }
 
 // midautumn
-#banner-midautumn a{
+#festival-banner.banner-midautumn a{
     background: url($midautumn-moon) top left no-repeat;
 }
-#banner-midautumn.banner-moon a{
+#festival-banner.banner-midautumn.banner-moon a{
     background: url($midautumn-moon) top left no-repeat;
 }
-#banner-midautumn.banner-night a{
+#festival-banner.banner-midautumn.banner-night a{
     background: url($midautumn-night) top left no-repeat;
 }
