@@ -7,7 +7,8 @@
         width: 100%;
         height: 40vw;
         max-height: 360px;
-        background: url($doubleseven) top left no-repeat;
+        
+        // background
         background-size: 100% auto;
         background-repeat: no-repeat;
         background-position: center;
@@ -23,4 +24,20 @@
         background-color: var(--header_background);
     }
 
+}
+#banner-doubleseven{
+    a {
+        background: url($doubleseven) top left no-repeat;
+    }
+}
+
+// midautumn
+#banner-midautumn a{
+    background: url($midautumn-moon) top left no-repeat;
+}
+#banner-midautumn.banner-moon a{
+    background: url($midautumn-moon) top left no-repeat;
+}
+#banner-midautumn.banner-night a{
+    background: url($midautumn-night) top left no-repeat;
 }
