@@ -132,7 +132,7 @@
         left: 50%;
         position: relative;
         transform: translateX(-50%);
-        justify-content: center;
+        justify-content: space-evenly;
         @include ttl-rounded-corners;
 
         .lottery-img {
