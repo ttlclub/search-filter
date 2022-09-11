@@ -127,6 +127,7 @@
       .lottery {
         background: var(--secondary);
         padding: 0.5em;
+        margin-bottom: 2em;
         @include ttl-rounded-corners;
 
         .lottery-img {
