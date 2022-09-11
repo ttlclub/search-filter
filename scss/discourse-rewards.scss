@@ -128,6 +128,11 @@
         background: var(--secondary);
         padding: 0.5em;
         margin-bottom: 2em;
+        max-width: 500px;
+        left: 50%;
+        position: relative;
+        transform: translateX(-50%);
+        justify-content: center;
         @include ttl-rounded-corners;
 
         .lottery-img {
