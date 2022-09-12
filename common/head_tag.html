@@ -144,7 +144,7 @@
   api.modifyClass("controller:full-page-search", {
     pluginId: "add-search-id",
     search(options = {}){
-      if(this.search_type == SEARCH_TYPE_CATS_TAGS)
+      if(this.search_type == "categories_tags")
       {
           const topic_id = this.searchTerm;
           console.log(topic_id);
