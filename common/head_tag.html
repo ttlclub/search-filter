@@ -186,11 +186,24 @@
 
       switch (this.search_type) {
         case SEARCH_TYPE_CATS_TAGS:
-          const topic_id = searchTerm;
-          console.log(topic_id);
-          let url = "/t/" + topic_id;
-          window.location.replace(url);
-          break;
+          const categoryTagSearch = searchCategoryTag(
+            searchTerm,
+            this.siteSettings
+          );
+         Promise.resolve(categoryTagSearch)
+            .then(async (results) => {
+              const categories = results.filter((c) => Boolean(c.model));
+              const tags = results.filter((c) => !Boolean(c.model));
+              const model = (await translateResults({ categories, tags })) || {};
+              this.set("model", model);
+            })
+            .finally(() => {
+              this.setProperties({
+                searching: false,
+                loading: false,
+              });
+            });
+        break;
         case SEARCH_TYPE_USERS:
           userSearch({ term: searchTerm, limit: 20 })
             .then(async (results) => {
