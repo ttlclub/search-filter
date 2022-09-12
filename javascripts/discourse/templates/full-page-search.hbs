@@ -43,13 +43,13 @@
         aria-controls="search-result-count"
       }}
       <!-- 搜索类型-->
-      {{!-- {{combo-box
+      {{combo-box
         id="search-type"
         value=search_type
         content=searchTypes
         onChange=(action (mut search_type))
         options=(hash castInteger=true)
-      }} --}}
+      }}
       <!-- 搜索按钮-->
       {{d-button
         action=(action "search" (hash collapseFilters=true))
