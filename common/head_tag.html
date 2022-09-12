@@ -142,12 +142,17 @@
 <!-- search-id-bar inner full-page-search -->
 <script type="text/discourse-plugin" version="0.8">
   api.modifyClass("controller:full-page-search", {
-    pluginId: "add-search-id",
     init() {
       this._super(...arguments);
 
       this.set("searchTypes", [
         { name: I18n.t("search.type.default"), id: SEARCH_TYPE_DEFAULT },
+        {
+          name: this.siteSettings.tagging_enabled
+            ? I18n.t("search.type.categories_and_tags")
+            : I18n.t("search.type.categories"),
+          id: SEARCH_TYPE_CATS_TAGS,
+        },
         { name: I18n.t("search.type.users"), id: SEARCH_TYPE_USERS },
       ]);
       this.selected = [];
