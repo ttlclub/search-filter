@@ -31,7 +31,6 @@ _search() {
       this.set("bulkSelectEnabled", false);
       this.selected.clear();
       this.set("searching", true);
-      scrollTop();
     } else {
       this.set("loading", true);
     }
