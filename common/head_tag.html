@@ -99,6 +99,16 @@
   });
 </script>
 
+<!-- init theme banner -->
+<script type="text/discourse-plugin" version="0.8">
+  const cookie = require("discourse/lib/cookie").default;
+  $(document).ready(() => {
+    console.log(cookie("userSelectedScheme"));
+    const theme = cookie("userSelectedScheme");
+    document.querySelector("div#festival-banner").classList.add("banner-" + (theme === "light" ? "moon" : "night"));
+  });
+</script>
+
 <!-- individual search id bar -->
 <!-- <script
   type="text/x-handlebars"
@@ -124,16 +134,6 @@
   })
   })
 </script> -->
-
-<!-- init theme banner -->
-<script type="text/discourse-plugin" version="0.8">
-  const cookie = require("discourse/lib/cookie").default;
-  $(document).ready(() => {
-    console.log(cookie("userSelectedScheme"));
-    const theme = cookie("userSelectedScheme");
-    document.querySelector("div#festival-banner").classList.add("banner-" + (theme === "light" ? "moon" : "night"));
-  });
-</script>
 
 <!-- <script type="text/discourse-plugin" version="0.8">
   api.replaceIcon('trophy', 'mora');
