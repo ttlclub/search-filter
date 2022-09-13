@@ -17,7 +17,7 @@
         {{#if hasAutofocus}}
           <div class="default-type">
             {{!-- {{i18n "search.full_page_title"}} --}}
-            {{! 在主题/帖子中搜索 }}
+            在主题/帖子中搜索
           </div>
         {{else}}
           <div class="result-count" id="search-result-count" aria-live="polite">
@@ -27,20 +27,20 @@
       {{else}}
         <div class="default-type">
           {{!-- {{i18n "search.full_page_title"}} --}}
-          {{! 在主题/帖子中搜索 }}
+          在主题/帖子中搜索
         </div>
       {{/if}}
     </h4>
     <!-- 搜索框-->
     <div class="search-bar">
       <!-- 搜索类型-->
-      {{combo-box
+      {{!-- {{combo-box
         id="search-type"
         value=search_type
         content=searchTypes
         onChange=(action (mut search_type))
         options=(hash castInteger=true)
-      }}
+      }} --}}
       <!-- 输入框-->
       {{search-text-field
         id="search-term"
