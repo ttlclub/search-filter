@@ -53,11 +53,9 @@
 }
 
 //halloween  banner-halloween
-#festival-banner.banner-halloween {
-  a {
-    background: url($halloween) top left no-repeat;
-    background-size: 100% auto;
-    background-repeat: no-repeat;
-    background-position: center;
-  }
+#festival-banner.banner-halloween a {
+  background: url($halloween) top left no-repeat;
+  background-size: 100% auto;
+  background-repeat: no-repeat;
+  background-position: center;
 }
