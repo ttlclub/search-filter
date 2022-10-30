@@ -8,15 +8,15 @@
   "minimum_discourse_version": null,
   "maximum_discourse_version": null,
   "assets": {
-    "doubleseven":"assets/doubleseven.png",
-    "icons-sprite":"assets/ttl-mora-icon.svg",
-    "midautumn-moon":"assets/midautumn-moon.png",
-    "midautumn-night":"assets/midautumn-night.png"
+    "doubleseven": "assets/doubleseven.png",
+    "icons-sprite": "assets/ttl-mora-icon.svg",
+    "midautumn-moon": "assets/midautumn-moon.png",
+    "midautumn-night": "assets/midautumn-night.png",
+    "halloween": "assets/halloween.png"
   },
-  "color_schemes": {
-  },
+  "color_schemes": {},
   "modifiers": {
-      "serialize_topic_excerpts": true
+    "serialize_topic_excerpts": true
   },
   "learn_more": "https://meta.discourse.org/t/beginners-guide-to-using-discourse-themes/91966"
 }
