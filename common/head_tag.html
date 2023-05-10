@@ -32,7 +32,7 @@
           /\/l\/latest$|\/l\/new$|\/l\/unread$|\/l\/top|\/latest$|\/new$|\/unread$|\/top$/g,
           ""
         );
-        href = href ? href + sortOrderParam : "/latest?order=created";
+        href = href !== "/" ? href + sortOrderParam : "/latest?order=created";
         return href;
       }
     },
@@ -98,155 +98,156 @@
       showFullTitle: false,
   });
 </script>
+
+<!-- init theme banner -->
+<script type="text/discourse-plugin" version="0.8">
+  const cookie = require("discourse/lib/cookie").default;
+  $(document).ready(() => {
+    console.log(cookie("userSelectedScheme"));
+    const theme = cookie("userSelectedScheme");
+    document.querySelector("div#festival-banner").classList.add("banner-" + (theme === "light" ? "moon" : "night"));
+  });
+</script>
+
+<!-- individual search id bar -->
+<script
+  type="text/x-handlebars"
+  data-template-name="/connectors/full-page-search-below-search-info/search_id"
+>
+    <div class="search-container">
+    <div class="search-header">
+      <div class="search-bar">
+      <input placeholder="输入帖子id" name="search-topic-id" type="number" id="search-topic-id"/>
+      <button id="search-topic-id-submit" class="btn-primary">进入帖子</button>
+    </div>
+  </div>
+  </div>
+</script>
+
+<script type="text/discourse-plugin" version="0.8">
+  api.onPageChange(()=>{
+    $("button#search-topic-id-submit").bind("click",()=>{
+    let topic_id=$("input#search-topic-id").val();
+    console.log(topic_id);
+    let url="/t/"+topic_id;
+    window.location.replace(url);
+  })
+  })
+</script>
+
 <!-- <script type="text/discourse-plugin" version="0.8">
   api.replaceIcon('trophy', 'mora');
 </script> -->
 
-<!-- <script type="" version="0.8.24">
-  // text/discourse-plugin
-  // https://github.com/B-iggy/alien-night-discourse-dark-theme/blob/master/common/head_tag.html
-  api.decorateWidget('header-buttons:after', helper => {
-      const showExtraInfo = helper.attrs.topic;
-      
-      if(!showExtraInfo) {
-          return helper.h('a.theme-switcherWrapper', [
-              helper.h('a.theme-switcher--light', {
-                  text: 'Light',
-                  title: 'Change the Theme Color to Light'
-              }),
-              helper.h('input.theme-switcherBox.theme-switcher #theme-switcher', {
-                  type:'checkbox'
-              }),
-              helper.h('label.theme-switcherLabel', {
-              'attributes': {
-                  'for': 'theme-switcher'
-              }
-              }),
-              helper.h('a.theme-switcher--dark', {
-                  text:'Dark',
-                  title: 'Change the Theme Color to Dark'
-              })
-          ]);
-      }
-  });
-  
-    $(document).ajaxComplete(function() {
-      $(".theme-switcher").on('change', function() {
-        if ($(this).is(':checked')) {
-          $('html').addClass('dark');
-          localStorage.setItem('theme', 'dark');
-          $('.theme-switcher').prop('checked', true);
-        }
-        else {
-          $('html').removeClass('dark');
-          localStorage.removeItem('theme', 'dark');
-          $('.theme-switcher').prop('checked', false);
-        }
-      });
-    });
-  
-    $( document ).ready(function() {
-      $(window).scroll(function() {
-  
-        if ($('.contents').find('.extra-info-wrapper').length > 0) {
-          // Scrolled Top
-        } else {
-          if ($('html').hasClass('dark')) {
-            $('.theme-switcher').prop('checked', true);
-  
-          } else {
-            $('.theme-switcher').prop('checked', false);
-          }
-        }
-  
-        $(".theme-switcher").on('change', function() {
-          if ($(this).is(':checked')) {
-            $('html').addClass('dark');
-            localStorage.setItem('theme', 'dark');
-            $('.theme-switcher').prop('checked', true);
-          }
-          else {
-            $('html').removeClass('dark');
-            localStorage.removeItem('theme', 'dark');
-            $('.theme-switcher').prop('checked', false);
-          }
-        });
-  
-        $('.theme-switcher--light').on('click', function() {
-          $('html').removeClass('dark');
-          $('.theme-switcher').prop('checked', false);
-  
-          if ($('html').hasClass('dark')) {
-            localStorage.setItem('theme', 'dark');
-  
-          } else {
-            localStorage.setItem('theme', 'light');
-          }
-        });
-  
-        $('.theme-switcher--dark').on('click', function() {
-          $('html').addClass('dark');
-          $('.theme-switcher').prop('checked', true);
-  
-          if ($('html').hasClass('dark')) {
-            localStorage.setItem('theme', 'dark');
-  
-          } else {
-            localStorage.setItem('theme', 'light');
-          }
-        });
-      });
-  
-      $(".theme-switcher").on('change', function() {
-        if ($(this).is(':checked')) {
-          $('html').addClass('dark');
-          localStorage.setItem('theme', 'dark');
-          $('.theme-switcher').prop('checked', true);
-        }
-        else {
-          $('html').removeClass('dark');
-          localStorage.removeItem('theme', 'dark');
-          $('.theme-switcher').prop('checked', false);
-        }
-      });
-  
-      $('.theme-switcher--light').on('click', function() {
-        $('html').removeClass('dark');
-        $('.theme-switcher').prop('checked', false);
-  
-        if ($('html').hasClass('dark')) {
-          localStorage.setItem('theme', 'dark');
-  
-        }else{
-          localStorage.setItem('theme', 'light');
-        }
-      });
-  
-      $('.theme-switcher--dark').on('click', function() {
-        $('html').addClass('dark');
-        $('.theme-switcher').prop('checked', true);
-  
-        if ($('html').hasClass('dark')) {
-          localStorage.setItem('theme', 'dark');
-        }else{
-          localStorage.setItem('theme', 'light');
-        }
-      });
-  
-  
-      if (typeof(localStorage) !== "undefined") {
-        if (localStorage.getItem("theme") === 'dark' || localStorage.getItem("theme") === null && !settings.default_light) {
-          $('html').addClass('dark');
-          $('.theme-switcher').prop('checked', true);
-        } else {
-          $('html').removeClass('dark');
-          $('.theme-switcher').prop('checked', false);
-          localStorage.removeItem('theme', 'dark');
-        }
+<!-- search-id-bar inner full-page-search -->
+<!-- <script type="text/discourse-plugin" version="0.8">
+  api.modifyClass("controller:full-page-search", {
+    pluginId: "add-search-id",
+    MyisValidSearchTerm(searchTerm, siteSettings) {
+      if (searchTerm) {
+        return searchTermtrim.().length >= siteSettings.min_search_term_length;
       } else {
-      // Sorry! No Web Storage support..
-      console.log('Upgrade to a better browser! Really!')
+        return false;
       }
-    });
-  
-  </script> -->
+    },
+  changeById(){
+      let topic_id= this.searchTerm;
+      console.log(topic_id);
+      let url="/t/"+topic_id;
+      window.location.href(url);
+  },
+  _search() {
+      if (this.searching) {
+        return;
+      }
+
+      this.set("invalidSearch", false);
+      const searchTerm = this.searchTerm;
+      if (!this.MyisValidSearchTerm(searchTerm, this.siteSettings)) {
+        this.set("invalidSearch", true);
+        return;
+      }
+
+      let args = { q: searchTerm, page: this.page };
+
+      if (args.page === 1) {
+        this.set("bulkSelectEnabled", false);
+        this.selected.clear();
+        this.set("searching", true);
+        this.scrollTop();
+      } else {
+        this.set("loading", true);
+      }
+
+      const sortOrder = this.sortOrder;
+      if (sortOrder && SortOrders[sortOrder].term) {
+        args.q += " " + SortOrders[sortOrder].term;
+      }
+
+      this.set("q", args.q);
+
+      const skip = this.skip_context;
+      if ((!skip && this.context) || skip === "false") {
+        args.search_context = {
+          type: this.context,
+          id: this.context_id,
+        };
+      }
+
+      const searchKey = this.getSearchKey(args);
+
+      switch (this.search_type) {
+        case SEARCH_TYPE_CATS_TAGS:
+          this.changeById();
+          break;
+        case SEARCH_TYPE_USERS:
+          this.userSearch({ term: searchTerm, limit: 20 })
+            .then(async (results) => {
+              const model = (await this.translateResults({ users: results })) || {};
+              this.set("model", model);
+            })
+            .finally(() => {
+              this.setProperties({
+                searching: false,
+                loading: false,
+              });
+            });
+          break;
+        default:
+          if (this.currentUser) {
+              this.updateRecentSearches(this.currentUser, searchTerm);
+          }
+          this.ajax("/search", { data: args })
+            .then(async (results) => {
+              const model = (await this.translateResults(results)) || {};
+
+              if (results.grouped_search_result) {
+                this.set("q", results.grouped_search_result.term);
+              }
+
+              if (args.page > 1) {
+                if (model) {
+                  this.model.posts.pushObjects(model.posts);
+                  this.model.topics.pushObjects(model.topics);
+                  this.model.set(
+                    "grouped_search_result",
+                    results.grouped_search_result
+                  );
+                }
+              } else {
+                  this.setTransient("lastSearch", { searchKey, model }, 5);
+                model.grouped_search_result = results.grouped_search_result;
+                this.set("model", model);
+              }
+            })
+            .finally(() => {
+              this.setProperties({
+                searching: false,
+                loading: false,
+              });
+            });
+          break;
+      }
+    },
+  });
+</script> -->

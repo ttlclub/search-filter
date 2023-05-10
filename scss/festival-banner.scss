@@ -1,26 +1,85 @@
 #festival-banner {
+  // clip-path: ellipse(150% 100% at 50% 0%);
+  a {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 40vw;
+    max-height: 360px;
 
-    // clip-path: ellipse(150% 100% at 50% 0%);
-    a {
-        position: relative;
-        display: block;
-        width: 100%;
-        height: 40vw;
-        max-height: 360px;
-        background: url($doubleseven) top left no-repeat;
-        background-size: 100% auto;
-        background-repeat: no-repeat;
-        background-position: center;
-    }
+    // background
+  }
 
-    a::after {
-        content: '';
-        width: 100%;
-        height: 20%;
-        position: absolute;
-        bottom: -5px;
-        border-radius: 100% 100% 0 0;
-        background-color: var(--header_background);
-    }
-
+  // a::after {
+  //     content: '';
+  //     width: 100%;
+  //     height: 20%;
+  //     position: absolute;
+  //     bottom: -5px;
+  //     border-radius: 100% 100% 0 0;
+  //     background-color: var(--header_background);
+  // }
 }
+
+#festival-banner.banner-doubleseven {
+  a {
+    background: url($doubleseven) top left no-repeat;
+    background-size: 100% auto;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+}
+
+// midautumn
+#festival-banner.banner-midautumn a {
+  background: url($midautumn-moon) top left no-repeat;
+  background-size: 100% auto;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+#festival-banner.banner-midautumn.banner-moon a {
+  background: url($midautumn-moon) top left no-repeat;
+  background-size: 100% auto;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+#festival-banner.banner-midautumn.banner-night a {
+  background: url($midautumn-night) top left no-repeat;
+  background-size: 100% auto;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+// halloween
+#festival-banner.banner-halloween a {
+  background: url($halloween) top left no-repeat;
+  background-size: 100% auto;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+//zhongli's birthday
+#festival-banner.banner-zhongliBirth a {
+  background: url($zhongliBirth) top left no-repeat;
+  background-size: 100% auto;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+//valentine
+#festival-banner.banner-valentine a {
+  background: url($valentine) top left no-repeat;
+  background-size: 100% auto;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+//whiteValen
+/*
+#festival-banner.banner-whitevalen a {
+  background: url($whitevalen) top left no-repeat;
+  background-size: 100% auto;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+*/
