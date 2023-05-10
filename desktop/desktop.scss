@@ -29,13 +29,6 @@
   display: flex;
   flex-direction: column;
   flex-wrap: nowrap;
-
-  .category-heading {
-    // display: flex;
-    // flex-direction: column;
-    // align-items: center;
-  }
-
 }
 
 .container .category-logo.aspect-image {
@@ -128,5 +121,6 @@
 
 #category-2, #category-3, #category-1 {
   width: 50%;
+  margin-top: 1em;
 }
 
