@@ -95,7 +95,7 @@
 
 
 .category-list {
-  height: 600px;
+  height: 70vw;
   display: grid;
   grid-template:
       "a a d "
@@ -109,7 +109,7 @@
 }
 
 .category-list, .muted-categories {
-  margin: 1em;
+  margin: 1.5em;
 }
 
 #category-7, #category-6, #category-8{
