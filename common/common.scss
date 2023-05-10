@@ -1565,9 +1565,6 @@ aside.onebox {
   @include ttl-small-category;
 }
 
-.category-heading p {
-  margin-top: 10px;
-}
 
 // /g &/u
 .container {
@@ -1630,6 +1627,22 @@ aside.onebox {
       border-radius: 8px;
       background-color: var(--header_background);
     }
+  }
+}
+
+
+// 类别页面banner
+.category-heading {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  img {
+    object-fit: contain;
+    max-height: 160px;
+  }
+  p {
+    margin-top: 10px;
   }
 }
 
