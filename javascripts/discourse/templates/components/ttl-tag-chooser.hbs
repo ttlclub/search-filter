@@ -90,8 +90,21 @@
     <!-- reset 确认 按钮组 -->  
     {{/if}}
     <div class="ttl-btn-panel">
+        {{!-- 
         {{d-button icon="undo" label=(theme-prefix "ttl_tag_chooser.reset") class="ttl-reset-btn btn-flat" click=(action this.selectKit.onClearSelection)}}
         {{d-button label=(theme-prefix "ttl_tag_chooser.ok") class="ttl-ok-btn btn-primary" click=(action this.selectKit.toggle)}}
+        --}}
+        <DButton
+          @class="ttl-reset-btn btn-flat"
+          @icon="undo"
+          @label={{theme-prefix "ttl_tag_chooser.reset"}}
+          @action={{this.selectKit.onClearSelection}}
+        />
+        <DButton
+          @class="ttl-ok-btn btn-primary"
+          @label={{theme-prefix "ttl_tag_chooser.ok"}}
+          @action={{this.selectKit.toggle}}
+        />
     </div>  
     
 

@@ -1958,7 +1958,7 @@ tbody.topic-list-body {
 
 // 用户
 .my-outlet-page {
-  .mobile-nav {
+  .mobile-nav,.nav-pills{
     display: flex;
     white-space: nowrap;
     flex-wrap: nowrap;
@@ -1978,8 +1978,6 @@ tbody.topic-list-body {
 .my-user-page .user-secondary-navigation .mobile-nav {
   line-height: 2em !important;
   margin: 1em !important;
-  margin-left: 2em !important;
-  margin-right: 2em !important;
 }
 
 .my-user-page .user-primary-navigation .mobile-nav {
@@ -2047,6 +2045,10 @@ tbody.topic-list-body {
     height: 1.5em;
     width: 1.5em;
   }
+}
+
+.select-kit.multi-select.ttl-tag-chooser {
+  width: 100%;
 }
 
 //  用户卡
