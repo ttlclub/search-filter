@@ -1970,6 +1970,18 @@ tbody.topic-list-body {
   }
 }
 
+.my-outlet-page {
+  .nav-pills{
+    display: flex;
+    margin-right: 0.5em;
+    a {
+      border-radius: 1em;
+      transition: all .5s linear;
+      display: inline-block;
+    }
+  }
+}
+
 .user-additional-controls {
   margin: 0.5em 1.5em 0em 1.5em;
 }
