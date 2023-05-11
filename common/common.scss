@@ -1862,7 +1862,7 @@ tbody.topic-list-body {
 
 // 热门时间段选择
 .select-kit.dropdown-select-box.period-chooser {
-  padding: 0.5em 1.2em 0 1.2em !important;
+  //padding: 0.5em 1.2em 0 1.2em !important;
 
   .select-kit-body {
     padding: 0px 1.2em;
@@ -1880,7 +1880,7 @@ tbody.topic-list-body {
 .select-kit.dropdown-select-box.period-chooser .period-chooser-header {
   display: flex;
   flex-direction: row;
-  padding: 0.5em;
+  // padding: 0.5em;
 }
 
 .topic-list {
@@ -1949,11 +1949,16 @@ tbody.topic-list-body {
 }
 
 .directory .total-rows {
-  padding: 0 0.8em 0 1.8em;
+  padding: 0;
 }
 
 .select-kit.dropdown-select-box.period-chooser {
   padding: unset;
+}
+
+.users-directory.directory {
+  margin-left: 1em;
+  margin-right: 1em;
 }
 
 // 用户
