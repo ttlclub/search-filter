@@ -145,6 +145,7 @@
         {{plugin-outlet name="topic-navigation" connectorTagName="div" args=(hash topic=model)}}
 
         {{#if info.renderTimeline}}
+        {{!-- 
           {{topic-timeline
             topic=model
             notificationLevel=model.details.notification_level
@@ -172,7 +173,36 @@
             showChangeTimestamp=(route-action "showChangeTimestamp")
             resetBumpDate=(action "resetBumpDate")
             convertToPublicTopic=(action "convertToPublicTopic")
-            convertToPrivateMessage=(action "convertToPrivateMessage")}}
+            convertToPrivateMessage=(action "convertToPrivateMessage")}} 
+        --}}
+          <TopicTimeline
+            @info={{info}}
+            @model={{this.model}}
+            @replyToPost={{action "replyToPost"}}
+            @showSummary={{action "showSummary"}}
+            @jumpToPostPrompt={{action "jumpToPostPrompt"}}
+            @enteredIndex={{this.enteredIndex}}
+            @prevEvent={{info.prevEvent}}
+            @jumpTop={{action "jumpTop"}}
+            @jumpBottom={{action "jumpBottom"}}
+            @jumpEnd={{action "jumpEnd"}}
+            @jumpToIndex={{action "jumpToIndex"}}
+            @toggleMultiSelect={{action "toggleMultiSelect"}}
+            @showTopicSlowModeUpdate={{route-action "showTopicSlowModeUpdate"}}
+            @deleteTopic={{action "deleteTopic"}}
+            @recoverTopic={{action "recoverTopic"}}
+            @toggleClosed={{action "toggleClosed"}}
+            @toggleArchived={{action "toggleArchived"}}
+            @toggleVisibility={{action "toggleVisibility"}}
+            @showTopicTimerModal={{route-action "showTopicTimerModal"}}
+            @showFeatureTopic={{route-action "showFeatureTopic"}}
+            @showChangeTimestamp={{route-action "showChangeTimestamp"}}
+            @resetBumpDate={{action "resetBumpDate"}}
+            @convertToPublicTopic={{action "convertToPublicTopic"}}
+            @convertToPrivateMessage={{action "convertToPrivateMessage"}}
+            @fullscreen={{info.topicProgressExpanded}}
+            @mobileView={{this.site.mobileView}}
+          />
         {{else}}
           {{#topic-progress
             prevEvent=info.prevEvent
