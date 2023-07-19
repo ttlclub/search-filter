@@ -9,3 +9,8 @@
 .user-main .about .primary{
   flex-direction: column;
 }
+
+// patch: 顶部导航固定 for mobile
+.d-header {
+  position: fixed;
+}
