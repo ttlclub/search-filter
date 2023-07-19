@@ -124,3 +124,8 @@
   margin-top: 1em;
 }
 
+// patch: 帖子进度条 for desktop
+.container.posts .topic-navigation {
+  position: fixed;
+  right: 3vw;
+}
