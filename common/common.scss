@@ -4,6 +4,11 @@
 @import "emoji";
 @import "discourse-rewards";
 
+// 顶部导航固定
+.d-header {
+  position: fixed;
+}
+
 // 用select kit重写的tag选择器
 .ttl-tag-chooser {
   &.select-kit {
